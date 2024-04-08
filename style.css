@@ -1,0 +1,146 @@
+/*
+
+Fonts:
+
+Fall is coming
+
+
+*/
+
+@font-face {
+    font-family: custom_font;
+    src:url(Fonts/too_cute.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "custom_font";
+    color: white;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('Images/Fire\ Obstacle\ Course.jpg') no-repeat;
+    background-size: cover;
+}
+
+.wrapper {
+    width: 500px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    color: #fff;
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+    font-size: 70px;
+    text-align: center;
+    font-weight: 100;
+}
+
+.wrapper .input_box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input_box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 25px;
+    color: #fff;
+    padding: 27px 45px 20px 20px;
+    font-weight: 100;
+}
+
+.input_box input::placeholder {
+    color: #fff;
+}
+
+.input_box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .remember_forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: -10px 0 15px;
+    font-weight: 100;
+}
+
+.remember_forgot label input {
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember_forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember_forgot a::hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 22px;
+    color: #333;
+    font-weight: 100;
+}
+
+.wrapper .regular_link {
+    font-size: 20px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.regular_link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 100;
+}
+
+.regular_link p a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .home{
+    font-size: 30px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.wrapper .home a{
+    text-decoration: none;
+}
+
+.wrapper .home:hover {
+    text-decoration: underline;
+}
