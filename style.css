@@ -1,16 +1,13 @@
-/*
-
-Fonts:
-
-Fall is coming
-
-
-*/
-
 @font-face {
     font-family: custom_font;
     src:url(Fonts/too_cute.ttf);
 }
+
+
+
+/* Login Page */
+
+
 
 * {
     margin: 0;
@@ -87,33 +84,6 @@ body {
     font-weight: 100;
 }
 
-.login_signup_container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-}
-
-
-.login_signup_container .btn {
-    text-decoration: none;
-    text-align: center;
-    padding-top: 5px;
-    padding: 10px;
-    width: 90%;
-    height: 100%;
-    background: #fff;
-    border-radius: 40px;
-    cursor: pointer;
-    font-size: 25px;
-    color: #542540;
-    font-weight: 100;
-    display: block;
-    line-height: 25px;
-    white-space: nowrap;
-    margin-right: 10px;
-}
-
 .remember_forgot label input {
     accent-color: #fff;
     margin-right: 3px;
@@ -129,9 +99,10 @@ body {
 }
 
 .wrapper .btn {
-    width: 100%;
+    width: 30%;
     height: 45px;
     background: #fff;
+    text-align: center;
     border: none;
     outline: none;
     border-radius: 40px;
@@ -140,6 +111,8 @@ body {
     font-size: 22px;
     color: #333;
     font-weight: 100;
+    display: block;
+    margin: 0 auto;
 }
 
 .wrapper .regular_link {
@@ -170,4 +143,76 @@ body {
 
 .wrapper .home:hover {
     text-decoration: underline;
+}
+
+
+
+
+/* Home Page */
+
+
+
+
+.login_signup_container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+}
+
+.login_signup_container .btn {
+    text-decoration: none;
+    text-align: center;
+    padding-top: 5px;
+    padding: 10px;
+    width: 90%;
+    height: 100%;
+    background: white;
+    /* background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2); */
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 25px;
+    color: black;
+    font-weight: 100;
+    display: block;
+    line-height: 25px;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+.header {
+    position: absolute;
+    top: 15%;
+    display: block;
+    white-space: nowrap;
+    font-weight: 100;
+}
+
+.languages {
+    position: absolute;
+    display: block;
+    white-space: nowrap;
+    top: 50%;
+}
+
+.languages .btn{
+    text-align: center;
+    padding-top: 5px;
+    padding: 10px;
+    width: auto%;
+    height: 100%;
+    background: white;
+    text-decoration: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 25px;
+    color: black;
+    font-weight: 100;
+    display: block;
+    line-height: 25px;
+    white-space: nowrap;
+    margin-right: 10px;
+    display: inline-block;
 }
