@@ -1,13 +1,15 @@
-@font-face {
-    font-family: custom_font;
-    src:url(Fonts/too_cute.ttf);
-}
 
 
 
 /* Login Page */
 
 
+
+
+@font-face {
+    font-family: custom_font;
+    src:url(Fonts/too_cute.ttf);
+}
 
 * {
     margin: 0;
