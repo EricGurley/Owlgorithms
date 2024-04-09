@@ -184,7 +184,7 @@ body {
 
 .header {
     position: absolute;
-    top: 15%;
+    top: 25%;
     display: block;
     white-space: nowrap;
     font-weight: 100;
@@ -194,14 +194,14 @@ body {
     position: absolute;
     display: block;
     white-space: nowrap;
-    top: 50%;
+    top: 45%;
 }
 
 .languages .btn{
     text-align: center;
     padding-top: 5px;
     padding: 10px;
-    width: auto%;
+    width: auto;
     height: 100%;
     background: white;
     text-decoration: none;
@@ -215,4 +215,12 @@ body {
     white-space: nowrap;
     margin-right: 10px;
     display: inline-block;
+}
+
+.select {
+    position: absolute;
+    top: 65%;
+    display: block;
+    white-space: nowrap;
+    font-weight: 100;
 }
