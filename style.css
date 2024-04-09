@@ -101,17 +101,18 @@ body {
 }
 
 .wrapper .btn {
+    color: rgb(98, 42, 87);
+    position: relative;
     width: 30%;
     height: 45px;
-    background: #fff;
+    background-color: white;
     text-align: center;
     border: none;
     outline: none;
     border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 22px;
-    color: #333;
     font-weight: 100;
     display: block;
     margin: 0 auto;
@@ -133,13 +134,13 @@ body {
     text-decoration: underline;
 }
 
-.wrapper .home{
+.wrapper .home {
     font-size: 30px;
     text-decoration: none;
     text-align: center;
 }
 
-.wrapper .home a{
+.wrapper .home a {
     text-decoration: none;
 }
 
