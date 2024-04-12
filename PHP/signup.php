@@ -17,8 +17,8 @@
             header("location: ../HTML/signup.html?error=invalidusername");
             exit();
         }
-        if(username_already_exists($conn, $username) !== false) {
-            header("location: ../HTML/signup.html?error=invalidusername");
+        if(username_already_exists($conn, $username, $email) !== false) {
+            header("location: ../HTML/signup.html?error=usernamealreadyexists");
             exit();
         }
         if(passwords_match($password, $password_repeat) !== false) {
@@ -26,7 +26,7 @@
             exit();
         }
         if(invalid_email($email) !== false) {
-            header("location: ../HTML/signup.html?error=invalidusername");
+            header("location: ../HTML/signup.html?error=invalidemail");
             exit();
         }
         create_user($conn, $username, $password, $email);
