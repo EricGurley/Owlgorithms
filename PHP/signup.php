@@ -1,18 +1,37 @@
 <?php
-
-    ob_start();
-
     if (isset($_POST["submit"])) {
         
-        // $username = $_POST['username'];
-        // $password = $_POST['password'];
-        // $email = $_POST['email'];
-    
-        echo "Registration successful!";
-    }
-    else {
-        include '../HTML/signup.html';
-    }
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $email = $_POST["email"];
+        $password_repeat = $_POST["password_repeat"];
 
-    $output = ob_get_clean(); // Get the buffered output
-    echo $output; // Output the buffered content
+        require_once 'connect_to_database.php';
+        require_once 'functions.php';
+
+        if(anything_empty($username, $password, $password_repeat, $email) !== false) {
+            header("location: ../HTML/signup.html?error=missinganinput");
+            exit();
+        }
+        if(invalid_username($username) !== false) {
+            header("location: ../HTML/signup.html?error=invalidusername");
+            exit();
+        }
+        if(username_already_exists($conn, $username) !== false) {
+            header("location: ../HTML/signup.html?error=invalidusername");
+            exit();
+        }
+        if(passwords_match($password, $password_repeat) !== false) {
+            header("location: ../HTML/signup.html?error=passwordsdonotmatch");
+            exit();
+        }
+        if(invalid_email($email) !== false) {
+            header("location: ../HTML/signup.html?error=invalidusername");
+            exit();
+        }
+        create_user($conn, $username, $password, $email);
+    }
+else {
+    header("location: ../HTML/signup.html");
+    exit();
+}
