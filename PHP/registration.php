@@ -1,5 +1,7 @@
 <?php
 
+    ob_start();
+
     if (isset($_POST["submit"])) {
         
         // $username = $_POST['username'];
@@ -9,5 +11,8 @@
         echo "Registration successful!";
     }
     else {
-        header("location : HTML\signup.html");
+        include '../HTML/signup.html';
     }
+
+    $output = ob_get_clean(); // Get the buffered output
+    echo $output; // Output the buffered content
