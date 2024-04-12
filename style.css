@@ -2,6 +2,11 @@
 
 
 
+@font-face {
+    font-family: custom_font;
+    src:url(Fonts/too_cute.ttf);
+}
+
 .login_signup_container {
     position: absolute;
     top: 20px;
@@ -14,7 +19,7 @@
     text-decoration: none;
     text-align: center;
     padding-top: 5px;
-    padding: 10px;
+    padding: 20px;
     width: 90%;
     height: 100%;
     mix-blend-mode: screen;
@@ -77,11 +82,6 @@
 /* Login Page */
 
 
-
-@font-face {
-    font-family: custom_font;
-    src:url(Fonts/too_cute.ttf);
-}
 
 * {
     margin: 0;
