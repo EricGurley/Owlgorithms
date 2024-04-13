@@ -1,3 +1,7 @@
+<?php
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +11,22 @@
     <link rel = "stylesheet" href = "../style.css">
 </head>
 <body>
-    
     <div class = "login_signup_container">
+    <?php
+        if (isset($_SESSION["id_number"])) {
+            <a class = "btn" href = "login.html"> Profile </a>
+            <a class = "btn" href = "signup.html"> Sign Out </a>
+        }
+        else {
+            <a class = "btn" href = "login.html"> Login </a>
+            <a class = "btn" href = "signup.html"> Sign up </a>
+        }
+    ?>
+    </div>
+    <!-- <div class = "login_signup_container">
         <a class = "btn" href = "login.html"> Login </a>
         <a class = "btn" href = "signup.html"> Sign up </a>
-    </div>
+    </div> -->
 
     <div class = "header">
         <h1> Space Programming Website </h1>
