@@ -43,7 +43,31 @@
         </form>
     </div>
 
-    
+    <?php
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == "missinganinput") {
+                echo "Fill in all fields!";
+            }
+            }
+            else if (isset($_GET["error"]) == "invalidusername") {
+                echo "Invalid username!";
+            }
+            else if (isset($_GET["error"]) == "usernamealreadyexists") {
+                echo "Username is already taken!";
+            }
+            else if (isset($_GET["error"]) == "passwordsdonotmatch") {
+                echo "Passwords do not match!";
+            }
+            else if (isset($_GET["error"]) == "invalidemail") {
+                echo "This email address is invalid!";
+            }
+            else if (isset($_GET["error"]) == "stmtfailed") {
+                echo "A technical error has occured, please try again later";
+            }
+            else if (isset($_GET["error"]) == "none") {
+                echo "Login successful!";
+            }
+    ?>
 
     <script src = "index.js"> </script>
 </body>
