@@ -11,22 +11,17 @@
     <link rel = "stylesheet" href = "../style.css">
 </head>
 <body>
-    <div class = "login_signup_container">
-    <!-- <?php
-        // if (isset($_SESSION["id_number"])) {
-        //     <a class = "btn" href = "login.html"> Profile </a>
-        //     <a class = "btn" href = "signupmain.php"> Sign Out </a>
-        // }
-        // else {
-        //     <a class = "btn" href = "login.html"> Login </a>
-        //     <a class = "btn" href = "signupmain.php"> Sign up </a>
-        // }
-    ?> -->
-    </div>
-    <div class = "login_signup_container">
-        <a class = "btn" href = "login.html"> Login </a>
-        <a class = "btn" href = "signupmain.php"> Sign up </a>
-    </div>
+    <?php if (isset($_SESSION["id_number"])) { ?>
+        <div class="login_signup_container">
+            Logged in!
+        </div>
+    <?php } else { ?>
+        <div class="login_signup_container">
+            Login or sign up!
+            <a class="btn" href="login.html">Login</a>
+            <a class="btn" href="signupmain.php">Sign up</a>
+        </div>
+    <?php } ?>
 
     <div class = "header">
         <h1> Space Programming Website </h1>
