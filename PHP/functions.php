@@ -78,7 +78,8 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        header("location: ../HTML/signupmain.php?error=none");
+                                                                // TODO: Fix this
+        header("location: ../HTML/signupmain.php?error=none");  // This is triggering even when errors occur
         exit();
     }
 

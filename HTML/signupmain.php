@@ -49,7 +49,7 @@
                 echo "Fill in all fields!";
             }
             else if (isset($_GET["error"]) == "invalidusername") {
-                echo "<p>Invalid username!</p>";
+                echo "<p>That username is invalid!</p>";
             }
             else if (isset($_GET["error"]) == "usernamealreadyexists") {
                 echo "<p>Username is already taken!</p>";
