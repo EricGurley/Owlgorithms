@@ -24,7 +24,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../HTML/signup.html?error=stmtfailed");
+            header("location: ../HTML/signupmain.php?error=stmtfailed");
             exit();
         }
 
@@ -68,7 +68,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../HTML/signup.html?error=stmtfailed");
+            header("location: ../HTML/signupmain.php?error=stmtfailed");
             exit();
         }
 
@@ -78,7 +78,7 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-        header("location: ../HTML/signup.html?error=none");
+        header("location: ../HTML/signupmain.php?error=none");
         exit();
     }
 

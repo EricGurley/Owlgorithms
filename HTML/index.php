@@ -12,21 +12,21 @@
 </head>
 <body>
     <div class = "login_signup_container">
-    <?php
-        if (isset($_SESSION["id_number"])) {
-            <a class = "btn" href = "login.html"> Profile </a>
-            <a class = "btn" href = "signup.html"> Sign Out </a>
-        }
-        else {
-            <a class = "btn" href = "login.html"> Login </a>
-            <a class = "btn" href = "signup.html"> Sign up </a>
-        }
-    ?>
+    <!-- <?php
+        // if (isset($_SESSION["id_number"])) {
+        //     <a class = "btn" href = "login.html"> Profile </a>
+        //     <a class = "btn" href = "signupmain.php"> Sign Out </a>
+        // }
+        // else {
+        //     <a class = "btn" href = "login.html"> Login </a>
+        //     <a class = "btn" href = "signupmain.php"> Sign up </a>
+        // }
+    ?> -->
     </div>
-    <!-- <div class = "login_signup_container">
+    <div class = "login_signup_container">
         <a class = "btn" href = "login.html"> Login </a>
-        <a class = "btn" href = "signup.html"> Sign up </a>
-    </div> -->
+        <a class = "btn" href = "signupmain.php"> Sign up </a>
+    </div>
 
     <div class = "header">
         <h1> Space Programming Website </h1>
@@ -36,17 +36,13 @@
         <a class = "btn" href = "c.html"> C </a>
         <a class = "btn" href = "cpp.html"> C++ </a>
 
-        <!-- TODO: Get the text inside the button -->
+        <!-- TODO: Language selection buttons -->
         <!-- <img src = "Images/Language Hexagon.png">
         <button class = "btn"> C </button> -->
 
         <!-- <img src = "Images/Language Hexagon.png">
         <button class = "btn"> C++ </button> -->
     </div>
-    
-    <!-- <div class = "select">
-        <h1> Select a language </h1>
-    </div> -->
 
     <script src = "index.js"> </script>
 </body>
