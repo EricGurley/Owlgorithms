@@ -9,7 +9,7 @@
         require_once '../PHP/functions.php';
 
         if(login_empty($username, $password) !== false) {
-            header("location: ../HTML/signup.html?error=missinganinput");
+            header("location: ../HTML/login.html?error=missinganinput");
             exit();
         }
 

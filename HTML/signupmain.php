@@ -48,25 +48,25 @@
             if ($_GET["error"] == "missinganinput") {
                 echo "Fill in all fields!";
             }
-            }
             else if (isset($_GET["error"]) == "invalidusername") {
-                echo "Invalid username!";
+                echo "<p>Invalid username!</p>";
             }
             else if (isset($_GET["error"]) == "usernamealreadyexists") {
-                echo "Username is already taken!";
+                echo "<p>Username is already taken!</p>";
             }
             else if (isset($_GET["error"]) == "passwordsdonotmatch") {
-                echo "Passwords do not match!";
+                echo "<p>Passwords do not match!</p>";
             }
             else if (isset($_GET["error"]) == "invalidemail") {
-                echo "This email address is invalid!";
+                echo "<p>This email address is invalid!</p>";
             }
             else if (isset($_GET["error"]) == "stmtfailed") {
-                echo "A technical error has occured, please try again later";
+                echo "<p>A technical error has occured, please try again later</p>";
             }
             else if (isset($_GET["error"]) == "none") {
-                echo "Login successful!";
+                echo "<p>Registration successful!</p>";
             }
+        }
     ?>
 
     <script src = "index.js"> </script>

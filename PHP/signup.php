@@ -1,7 +1,7 @@
 <?php
     if (isset($_POST["submit"])) {
         
-        $username = $_POST["username"];
+        $username = $_POST["username"];     // uid is username
         $password = $_POST["password"];
         $email = $_POST["email"];
         $password_repeat = $_POST["password_repeat"];

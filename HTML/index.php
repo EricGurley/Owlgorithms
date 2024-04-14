@@ -12,9 +12,8 @@
 </head>
 <body>
     <?php if (isset($_SESSION["id_number"])) { ?>
-        <div class="login_signup_container">
-            Logged in!
-        </div>
+        <h1>Logged in!</h1>
+        
     <?php } else { ?>
         <div class="login_signup_container">
             Login or sign up!

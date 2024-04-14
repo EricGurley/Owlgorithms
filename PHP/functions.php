@@ -112,9 +112,10 @@
         }
         else if ($check_password === true) {
             session_start();
-            $_SESSION["id_number"] = $username["id_number"];
-            $_SESSION["username"] = $username["username"];
-            header("location: ../HTML/login.html");
+            $_SESSION["id_number"] = $username_already_exists["id_number"];
+            $_SESSION["username"] = $username_already_exists["username"];
+            echo "<p>Login successful!</p>";
+            // header("location: ../HTML/login.html");
             exit();
         }
     }
