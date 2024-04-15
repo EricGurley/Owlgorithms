@@ -1,13 +1,11 @@
 <?php
     function invalid_username($username) {
-        $result;
         if (!preg_match("/^[a-zA-Z0-9 ]+$/", $username)) {
-            $result = true;
+            return true;
         }
         else {
-            $result = false;
+            return false;
         }
-        return $result;
     }
 
                                                                     // TODO: Found the culprit 
@@ -37,25 +35,21 @@
     }
 
     function passwords_match($password, $password_repeat) {
-        $result;
         if ($password !== $password_repeat) {
-            $result = true;
+            return true;
         }
         else {
-            $result = false;
+            return false;
         }
-        return $result;
     }
 
     function invalid_email($email) {
-        $result;
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $result = true;
+            return true;
         }
         else {
-            $result = false;
+            return false;
         }
-        return $result;
     }
 
     function create_user($conn, $username, $password, $email) {
