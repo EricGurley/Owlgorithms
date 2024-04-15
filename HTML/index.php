@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" href = "../style.css">
 </head>
@@ -17,8 +17,8 @@
     <?php } else { ?>
         <div class="login_signup_container">
             Login or sign up!
-            <a class="btn" href="login.html">Login</a>
-            <a class="btn" href="signupmain.php">Sign up</a>
+            <a class = "btn" href = "login.html"> Login </a>
+            <a class = "btn" href = "signupmain.php"> Sign up </a>
         </div>
     <?php } ?>
 

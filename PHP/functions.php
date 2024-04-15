@@ -84,17 +84,6 @@
     }
 
     // Login functions
-
-    function login_empty($username, $password) {
-        $result;
-        if (empty($username) || empty($password)) {
-            $result = true;
-        }
-        else {
-            $result = false;
-        }
-        return $result;
-    }
     
     function login($conn, $username, $password) {
         $username_already_exists = username_already_exists($conn, $username, $username);
@@ -115,8 +104,7 @@
             session_start();
             $_SESSION["id_number"] = $username_already_exists["id_number"];
             $_SESSION["username"] = $username_already_exists["username"];
-            echo "<p>Login successful!</p>";
-            // header("location: ../HTML/login.html");
+            header("location: ../HTML/login.html");
             exit();
         }
     }

@@ -46,7 +46,7 @@
     <?php
         if (isset($_GET["error"])) {
             if ($_GET["error"] == "missinganinput") {
-                echo "Fill in all fields!";
+                echo "<p>Fill in all fields!</p>";
             }
             else if (isset($_GET["error"]) == "invalidusername") {
                 echo "<p>That username is invalid!</p>";
