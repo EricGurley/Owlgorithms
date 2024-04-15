@@ -37,7 +37,7 @@
             </div>
 
             <button type = "submit" class = "btn" name = "submit"> Register </button> <br>
-            
+
             <div class = "home">
                 <a href = "index.php"> Home </a>
             </div>
@@ -70,7 +70,6 @@
             }
         }
     ?>
-
 
     <script src = "index.js"> </script>
 </body>

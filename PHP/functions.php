@@ -23,7 +23,7 @@
 
         if ($row = mysqli_fetch_assoc($result_data)) {
             mysqli_stmt_close($stmt);
-            return $row; // Return user data if found
+            return $row;
         }
 
         mysqli_stmt_close($stmt);
