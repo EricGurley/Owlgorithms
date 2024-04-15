@@ -83,8 +83,7 @@
         $password_hashed = $username_already_exists["user_password"];
         $check_password = password_verify($password, $password_hashed);
 
-                                            // TODO: Possible cause of login failure
-        if ($check_password === false) {    // This is not triggering. This is probably the biggest hint
+        if ($check_password === false) {    
             header("location: ../HTML/login.html?error=incorrectpassword");
             exit();
         }   //If the password is not correct

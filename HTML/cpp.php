@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel = "stylesheet" href = "../style.css">
 </head>
@@ -23,21 +23,13 @@
             <a class = "btn" href = "signupmain.php"> Sign up </a>
         </div>
     <?php } ?>
-
-    <div class = "header">
-        <h1> Space Programming Website </h1>
-    </div>
     
-    <div class = "languages">
-        <a class = "btn" href = "c.php"> C </a>
-        <a class = "btn" href = "cpp.php"> C++ </a>
+    <div class = "header">
+        <h1> C++ </h1>
+    </div>
 
-        <!-- TODO: Language selection buttons -->
-        <!-- <img src = "Images/Language Hexagon.png">
-        <button class = "btn"> C </button> -->
-
-        <!-- <img src = "Images/Language Hexagon.png">
-        <button class = "btn"> C++ </button> -->
+    <div class = "home">
+        <a href = "index.php"> Home </a>
     </div>
 
     <script src = "index.js"> </script>
