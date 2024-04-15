@@ -66,8 +66,6 @@
             else if (isset($_GET["error"]) == "none") {
                 echo "<p>Registration successful!</p>";
             }
-            // TODO: For some reason, whenever a faulty registration is submitted,
-            //       the account is still created into the database
         }
     ?>
 

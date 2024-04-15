@@ -26,7 +26,14 @@
             exit();
         }
         else {
-            create_user($conn, $username, $password, $email);
+            $user_created = create_user($conn, $username, $password, $email);
+            if ($user_created) {
+                header("location: ../HTML/index.php"); // Redirect to the desired page after successful sign-up
+                exit();
+            } else {
+                header("location: ../HTML/signupmain.php?error=stmtfailed"); // Handle potential errors during user creation
+                exit();
+            }
         }
     }
     else {

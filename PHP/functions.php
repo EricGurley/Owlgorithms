@@ -9,6 +9,7 @@
         }
         return $result;
     }
+    
     function username_already_exists($conn, $username, $email) {
         $sql = "SELECT * FROM users WHERE id_number = ? OR email = ?;";
         $stmt = mysqli_stmt_init($conn);
@@ -33,6 +34,7 @@
 
         mysqli_stmt_close($stmt);
     }
+
     function passwords_match($password, $password_repeat) {
         $result;
         if ($password !== $password_repeat) {
@@ -43,6 +45,7 @@
         }
         return $result;
     }
+
     function invalid_email($email) {
         $result;
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -53,6 +56,7 @@
         }
         return $result;
     }
+
     function create_user($conn, $username, $password, $email) {
         $sql = "INSERT INTO users (username, user_password, email) VALUES (?, ?, ?);";
         $stmt = mysqli_stmt_init($conn);
@@ -94,7 +98,7 @@
             session_start();
             $_SESSION["id_number"] = $username_already_exists["id_number"];
             $_SESSION["username"] = $username_already_exists["username"];
-            header("location: ../HTML/login.html");
+            header("location: ../HTML/index.php");
             exit();
         }
     }
