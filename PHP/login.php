@@ -11,6 +11,6 @@
         login($conn, $username, $password);
     }
     else {
-        header("location: ../HTML/index.php");
+        header("location: ../HTML/login.html?loginfailed");     // This keeps triggering for some reason
         exit();
     }

@@ -9,7 +9,7 @@
     }
 
     function username_already_exists($conn, $username, $email) {
-        $sql = "SELECT * FROM users WHERE username = ?;";
+        $sql = "SELECT * FROM users WHERE username = ? OR email = ?";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -17,31 +17,13 @@
             exit();
         }
 
-        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_bind_param($stmt, "ss", $username, $email);
         mysqli_stmt_execute($stmt);
-
         $result_data = mysqli_stmt_get_result($stmt);
 
         if ($row = mysqli_fetch_assoc($result_data)) {
             mysqli_stmt_close($stmt);
-            return true; 
-        }
-
-        
-        $sql = "SELECT * FROM users WHERE email = ?;";
-        if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../HTML/signupmain.php?error=stmtfailed");
-            exit();
-        }
-
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-
-        $result_data = mysqli_stmt_get_result($stmt);
-
-        if ($row = mysqli_fetch_assoc($result_data)) {
-            mysqli_stmt_close($stmt);
-            return true; 
+            return $row; // Return user data if found
         }
 
         mysqli_stmt_close($stmt);
@@ -94,7 +76,7 @@
         
         // If the username / email does not exist
         if ($username_already_exists === false) {   // This is not triggering
-            header("location: ../HTML/login.html?error=loginfailed");
+            header("location: ../HTML/login.html?error=usernamedoesnotexist");
             exit();
         }
 
@@ -103,7 +85,7 @@
 
                                             // TODO: Possible cause of login failure
         if ($check_password === false) {    // This is not triggering. This is probably the biggest hint
-            header("location: ../HTML/login.html?error=loginfailed");
+            header("location: ../HTML/login.html?error=incorrectpassword");
             exit();
         }   //If the password is not correct
         else if ($check_password === true) {
