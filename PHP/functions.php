@@ -10,8 +10,9 @@
         return $result;
     }
 
-    function username_already_exists($conn, $username, $email) {
-        $sql = "SELECT * FROM users WHERE id_number = ? OR email = ?;";
+                                                                    // TODO: Found the culprit 
+    function username_already_exists($conn, $username, $email) {    // This is officially the problem
+        $sql = "SELECT * FROM users WHERE username = ? OR email = ?;";
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)) {
@@ -25,14 +26,14 @@
         $result_data = mysqli_stmt_get_result($stmt);
 
         if ($row = mysqli_fetch_assoc($result_data)) {
+            mysqli_stmt_close($stmt);
             return $row;
         }
         else {
             $result = false;
+            mysqli_stmt_close($stmt);
             return $result;
         }
-
-        mysqli_stmt_close($stmt);
     }
 
     function passwords_match($password, $password_repeat) {
@@ -72,8 +73,8 @@
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
-                                                                // TODO: Fix this
-        header("location: ../HTML/signupmain.php?error=none");  // This is triggering even when errors occur
+                                                                
+        header("location: ../HTML/signupmain.php?error=none");  // This is triggering because username_already_exists() is faulty
         exit();
     }
 
@@ -89,7 +90,7 @@
 
         $password_hashed = $username_already_exists["user_password"];
         $check_password = password_verify($password, $password_hashed);
-        
+
                                             // TODO: Possible cause of login failure
         if ($check_password === false) {    // This is not triggering. This is probably the biggest hint
             header("location: ../HTML/login.html?error=loginfailed");

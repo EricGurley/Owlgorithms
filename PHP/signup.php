@@ -29,8 +29,7 @@
             create_user($conn, $username, $password, $email);
     
         }
-        // TODO: Emails can be recycled for registration
-    }   // Accounts can still be created if even if the email is already in use
+    }  
     else {
         header("location: ../HTML/signupmain.php");
         exit();

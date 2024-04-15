@@ -11,7 +11,7 @@
     <link rel = "stylesheet" href = "../style.css">
 </head>
 <body>
-    <?php if (isset($_SESSION["id_number"])) { ?>
+    <?php if (isset($_SESSION["username"])) { ?>
         <h1> Logged in!!! </h1>
         
     <?php } else { ?>
