@@ -8,8 +8,8 @@
         }
     }
 
-                                                                    // TODO: Found the culprit 
-    function username_already_exists($conn, $username, $email) {    // This is officially the problem
+                                                                    // TODO: Possibly still the culprit
+    function username_already_exists($conn, $username, $email) {    // This seems to be functioning but login is still trolling
         $sql = "SELECT * FROM users WHERE username = ? OR email = ?;";
         $stmt = mysqli_stmt_init($conn);
 
@@ -28,9 +28,8 @@
             return $row;
         }
         else {
-            $result = false;
             mysqli_stmt_close($stmt);
-            return $result;
+            return false;
         }
     }
 
@@ -68,16 +67,17 @@
         mysqli_stmt_close($stmt);
 
                                                                 
-        header("location: ../HTML/signupmain.php?error=none");  // This is triggering because username_already_exists() is faulty
+        header("location: ../HTML/signupmain.php?error=none"); 
         exit();
     }
 
     // Login functions
     
     function login($conn, $username, $password) {
-        $username_already_exists = username_already_exists($conn, $username, $username);
+        $username_already_exists = username_already_exists($conn, $username, '');
         
-        if ($username_already_exists === false) {
+        // If the username / email does not exist
+        if ($username_already_exists === false) {   // This is not triggering
             header("location: ../HTML/login.html?error=loginfailed");
             exit();
         }
@@ -89,7 +89,7 @@
         if ($check_password === false) {    // This is not triggering. This is probably the biggest hint
             header("location: ../HTML/login.html?error=loginfailed");
             exit();
-        }
+        }   //If the password is not correct
         else if ($check_password === true) {
             session_start();
             $_SESSION["id_number"] = $username_already_exists["id_number"];

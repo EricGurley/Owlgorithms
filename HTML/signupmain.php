@@ -45,29 +45,23 @@
 
     <?php
         if (isset($_GET["error"])) {
-            if ($_GET["error"] == "missinganinput") {
-                echo "<p>Fill in all fields!</p>";
-            }
-            else if (isset($_GET["error"]) == "invalidusername") {
-                echo "<p>That username is invalid!</p>";
-            }
-            else if (isset($_GET["error"]) == "usernamealreadyexists") {
-                echo "<p>Username is already taken!</p>";
-            }
-            else if (isset($_GET["error"]) == "passwordsdonotmatch") {
-                echo "<p>Passwords do not match!</p>";
-            }
-            else if (isset($_GET["error"]) == "invalidemail") {
-                echo "<p>This email address is invalid!</p>";
-            }
-            else if (isset($_GET["error"]) == "stmtfailed") {
-                echo "<p>A technical error has occured, please try again later</p>";
-            }
-            else if (isset($_GET["error"]) == "none") {
-                echo "<p>Registration successful!</p>";
+            $error = $_GET["error"];
+            if ($error == "invalidusername") {
+                echo "<p> That username is invalid! </p>";
+            } else if ($error == "usernamealreadyexists") {
+                echo "<p> Username is already taken! </p>";
+            } else if ($error == "passwordsdonotmatch") {
+                echo "<p> Passwords do not match! </p>";
+            } else if ($error == "invalidemail") {
+                echo "<p> This email address is already in use! </p>";
+            } else if ($error == "stmtfailed") {
+                echo "<p> A technical error has occured, please try again later! </p>";
+            } else if ($error == "none") {
+                echo "<p> Registration successful! </p>";
             }
         }
     ?>
+
 
     <script src = "index.js"> </script>
 </body>

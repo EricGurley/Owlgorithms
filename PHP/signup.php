@@ -27,7 +27,6 @@
         }
         else {
             create_user($conn, $username, $password, $email);
-    
         }
     }  
     else {
