@@ -12,11 +12,10 @@
 </head>
 <body>
     <?php if (isset($_SESSION["id_number"])) { ?>
-        <h1>Logged in!</h1>
+        <h1> Logged in!!! </h1>
         
     <?php } else { ?>
         <div class="login_signup_container">
-            Login or sign up!
             <a class = "btn" href = "login.html"> Login </a>
             <a class = "btn" href = "signupmain.php"> Sign up </a>
         </div>

@@ -9,7 +9,7 @@
         }
         return $result;
     }
-    
+
     function username_already_exists($conn, $username, $email) {
         $sql = "SELECT * FROM users WHERE id_number = ? OR email = ?;";
         $stmt = mysqli_stmt_init($conn);
@@ -90,7 +90,8 @@
         $password_hashed = $username_already_exists["user_password"];
         $check_password = password_verify($password, $password_hashed);
         
-        if ($check_password === false) {
+                                            // TODO: Possible cause of login failure
+        if ($check_password === false) {    // This is not triggering. This is probably the biggest hint
             header("location: ../HTML/login.html?error=loginfailed");
             exit();
         }
