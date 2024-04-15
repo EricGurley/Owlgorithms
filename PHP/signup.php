@@ -13,16 +13,16 @@
             header("location: ../HTML/signupmain.php?error=invalidusername");
             exit();
         }
+        else if(invalid_email($email) !== false) {
+            header("location: ../HTML/signupmain.php?error=invalidemail");
+            exit();
+        }
         else if(username_already_exists($conn, $username, $email) !== false) {
             header("location: ../HTML/signupmain.php?error=usernamealreadyexists");
             exit();
         }
         else if(passwords_match($password, $password_repeat) !== false) {
             header("location: ../HTML/signupmain.php?error=passwordsdonotmatch");
-            exit();
-        }
-        else if(invalid_email($email) !== false) {
-            header("location: ../HTML/signupmain.php?error=invalidemail");
             exit();
         }
         else {

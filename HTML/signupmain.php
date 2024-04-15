@@ -53,7 +53,7 @@
             } else if ($error == "passwordsdonotmatch") {
                 echo "<p> Passwords do not match! </p>";
             } else if ($error == "invalidemail") {
-                echo "<p> This email address is already in use! </p>";
+                echo "<p> That email address is invalid! </p>";
             } else if ($error == "stmtfailed") {
                 echo "<p> A technical error has occured, please try again later! </p>";
             } else if ($error == "none") {

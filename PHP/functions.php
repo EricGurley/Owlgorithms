@@ -8,30 +8,46 @@
         }
     }
 
-                                                                    // TODO: Possibly still the culprit
-    function username_already_exists($conn, $username, $email) {    // This seems to be functioning but login is still trolling
-        $sql = "SELECT * FROM users WHERE username = ? OR email = ?;";
+    function username_already_exists($conn, $username, $email) {
+        $sql = "SELECT * FROM users WHERE username = ?;";
         $stmt = mysqli_stmt_init($conn);
 
-        if(!mysqli_stmt_prepare($stmt, $sql)) {
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("location: ../HTML/signupmain.php?error=stmtfailed");
             exit();
         }
 
-        mysqli_stmt_bind_param($stmt, "ss", $username, $email);
+        mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
 
         $result_data = mysqli_stmt_get_result($stmt);
 
         if ($row = mysqli_fetch_assoc($result_data)) {
             mysqli_stmt_close($stmt);
-            return $row;
+            return true; 
         }
-        else {
+
+        
+        $sql = "SELECT * FROM users WHERE email = ?;";
+        if (!mysqli_stmt_prepare($stmt, $sql)) {
+            header("location: ../HTML/signupmain.php?error=stmtfailed");
+            exit();
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+
+        $result_data = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($result_data)) {
             mysqli_stmt_close($stmt);
-            return false;
+            return true; 
         }
+
+        mysqli_stmt_close($stmt);
+        return false; 
     }
+
 
     function passwords_match($password, $password_repeat) {
         if ($password !== $password_repeat) {
