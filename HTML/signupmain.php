@@ -48,15 +48,23 @@
             $error = $_GET["error"];
             if ($error == "invalidusername") {
                 echo "<p> That username is invalid! </p>";
-            } else if ($error == "usernamealreadyexists") {
+            } 
+            else if ($error == "usernamealreadyexists") {
                 echo "<p> Username is already taken! </p>";
-            } else if ($error == "passwordsdonotmatch") {
+            }
+            else if ($error == "emailalreadyexists") {
+                echo "<p> Email is already taken! </p>";
+            } 
+            else if ($error == "passwordsdonotmatch") {
                 echo "<p> Passwords do not match! </p>";
-            } else if ($error == "invalidemail") {
+            } 
+            else if ($error == "invalidemail") {
                 echo "<p> That email address is invalid! </p>";
-            } else if ($error == "stmtfailed") {
+            } 
+            else if ($error == "stmtfailed") {
                 echo "<p> A technical error has occured, please try again later! </p>";
-            } else if ($error == "none") {
+            } 
+            else if ($error == "none") {
                 echo "<p> Registration successful! </p>";
             }
         }

@@ -17,8 +17,12 @@
             header("location: ../HTML/signupmain.php?error=invalidemail");
             exit();
         }
-        else if(username_already_exists($conn, $username, $email) !== false) {
+        else if(username_already_exists($conn, $username, $username) !== false) {
             header("location: ../HTML/signupmain.php?error=usernamealreadyexists");
+            exit();
+        }
+        else if(username_already_exists($conn, $email, $email) !== false) {
+            header("location: ../HTML/signupmain.php?error=emailalreadyexists");
             exit();
         }
         else if(passwords_match($password, $password_repeat) !== false) {
