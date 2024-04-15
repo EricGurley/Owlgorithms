@@ -9,29 +9,27 @@
         require_once 'connect_to_database.php';
         require_once 'functions.php';
 
-        if(anything_empty($username, $password, $password_repeat, $email) !== false) {
-            header("location: ../HTML/signupmain.php?error=missinganinput");
-            exit();
-        }
         if(invalid_username($username) !== false) {
             header("location: ../HTML/signupmain.php?error=invalidusername");
             exit();
         }
-        if(username_already_exists($conn, $username, $email) !== false) {
+        else if(username_already_exists($conn, $username, $email) !== false) {
             header("location: ../HTML/signupmain.php?error=usernamealreadyexists");
             exit();
         }
-        if(passwords_match($password, $password_repeat) !== false) {
+        else if(passwords_match($password, $password_repeat) !== false) {
             header("location: ../HTML/signupmain.php?error=passwordsdonotmatch");
             exit();
         }
-        if(invalid_email($email) !== false) {
+        else if(invalid_email($email) !== false) {
             header("location: ../HTML/signupmain.php?error=invalidemail");
             exit();
         }
-        create_user($conn, $username, $password, $email);
+        else {
+            create_user($conn, $username, $password, $email);
+        }
     }
-else {
-    header("location: ../HTML/signupmain.php");
-    exit();
+    else {
+        header("location: ../HTML/signupmain.php");
+        exit();
 }

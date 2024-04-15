@@ -1,14 +1,4 @@
 <?php
-    function anything_empty($username, $password, $password_repeat, $email) {
-        $result;
-        if (empty($username) || empty($password) || empty($password_repeat) || empty($email)) {
-            $result = true;
-        }
-        else {
-            $result = false;
-        }
-        return $result;
-    }
     function invalid_username($username) {
         $result;
         if (!preg_match("/^[a-zA-Z0-9 ]+$/", $username)) {
