@@ -71,6 +71,8 @@
         }
     ?>
 
+    <!-- ALTER TABLE users AUTO_INCREMENT = current highest id_number; -->
+
     <script src = "index.js"> </script>
 </body>
 </html>
