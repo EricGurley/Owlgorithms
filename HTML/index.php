@@ -5,7 +5,7 @@
 <body>
     <?php if (isset($_SESSION["username"])) { ?>
         <div class="login_signup_container">
-            <a class = "btn" href = "index.php"> Profile </a>
+            <a class = "btn" href = "profile.php"> Profile </a>
             <a class = "btn" href = "../PHP/logout.php"> Sign Out </a>
         </div>
         
