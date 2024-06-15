@@ -22,7 +22,7 @@
     
     <div class = "languages">
         <a class = "btn" href = "c.php"> C </a>
-        <a class = "btn" href = "cpp.php"> C++ </a>
+        <!-- <a class = "btn" href = "cpp.php"> C++ </a> -->
 
         <!-- TODO: Language selection buttons -->
         <!-- <img src = "Images/Language Hexagon.png">
