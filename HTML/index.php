@@ -11,7 +11,7 @@
         
     <?php } else { ?>
         <div class="login_signup_container">
-            <a class = "btn" href = "login.html"> Login </a>
+            <a class = "btn" href = "login.php"> Login </a>
             <a class = "btn" href = "signupmain.php"> Sign up </a>
         </div>
     <?php } ?>
