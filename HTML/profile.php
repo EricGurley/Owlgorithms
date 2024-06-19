@@ -13,6 +13,16 @@
     <h1> Personal Information </h1>
     </div>
 
+    <div class = "wrapper">
+        Name:
+        <br>
+        Email Address:
+        <br>
+        Change Password:
+        <br>
+        Change Theme: Coming Soon!
+    </div>
+
     <script src = "index.js"> </script>
 </body>
 </html>
