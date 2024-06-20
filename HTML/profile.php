@@ -9,18 +9,26 @@
             <a class = "btn" href = "../PHP/logout.php"> Sign Out </a>
         </div>
 
-    <div class = "header">
-    <h1> Personal Information </h1>
-    </div>
-
     <div class = "wrapper">
-        Name:
+        <h1> Personal Information </h1>
         <br>
-        Email Address:
-        <br>
-        Change Password:
-        <br>
-        Change Theme: Coming Soon!
+
+        <div class="label">
+            Username: 
+        </div>
+
+        <div class="label">
+            Email Address:
+        </div>
+
+        <div class="label">
+            Password: 
+        </div>
+
+        <div class="label">
+            Change Theme: Coming Soon!
+        </div>
+
     </div>
 
     <script src = "index.js"> </script>
