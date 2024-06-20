@@ -75,7 +75,7 @@
         $username_already_exists = username_already_exists($conn, $username, '');
         
         // If the username / email does not exist
-        if ($username_already_exists === false) {   // This is not triggering
+        if ($username_already_exists === false) {
             header("location: ../HTML/login.html?error=usernamedoesnotexist");
             exit();
         }
@@ -91,6 +91,8 @@
             session_start();
             $_SESSION["id_number"] = $username_already_exists["id_number"];
             $_SESSION["username"] = $username_already_exists["username"];
+            $_SESSION["user_password"] = $username_already_exists["user_password"];
+            $_SESSION["email"] = $username_already_exists["email"];
             header("location: ../HTML/index.php");
             exit();
         }

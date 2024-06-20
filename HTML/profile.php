@@ -9,20 +9,21 @@
             <a class = "btn" href = "../PHP/logout.php"> Sign Out </a>
         </div>
 
+
     <div class = "wrapper">
-        <h1> Personal Information </h1>
+        <h1> Account Information </h1>
         <br>
 
         <div class="label">
-            Username: 
+            Username: <?php echo $_SESSION['username']; ?>
         </div>
 
         <div class="label">
-            Email Address:
+            Email Address: <?php echo $_SESSION['email']; ?>
         </div>
 
         <div class="label">
-            Password: 
+            Account Number: <?php echo $_SESSION['id_number']; ?>
         </div>
 
         <div class="label">
