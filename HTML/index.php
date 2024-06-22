@@ -17,8 +17,25 @@
     <?php } ?>
 
     <div class = "header">
-        <h1> Space Programming Website </h1>
+        <h1> Owlgorithms </h1>
     </div>
+
+    <!-- 
+    
+    Website Names:
+    
+    Owlgorithms
+    Plug and pray
+    Why is it not working
+    My code is not working
+    Cry while coding
+    Coding makes me cry
+    I hate coding
+    Suffering by coding
+    I want to quit coding
+    
+    
+    -->
     
     <div class = "languages">
         <a class = "btn" href = "c.php"> C </a>
