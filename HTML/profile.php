@@ -19,7 +19,7 @@
         </div>
 
         <div class="label">
-            Email Address: <?php echo $_SESSION['email']; ?>
+            Email: <?php echo $_SESSION['email']; ?>
         </div>
 
         <div class="label">
@@ -29,6 +29,16 @@
         <div class="label">
             Change Theme: Coming Soon!
         </div>
+
+        <!-- 
+
+        Themes:
+        
+        Alexandria
+        Ethereal
+        Slayer
+
+        -->
 
     </div>
 

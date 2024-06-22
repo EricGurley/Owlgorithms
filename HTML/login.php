@@ -20,16 +20,14 @@
 
             <div class = "remember_forgot">
                 <label>
-                    <input type = "checkbox"> Remember me </label>
-                    <a href = "#"> Forgot password </a>
+                    <!-- <input type = "checkbox"> Remember me </label> -->
+                    <!-- <a href = "#"> Forgot password? </a> -->
             </div>
             
             <button type = "submit" name = "submit" class = "btn"> Login </button>
 
             <div class = "regular_link">
-                <p> Don't have an account? 
-                    <a href = "signupmain.php"> Register </a>
-                </p>
+                <p> <a href = "signupmain.php"> Register </a> </p>
             </div>
 
             <div class = "home">

@@ -55,7 +55,6 @@
     height: 100px;
     color: rgb(255, 255, 255);
     background: rgba(255, 49, 49, 0.632);
-    /* backdrop-filter: blur(2px); */
     text-decoration: none;
     border-radius: 35px;
     cursor: pointer;
@@ -96,7 +95,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('Images/Doom.jpg') no-repeat;
+    background: url('Images/Runes.jpg') no-repeat;
     background-size: cover;
 }
 
