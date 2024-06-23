@@ -30,7 +30,7 @@
     display: block;
     line-height: 25px;
     white-space: nowrap;
-    margin-right: 10px;
+    margin: 10px;
 }
 
 .header {
@@ -63,7 +63,7 @@
     mix-blend-mode: screen;
     display: block;
     white-space: nowrap;
-    margin: 10px;
+    margin: 15px;
     display: inline-block;
     line-height: 90px;
 }
@@ -188,9 +188,9 @@ body {
 
 .wrapper .btn {
     color: white;
-    position: relative;
+    position: center;
     width: 40%;
-    height: 90px;
+    /* height: 90px; */
     background-color: rgba(255, 124, 148, 0.356);
     text-align: center;
     border: none;
@@ -200,7 +200,9 @@ body {
     cursor: pointer;
     font-size: 40px;
     display: block;
-    margin: 0 auto;
+    margin: 0px auto;
+    text-decoration: none;
+    padding: 20px 0;
 }
 
 .wrapper .regular_link {
@@ -217,7 +219,7 @@ body {
 .regular_link p a:hover {
     text-decoration: underline;
 }
-
+/* 
 .wrapper .home {
     font-size: 30px;
     text-decoration: none;
@@ -230,4 +232,4 @@ body {
 
 .wrapper .home:hover {
     text-decoration: underline;
-}
+} */
