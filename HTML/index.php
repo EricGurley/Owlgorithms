@@ -36,17 +36,6 @@
     I hope it works
     
     
-    <div class = "languages">
-        <a class = "btn" href = "c.php"> C </a>
-        <!-- <a class = "btn" href = "cpp.php"> C++ </a> -->
-
-        <!-- TODO: Language selection buttons -->
-        <!-- <img src = "Images/Language Hexagon.png">
-        <button class = "btn"> C </button> -->
-
-        <!-- <img src = "Images/Language Hexagon.png">
-        <button class = "btn"> C++ </button>
-    </div>
     -->
 
     <script src = "index.js"> </script>

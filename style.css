@@ -33,36 +33,6 @@
     font-size: 25px;
 }
 
-/*
-.languages {
-    position: absolute;
-    display: block;
-    white-space: nowrap;
-    top: 45%;
-}
-
-.languages .btn{
-    text-align: center;
-    backdrop-filter: blur(5px);
-    padding-top: 5px;
-    padding: 10px;
-    width: 100px;
-    height: 100px;
-    color: rgb(255, 255, 255);
-    background: rgba(255, 49, 49, 0.632);
-    text-decoration: none;
-    border-radius: 35px;
-    cursor: pointer;
-    font-size: 45px;
-    mix-blend-mode: screen;
-    display: block;
-    white-space: nowrap;
-    margin: 15px;
-    display: inline-block;
-    line-height: 90px;
-}
-*/
-
 .btn {
     transition: all .2s;
 }
@@ -80,9 +50,7 @@
 }
 
 
-
 /* Login Page */
-
 
 
 * {
