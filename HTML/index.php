@@ -35,7 +35,6 @@
     I want to quit coding
     I hope it works
     
-    -->
     
     <div class = "languages">
         <a class = "btn" href = "c.php"> C </a>
@@ -46,8 +45,9 @@
         <button class = "btn"> C </button> -->
 
         <!-- <img src = "Images/Language Hexagon.png">
-        <button class = "btn"> C++ </button> -->
+        <button class = "btn"> C++ </button>
     </div>
+    -->
 
     <script src = "index.js"> </script>
 </body>

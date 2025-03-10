@@ -1,13 +1,10 @@
 Curriculum:
 
 Printf
-
 If Else
+
 While
 For
 
 Pointers
 Struct Pointers
-
-Data Structures
-Algorithms
