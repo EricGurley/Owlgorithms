@@ -104,7 +104,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('Images/Runes.jpg') no-repeat;
+    background: url('Images/Doom.jpg') no-repeat;
     background-size: cover;
 }
 
@@ -190,7 +190,6 @@ body {
     color: white;
     position: center;
     width: 40%;
-    /* height: 90px; */
     background-color: rgba(255, 124, 148, 0.356);
     text-align: center;
     border: none;
@@ -219,17 +218,3 @@ body {
 .regular_link p a:hover {
     text-decoration: underline;
 }
-/* 
-.wrapper .home {
-    font-size: 30px;
-    text-decoration: none;
-    text-align: center;
-}
-
-.wrapper .home a {
-    text-decoration: none;
-}
-
-.wrapper .home:hover {
-    text-decoration: underline;
-} */
