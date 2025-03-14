@@ -20,22 +20,8 @@
         <h1> Owlgorithms </h1>
     </div>
 
-    <!-- 
-    
-    Website Names:
-    
-    Owlgorithms
-    Plug and pray
-    Why is it not working
-    My code is not working
-    Cry while coding
-    Coding makes me cry
-    I hate coding
-    Suffering by coding
-    I want to quit coding
-    I hope it works
-    
-    
+    <!--
+        TODO : Tree
     -->
 
     <script src = "index.js"> </script>

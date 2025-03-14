@@ -6,6 +6,14 @@
     src:url(Fonts/too_cute.ttf);
 }
 
+.header {
+    position: absolute;
+    top: 5%;
+    display: block;
+    white-space: nowrap;
+    font-size: 25px;
+}
+
 .login_signup_container {
     position: absolute;
     top: 20px;
@@ -13,7 +21,7 @@
     display: flex;
 }
 
-.login_signup_container .btn {
+.btn {
     backdrop-filter: blur(5px);
     padding: 20px;
     mix-blend-mode: screen;
@@ -23,14 +31,6 @@
     display: block;
     line-height: 25px;
     margin: 10px;
-}
-
-.header {
-    position: absolute;
-    top: 5%;
-    display: block;
-    white-space: nowrap;
-    font-size: 25px;
 }
 
 .btn {
@@ -61,6 +61,7 @@
     color: white;
     font-weight: 100;
     text-decoration: none;
+    background: transparent;
 }
 
 body {
@@ -72,23 +73,7 @@ body {
     background-size: cover;
 }
 
-.wrapper {
-    width: 500px;
-    background: transparent;
-    border: 2px solid rgba(146, 99, 143, 0.408);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
-    color: #fff;
-    border-radius: 30px;
-    padding: 30px 40px;
-}
-
-.wrapper h1 {
-    font-size: 70px;
-    text-align: center;
-}
-
-.wrapper .input_box {
+.input_box {
     position: relative;
     width: 100%;
     height: 50px;
@@ -98,27 +83,12 @@ body {
 .input_box input {
     width: 100%;
     height: 100%;
-    background: transparent;
     border: none;
     outline: none;
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 40px;
     font-size: 25px;
-    color: #fff;
     padding: 27px 45px 20px 20px;
-}
-
-.label {
-    border: 2px solid rgba(255, 255, 255, .2);
-    border-radius: 40px;
-    font-size: 25px;
-    color: #fff;
-    padding: 15px;
-    margin: 15px;
-}
-
-.input_box input::placeholder {
-    color: #fff;
 }
 
 .input_box i {
@@ -127,6 +97,34 @@ body {
     top: 50%;
     transform: translateY(-50%);
     font-size: 20px; 
+}
+
+.label {
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 25px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.wrapper {
+    width: 500px;
+    border: 2px solid rgba(146, 99, 143, 0.408);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+    border-radius: 30px;
+    padding: 30px 40px;
+}
+
+.wrapper h1 {
+    font-size: 70px;
+    text-align: center;
+}
+
+.wrapper .btn {
+    position: center;
+    width: 40%;
+    margin: 0px auto;
 }
 
 .wrapper .remember_forgot {
@@ -142,30 +140,11 @@ body {
 }
 
 .remember_forgot a {
-    color: #fff;
     text-decoration: none;
 }
 
 .remember_forgot a::hover {
     text-decoration: underline;
-}
-
-.wrapper .btn {
-    color: white;
-    position: center;
-    width: 40%;
-    background-color: rgba(255, 124, 148, 0.356);
-    text-align: center;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(62, 14, 50, 0.474);
-    cursor: pointer;
-    font-size: 40px;
-    display: block;
-    margin: 0px auto;
-    text-decoration: none;
-    padding: 20px 0;
 }
 
 .wrapper .regular_link {
@@ -175,7 +154,6 @@ body {
 }
 
 .regular_link p a {
-    color: #fff;
     text-decoration: none;
 }
 
