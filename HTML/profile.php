@@ -3,8 +3,6 @@
 ?>
 
 <body>
-    
-
 
     <div class = "wrapper">
         <h1> Account Information </h1>
