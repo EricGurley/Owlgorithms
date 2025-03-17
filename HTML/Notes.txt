@@ -6,5 +6,8 @@ If Else
 While
 For
 
+Functions
+
+Structs
 Pointers
 Struct Pointers

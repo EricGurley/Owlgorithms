@@ -20,11 +20,11 @@
             Account Number: <?php echo $_SESSION['id_number']; ?>
         </div>
 
+        <!-- 
+        
         <div class="label">
             Change Theme: Coming Soon!
         </div>
-
-        <!-- 
 
         Themes:
         
