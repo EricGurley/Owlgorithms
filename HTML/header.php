@@ -1,7 +1,9 @@
 <?php
     session_start();
     $on_profile;
+    $on_login;
     $profile_page = "/space programming website/HTML/profile.php";
+    $login_page = "/space programming website/HTML/login.php";
     $current_page = $_SERVER['PHP_SELF'];
 
     if ($current_page == $profile_page) {
@@ -9,6 +11,13 @@
     }
     else {
         $on_profile = False;
+    }
+
+    if ($current_page == $login_page) {
+        $on_login = True;
+    }
+    else {
+        $on_login = False;
     }
 ?>
 
@@ -31,6 +40,12 @@
         <div class="login_signup_container">
             <a class = "btn" href = "index.php"> Home </a>
             <a class = "btn" href = "../PHP/logout.php"> Sign Out </a>
+        </div>
+    
+    <?php } else if (!isset($_SESSION["username"]) and $on_login == True) { ?>
+        <div class="login_signup_container">
+            <a class = "btn" href = "index.php"> Home </a>
+            <a class = "btn" href = "signupmain.php"> Sign up </a>
         </div>
         
     <?php } else { ?>
