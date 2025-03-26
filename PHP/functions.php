@@ -93,7 +93,7 @@
             $_SESSION["username"] = $username_already_exists["username"];
             $_SESSION["user_password"] = $username_already_exists["user_password"];
             $_SESSION["email"] = $username_already_exists["email"];
-            header("location: ../HTML/index.php");
+            header("location: ../index.php");
             exit();
         }
     }
