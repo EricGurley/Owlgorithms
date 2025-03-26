@@ -1,12 +1,21 @@
 <?php
     session_start();
+    $on_home;
     $on_profile;
     $on_login;
     $on_signup;
+    $home_page = "/space programming website/index.php";
     $profile_page = "/space programming website/HTML/profile.php";
     $login_page = "/space programming website/HTML/login.php";
     $signup_page= "/space programming website/HTML/signupmain.php";
     $current_page = $_SERVER['PHP_SELF'];
+
+    if ($current_page == $home_page) {
+        $on_home = True;
+    }
+    else {
+        $on_home = False;
+    }
 
     if ($current_page == $profile_page) {
         $on_profile = True;
@@ -36,10 +45,10 @@
     <link rel = "stylesheet" href = "../style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <?php if (isset($_SESSION["username"]) and $on_profile == False) { ?>
+    <?php if (isset($_SESSION["username"]) and $on_home == True) { ?>
         <div class="login_signup_container">
             <a class = "btn" href = "HTML/profile.php"> Profile </a>
-            <a class = "btn" href = "../PHP/logout.php"> Sign Out </a>
+            <a class = "btn" href = "PHP/logout.php"> Sign Out </a>
         </div>
     
     <?php } else if (isset($_SESSION["username"]) and $on_profile == True) { ?>
@@ -51,7 +60,7 @@
     <?php } else if (!isset($_SESSION["username"]) and $on_login == True) { ?>
         <div class="login_signup_container">
             <a class = "btn" href = "../index.php"> Home </a>
-            <a class = "btn" href = "signupmain.php"> Sign up </a>
+            <a class = "btn" href = "signupmain.php"> Sign Up </a>
         </div>
     
     <?php } else if (!isset($_SESSION["username"]) and $on_signup == True) { ?>
@@ -63,8 +72,9 @@
     <?php } else { ?>
         <div class="login_signup_container">
             <a class = "btn" href = "HTML/login.php"> Login </a>
-            <a class = "btn" href = "HTML/signupmain.php"> Sign up </a>
+            <a class = "btn" href = "HTML/signupmain.php"> Sign Up </a>
         </div>
     <?php } ?>
 
 </head>
+</html>
