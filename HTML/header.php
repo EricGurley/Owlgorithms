@@ -16,14 +16,14 @@
 
     // For the internet
 
-    $home_page = "/ ";
+    $home_page = "/index.php";
     $profile_page = "/HTML/profile.php";
     $login_page = "/HTML/login.php";
     $signup_page = "/HTML/signupmain.php";
     
     // $current_page = $_SERVER['PHP_SELF'];
     $current_page = $_SERVER['REQUEST_URI'];
-    echo $current_page;
+    //echo $current_page;
 
     if ($current_page == $home_page) {
         $on_home = True;
