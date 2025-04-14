@@ -4,11 +4,26 @@
     $on_profile;
     $on_login;
     $on_signup;
+
+    /*  For local hosting
+
     $home_page = "/space programming website/index.php";
     $profile_page = "/space programming website/HTML/profile.php";
     $login_page = "/space programming website/HTML/login.php";
     $signup_page= "/space programming website/HTML/signupmain.php";
-    $current_page = $_SERVER['PHP_SELF'];
+
+    */
+
+    // For the internet
+
+    $home_page = "/ ";
+    $profile_page = "/HTML/profile.php";
+    $login_page = "/HTML/login.php";
+    $signup_page = "/HTML/signupmain.php";
+    
+    // $current_page = $_SERVER['PHP_SELF'];
+    $current_page = $_SERVER['REQUEST_URI'];
+    echo $current_page;
 
     if ($current_page == $home_page) {
         $on_home = True;
