@@ -17,9 +17,9 @@
     // For the internet
 
     $home_page = "/index.php";
-    $profile_page = "/HTML/profile.php";
-    $login_page = "/HTML/login.php";
-    $signup_page = "/HTML/signupmain.php";
+    $profile_page = "/Main/profile.php";
+    $login_page = "/Main/login.php";
+    $signup_page = "/Main/signupmain.php";
     
     // $current_page = $_SERVER['PHP_SELF'];
     $current_page = $_SERVER['REQUEST_URI'];
@@ -62,14 +62,14 @@
 
     <?php if (isset($_SESSION["username"]) and $on_home == True) { ?>
         <div class="login_signup_container">
-            <a class = "btn" href = "HTML/profile.php"> Profile </a>
-            <a class = "btn" href = "PHP/logout.php"> Sign Out </a>
+            <a class = "btn" href = "Main/profile.php"> Profile </a>
+            <a class = "btn" href = "Functions/logout.php"> Sign Out </a>
         </div>
     
     <?php } else if (isset($_SESSION["username"]) and $on_profile == True) { ?>
         <div class="login_signup_container">
             <a class = "btn" href = "../index.php"> Home </a>
-            <a class = "btn" href = "../PHP/logout.php"> Sign Out </a>
+            <a class = "btn" href = "../Functions/logout.php"> Sign Out </a>
         </div>
     
     <?php } else if (!isset($_SESSION["username"]) and $on_login == True) { ?>
@@ -86,8 +86,8 @@
         
     <?php } else { ?>
         <div class="login_signup_container">
-            <a class = "btn" href = "HTML/login.php"> Login </a>
-            <a class = "btn" href = "HTML/signupmain.php"> Sign Up </a>
+            <a class = "btn" href = "Main/login.php"> Login </a>
+            <a class = "btn" href = "Main/signupmain.php"> Sign Up </a>
         </div>
     <?php } ?>
 

@@ -5,7 +5,7 @@
 <body>
     
     <div class = "wrapper">
-        <form action = "../PHP/login.php" method = "post">
+        <form action = "../Functions/login.php" method = "post">
             <h1> Login </h1>
             <div class = "input_box">
                 <input type = "text" name = "username" 

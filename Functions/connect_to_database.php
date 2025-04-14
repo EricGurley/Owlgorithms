@@ -2,7 +2,7 @@
         // File created on 10:50 A.M. on 4/12/2024
         // Database created on 11:09 A.M. on 4/12/2024
 
-        // To anyone viewing the github, the current version of this file is not public, as it contains sensitive
+        // To anyone viewing the github, the current version of this file is no longer public, as it contains sensitive
         // information that is required to run on the actual internet instead of my computer, which previously
         // did not require said sensitive data
 

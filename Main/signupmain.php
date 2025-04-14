@@ -6,7 +6,7 @@
 
     <div class = "wrapper">
 
-        <form action = "../PHP/signup.php" method = "post">
+        <form action = "../Functions/signup.php" method = "post">
             <h1> Register </h1>
 
             <div class = "input_box">

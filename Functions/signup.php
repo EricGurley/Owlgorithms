@@ -10,23 +10,23 @@
         require_once 'functions.php';
 
         if(invalid_username($username) !== false) {
-            header("location: ../HTML/signupmain.php?error=invalidusername");
+            header("location: ../Main/signupmain.php?error=invalidusername");
             exit();
         }
         else if(invalid_email($email) !== false) {
-            header("location: ../HTML/signupmain.php?error=invalidemail");
+            header("location: ../Main/signupmain.php?error=invalidemail");
             exit();
         }
         else if(username_already_exists($conn, $username, $username) !== false) {
-            header("location: ../HTML/signupmain.php?error=usernamealreadyexists");
+            header("location: ../Main/signupmain.php?error=usernamealreadyexists");
             exit();
         }
         else if(username_already_exists($conn, $email, $email) !== false) {
-            header("location: ../HTML/signupmain.php?error=emailalreadyexists");
+            header("location: ../Main/signupmain.php?error=emailalreadyexists");
             exit();
         }
         else if(passwords_match($password, $password_repeat) !== false) {
-            header("location: ../HTML/signupmain.php?error=passwordsdonotmatch");
+            header("location: ../Main/signupmain.php?error=passwordsdonotmatch");
             exit();
         }
         else {
@@ -34,6 +34,6 @@
         }
     }  
     else {
-        header("location: ../HTML/signupmain.php");
+        header("location: ../Main/signupmain.php");
         exit();
 }

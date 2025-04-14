@@ -13,7 +13,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../HTML/signupmain.php?error=stmtfailed");
+            header("location: ../Main/signupmain.php?error=stmtfailed");
             exit();
         }
 
@@ -54,7 +54,7 @@
         $stmt = mysqli_stmt_init($conn);
 
         if(!mysqli_stmt_prepare($stmt, $sql)) {
-            header("location: ../HTML/signupmain.php?error=stmtfailed");
+            header("location: ../Main/signupmain.php?error=stmtfailed");
             exit();
         }
 
@@ -65,7 +65,7 @@
         mysqli_stmt_close($stmt);
 
                                                                 
-        header("location: ../HTML/signupmain.php?error=none"); 
+        header("location: ../Main/signupmain.php?error=none"); 
         exit();
     }
 
@@ -76,7 +76,7 @@
         
         // If the username / email does not exist
         if ($username_already_exists === false) {
-            header("location: ../HTML/login.html?error=usernamedoesnotexist");
+            header("location: ../Main/login.html?error=usernamedoesnotexist");
             exit();
         }
 
@@ -84,7 +84,7 @@
         $check_password = password_verify($password, $password_hashed);
 
         if ($check_password === false) {    
-            header("location: ../HTML/login.html?error=incorrectpassword");
+            header("location: ../Main/login.html?error=incorrectpassword");
             exit();
         }   //If the password is not correct
         else if ($check_password === true) {

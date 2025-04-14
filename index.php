@@ -1,5 +1,5 @@
 <?php
-    include_once 'HTML/header.php';
+    include_once 'Main/header.php';
 ?>
 
 <head>
