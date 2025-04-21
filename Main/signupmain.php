@@ -33,7 +33,7 @@
                 <i class='bx bx-envelope'></i>
             </div>
 
-            <button type = "submit" class = "btn" name = "submit"> Register </button> <br>
+            <button type = "submit" class = "btn" name = "submit" href = "../index.php"> Register </button> <br>
 
         </form>
     </div>

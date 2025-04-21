@@ -49,6 +49,18 @@
     font-weight: 100;
 }
 
+.tree_button {
+    font-size: 200%;
+    padding: 30px;
+    border-radius: 20px;
+    margin: 10px;
+    display: block;
+}
+
+.tree_button:hover {
+    cursor: pointer;
+}
+
 
 /* Login Page */
 
