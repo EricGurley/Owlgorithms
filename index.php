@@ -73,9 +73,11 @@
             If / Else
         </button>
 
-        <button type = "button" class = "tree_button" id = "print">
+        <a href = "Main/print.php">
+            <button type = "button" class = "tree_button" id = "print">
             Print
-        </button>
+            </button>
+        </a>
         
     </div>
     
