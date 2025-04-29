@@ -41,6 +41,27 @@
     transform: scale(1.1);
 }
 
+.level {
+    margin-top: 15%;
+    position: absolute;
+}
+
+#one {
+    bottom: 10%;
+}
+
+#two {
+    bottom: 25%;
+}
+
+#three {
+    bottom: 40%;
+}
+
+#four {
+    bottom: 55%;
+}
+
 .select {
     position: absolute;
     top: 65%;
@@ -54,7 +75,6 @@
     padding: 30px;
     border-radius: 20px;
     margin: 10px;
-    display: block;
 }
 
 .tree_button:hover {
