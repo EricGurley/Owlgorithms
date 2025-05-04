@@ -1,0 +1,27 @@
+{
+  "name": "space-programming-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricGurley/Space-Programming-Website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricGurley/Space-Programming-Website/issues"
+  },
+  "homepage": "https://github.com/EricGurley/Space-Programming-Website#readme",
+  "description": "",
+  "dependencies": {
+    "@chakra-ui/react": "^3.17.0",
+    "@emotion/react": "^11.14.0"
+  }
+}

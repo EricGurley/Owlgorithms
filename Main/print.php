@@ -6,7 +6,6 @@
 
     <div class = "editor_container">
         <div id = "editor">
-            // printf
         </div>
     </div>
 
