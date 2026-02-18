@@ -1,0 +1,13 @@
+Owlgorithms will no longer be a platform for learning C programming.
+It will now focus on providing supplementary material for
+a typical introductory Astrophysics 101 university course.
+
+
+
+THE BACKGROUND IMAGE IS NOT MINE, IT IS A PLACEHOLDER UNTIL I CREATE A BACKGROUND MYSELF
+
+Artist for the background:
+
+https://www.artstation.com/carolynwilliams8
+
+No copyright infringement intended.
