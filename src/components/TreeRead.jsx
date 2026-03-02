@@ -1,5 +1,8 @@
 function Toggle() {
-    return <h1>bruh</h1>;
+
+    return (
+        <button>bruh</button>
+    );
 }
 
 export default Toggle;
