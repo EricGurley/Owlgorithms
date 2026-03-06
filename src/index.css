@@ -27,7 +27,6 @@ a:hover {
 }
 
 body {
-  background-image: url('/Images/Rocket.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -98,4 +97,22 @@ button:focus-visible {
   width: 20px;
   height: 20px;
   filter: invert(100%);
+}
+
+.app-wrapper {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.bg-retro {
+  background-image: url('/Images/Retro.png');
+}
+
+.bg-rocket {
+  background-image: url('/Images/Rocket.jpg');
 }

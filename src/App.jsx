@@ -1,13 +1,16 @@
-import React from 'react';
-import Toggle from './components/TreeRead'
+import React, { useState } from 'react';
 
-function App() {
+export default function App() {
+
+  const [currentBackground, setCurrentBackground] = useState('bg-retro');
+
   return (
-    <div>
-      <h1>Fake Jayz</h1>
-      <Toggle />
+    <div className = {`app-wrapper ${currentBackground}`}>
+
+      <button onClick={() => setCurrentBackground('bg-rocket')}>
+        yay
+      </button>
+      
     </div>
   );
 }
-
-export default App;
