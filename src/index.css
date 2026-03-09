@@ -53,11 +53,12 @@ button {
   font-weight: 500;
   font-family: 'Secret Midnight';
   background-color: #74747477;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  transform: scale(1.0);
+  transition: transform 0.5s ease-in-out;
 }
 button:hover {
   background-color: #000000b0;
+  transform: scale(1.1);
 }
 button:focus,
 button:focus-visible {
