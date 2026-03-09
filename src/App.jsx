@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Read from './pages/Read';
+import Practice from './pages/Practice';
 
 export default function App() {
 
@@ -10,6 +12,9 @@ export default function App() {
       <button onClick={() => setCurrentBackground('bg-rocket')}>
         yay
       </button>
+
+      <Read ></Read>
+      <Practice ></Practice>
       
     </div>
   );
