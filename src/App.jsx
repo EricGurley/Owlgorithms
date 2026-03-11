@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Read from './pages/Read';
 import Practice from './pages/Practice';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
 export default function App() {
 
@@ -9,13 +11,15 @@ export default function App() {
   return (
     <div className = {`app-wrapper ${currentBackground}`}>
 
-      <button onClick={() => setCurrentBackground('bg-rocket')}>
+      <button classname = 'yay' onClick={() => setCurrentBackground('bg-rocket')}>
         yay
       </button>
 
-      <Read ></Read>
-      <Practice ></Practice>
-      
+      <Read/>
+      <Practice/>
+      <Login/>
+      <Signup/>
+
     </div>
   );
 }
