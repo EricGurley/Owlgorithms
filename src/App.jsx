@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+
 import Read from './pages/Read';
 import Practice from './pages/Practice';
 import Login from './pages/Login';
@@ -9,17 +11,22 @@ export default function App() {
   const [currentBackground, setCurrentBackground] = useState('bg-retro');
 
   return (
-    <div className = {`app-wrapper ${currentBackground}`}>
+    <BrowserRouter>
+      <div className = {`app-wrapper ${currentBackground}`}>
 
-      <button classname = 'yay' onClick={() => setCurrentBackground('bg-rocket')}>
-        yay
-      </button>
+        <button className = 'yay' onClick={() => setCurrentBackground('bg-rocket')}>
+          yay
+        </button>
 
-      <Read/>
-      <Practice/>
-      <Login/>
-      <Signup/>
+        <Link to="/"> Practice </Link>
+        <Link to="/read"> Read </Link>
 
-    </div>
+        <Routes>
+          <Route path="/" element={<Practice />} />
+          <Route path="/read" element={<Read />} />
+        </Routes>
+
+      </div>
+    </BrowserRouter>
   );
 }
