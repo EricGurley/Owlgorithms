@@ -111,9 +111,9 @@ button:focus-visible {
 }
 
 .bg-retro {
-  background-image: url('/Images/Retro.png');
+  background-image: url('/Images/Backgrounds/Retro.png');
 }
 
 .bg-rocket {
-  background-image: url('/Images/Rocket.jpg');
+  background-image: url('/Images/Backgrounds/Rocket.jpg');
 }

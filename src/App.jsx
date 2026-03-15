@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Read from './pages/Read';
 import Practice from './pages/Practice';
 import Login from './pages/Login';
-import Signup from './pages/Signup';
+import Register from './pages/Register';
 
 export default function App() {
 
@@ -18,12 +18,20 @@ export default function App() {
           yay
         </button>
 
+        <button className = 'whoops' onClick={() => setCurrentBackground('bg-retro')}>
+          whoops
+        </button>
+
         <Link to="/"> Practice </Link>
         <Link to="/read"> Read </Link>
+        <Link to="/login"> Login </Link>
+        <Link to="/register"> Register </Link>
 
         <Routes>
           <Route path="/" element={<Practice />} />
           <Route path="/read" element={<Read />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
 
       </div>
