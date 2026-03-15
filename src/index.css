@@ -34,6 +34,11 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  color: #ffffff;
+  text-shadow:
+    0 0 5px #ffffff,
+    0 0 30px #ffffff; 
 }
 
 h1 {

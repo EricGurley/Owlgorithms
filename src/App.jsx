@@ -24,14 +24,6 @@ export default function App() {
           <source src = "/Images/Backgrounds/BG-Compressed.mp4" type = "video/mp4"></source>
         </video>
 
-        <button className = 'yay' onClick={() => setCurrentBackground('bg-rocket')}>
-          yay
-        </button>
-
-        <button className = 'whoops' onClick={() => setCurrentBackground('bg-retro')}>
-          whoops
-        </button>
-
         <Link to="/"> Practice </Link>
         <Link to="/read"> Read </Link>
         <Link to="/login"> Login </Link>
