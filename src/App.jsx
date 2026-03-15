@@ -14,6 +14,16 @@ export default function App() {
     <BrowserRouter>
       <div className = {`app-wrapper ${currentBackground}`}>
 
+        <video
+          className = "video-background"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src = "/Images/Backgrounds/BG-Compressed.mp4" type = "video/mp4"></source>
+        </video>
+
         <button className = 'yay' onClick={() => setCurrentBackground('bg-rocket')}>
           yay
         </button>
