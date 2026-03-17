@@ -1,21 +1,39 @@
 import React from 'react';
 
 const Register = () => {
+    
+    const handleRegister = (e) => {
+        e.preventDefault();
+        console.log("Form submitted");
+    };
+
     return (
-        <div className = "register-container">
+        <div className="register-container">
             <h1>Sign Up</h1>
-            <div className = "username">
-                <input type = "text" placeholder = "Username"/>
-            </div>
-            <div className = "email">
-                <input type = "text" placeholder = "Email"/>
-            </div>
-            <div className = "password">
-                <input type = "password" placeholder = "Password"/>
-            </div>
-            <div className = "confirm-password">
-                <input type = "password" placeholder = "Confirm Password"/>
-            </div>
+            
+            <form className="register-creds-list" onSubmit={handleRegister}>
+                
+                <div className="register-input">
+                    <input type="text" placeholder="Username" required />
+                </div>
+                
+                <div className="register-input">
+                    <input type="email" placeholder="Email" required />
+                </div>
+                
+                <div className="register-input">
+                    <input type="password" placeholder="Password" required />
+                </div>
+                
+                <div className="register-input">
+                    <input type="password" placeholder="Confirm Password" required />
+                </div>
+
+                <button type="submit" className="neon-button">
+                    Submit
+                </button>
+
+            </form>
         </div>
     );
 }

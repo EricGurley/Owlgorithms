@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className = {`app-wrapper flex-center ${currentBackground}`}>
+      <div className = {`app-wrapper ${currentBackground}`}>
 
         <video
           className = "video-background"

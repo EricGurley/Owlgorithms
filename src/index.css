@@ -67,12 +67,6 @@ h1 {
   }
 }
 
-.flex-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 @keyframes film-scratch {
   0% { transform: translate(0%, 0%); }
   20% { transform: translate(-5%, 5%); }
@@ -81,6 +75,16 @@ h1 {
   80% { transform: translate(5%, -5%); }
   100% { transform: translate(0%, 0%); }
 }
+
+.video-background {
+  position: fixed;
+  object-fit: cover;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+/* App */
 
 .app-wrapper::before {
   content: "";
@@ -106,6 +110,10 @@ h1 {
 }
 
 .app-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   background-size: 100% 100%;
   background-position: center;
   background-attachment: fixed;
@@ -122,6 +130,10 @@ h1 {
   overflow-y: auto;
 }
 
+/* App */
+
+/* Navbar */
+
 .navbar-container {
   display: flex;
   flex-direction: row;
@@ -137,13 +149,69 @@ h1 {
   top: 0;
 }
 
+/* Navbar */
+
+/* Login */
+
 .login-container {
   padding-top: 200px;
 }
 
-.register-container {
-  padding-top: 200px;
+/* Login */
+
+/* Register */
+
+.register-container, .login-container {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  background-color: rgba(0, 0, 0, 0.808);
+  font-size: 1.6rem;
+  min-height: 65vh;
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  width: 60%;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),      
+    0 0 50px rgba(255, 255, 255, 0.5),      
+    inset 0 0 20px rgba(255, 255, 255, 0.6);
 }
+
+.register-input input::placeholder, .register-input input,
+.login-container input::placeholder, .login-input input {
+  background-color: transparent;
+  font-family: 'Secret Midnight';
+  text-indent: 10px;
+  line-height: 2.5rem;
+  font-size: 1.6rem;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 15px;
+  margin: 10px;
+  text-shadow: 0 0 10px #ffffff;
+  box-sizing: border-box;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.register-input input, .login-input input {
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+}
+
+.register-creds-list, .login-creds-list {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Register */
+
+/* Practice */
 
 .practice-container {
   display: flex;
@@ -163,13 +231,9 @@ h1 {
   text-align: center;
 }
 
-.video-background {
-  position: fixed;
-  object-fit: cover;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-}
+/* Practice */
+
+/* Neon Button */
 
 .neon-button {
   background-color: #000000cb;
@@ -216,6 +280,10 @@ h1 {
   margin: 5px;
 }
 
+/* Neon Button */
+
+/* Read */
+
 .table-of-contents {
   width: 280px;
   flex-shrink: 0;
@@ -233,8 +301,6 @@ h1 {
   padding-bottom: 15px;
   letter-spacing: 2px;
 }
-
-/* Read */
 
 .read-container {
   display: flex;
