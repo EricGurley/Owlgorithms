@@ -22,7 +22,7 @@ export default function App() {
           muted
           playsInline
         >
-          <source src = "/Images/Backgrounds/BG-Compressed.mp4" type = "video/mp4"></source>
+          <source src = "/Images/Backgrounds/BG-Seamless.mp4" type = "video/mp4"></source>
         </video>
 
         <Navbar />

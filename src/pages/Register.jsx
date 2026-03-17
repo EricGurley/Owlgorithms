@@ -2,7 +2,7 @@ import React from 'react';
 
 const Register = () => {
     return (
-        <div className = "register_container">
+        <div className = "register-container">
             <h1>Sign Up</h1>
             <div className = "username">
                 <input type = "text" placeholder = "Username"/>
