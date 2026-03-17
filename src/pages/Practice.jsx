@@ -5,7 +5,7 @@ export default function Practice() {
         <div className = "practice-container">
             <h1>I. The Tools Of Astronomy</h1>
 
-            <button className = 'celestial-sphere'>
+            <button className = 'neon-button'>
                 The Celestial Sphere
             </button>
         </div>
