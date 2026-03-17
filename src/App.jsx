@@ -5,6 +5,7 @@ import Read from './pages/Read';
 import Practice from './pages/Practice';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Navbar from './components/Navbar'
 
 export default function App() {
 
@@ -12,7 +13,7 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className = {`app-wrapper ${currentBackground}`}>
+      <div className = {`app-wrapper flex-center ${currentBackground}`}>
 
         <video
           className = "video-background"
@@ -24,10 +25,7 @@ export default function App() {
           <source src = "/Images/Backgrounds/BG-Compressed.mp4" type = "video/mp4"></source>
         </video>
 
-        <Link to="/"> Practice </Link>
-        <Link to="/read"> Read </Link>
-        <Link to="/login"> Login </Link>
-        <Link to="/register"> Register </Link>
+        <Navbar />
 
         <Routes>
           <Route path="/" element={<Practice />} />
