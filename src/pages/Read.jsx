@@ -14,10 +14,6 @@ export default function Read() {
                     </ul>
                 </nav>
             </aside>
-
-            <main className = "reading-content">
-                <div style={{ height: "2000px" }}></div>
-            </main>
         </div>
     );
 }
