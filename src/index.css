@@ -124,10 +124,7 @@ h1 {
 
   width: 100vw;
   height: 100vh;
-  max-height: 100vh;
-
   overflow-x: hidden; 
-  overflow-y: auto;
 }
 
 /* App */
@@ -164,7 +161,7 @@ h1 {
 .register-container, .login-container {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
-  background-color: rgba(0, 0, 0, 0.808);
+  background-color: rgba(0, 0, 0, 0.849);
   font-size: 1.6rem;
   min-height: 65vh;
   margin-top: 170px;
@@ -183,17 +180,17 @@ h1 {
 .login-container input::placeholder, .login-input input {
   background-color: transparent;
   font-family: 'Secret Midnight';
-  text-indent: 10px;
+  text-indent: 30px;
   line-height: 2.5rem;
   font-size: 1.6rem;
   color: white;
-  padding: 10px 10px;
+  padding: 15px 10px 15px 0px;
   border-radius: 15px;
-  margin: 10px;
+  margin: 15px;
   text-shadow: 0 0 10px #ffffff;
   box-sizing: border-box;
   box-shadow: 
-    0 0 10px rgba(255, 255, 255, 0.8);
+    0 0 15px rgba(255, 255, 255, 0.6);
 }
 
 .register-input input, .login-input input {
@@ -239,7 +236,7 @@ h1 {
 .practice-container h1 {
   padding-bottom: 30px;
   width: 70%;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 /* Practice */
@@ -291,31 +288,55 @@ h1 {
   margin: 5px;
 }
 
+.neon-button.google-login {
+  margin-top: 0px; 
+  border-color: #9cbbec; 
+  text-shadow: 0 0 10px #4285F4;
+  
+  box-shadow: 
+    0 0 15px rgb(66, 134, 244),       
+    inset 0 0 30px rgb(94, 151, 243);
+}
+
+.neon-button.google-button:hover {
+  background-color: #000000cb;
+  
+  box-shadow: 
+    0 0 20px rgba(66, 133, 244, 0.8), 
+    0 0 40px rgba(66, 133, 244, 0.6), 
+    inset 0 0 20px rgba(66, 133, 244, 0.8);
+    
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #4285F4, 0 0 30px #4285F4;
+}
+
 /* Neon Button */
 
 /* Read */
 
 .table-of-contents {
-  width: 280px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-shrink: 0;
   background-color: rgba(0, 0, 0, 0.747);
-  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 30px;
   box-shadow: 
-    0 0 30px rgba(255, 255, 255, 0.8);
+    0 0 30px rgba(255, 255, 255, 0.9);
 }
 
 .table-of-contents h2 {
   font-family: 'Beowulf Modern';
+   display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #ffffff;
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
   
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   padding-bottom: 15px;
   letter-spacing: 2px;
+  width: 90%;
 }
 
 .read-container {
@@ -374,4 +395,29 @@ h1 {
   background: #ff4dff; 
 }
 
- */
+*/
+
+/* Default browser behaviors being overrided */
+
+/* Clears yellow filling of input fields */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #000000 inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+
+/* Clears blue wrapping around active input fields */
+
+.register-input input:focus, 
+.login-input input:focus {
+  outline: none; 
+  border-color: #ff00ff;
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 0.8), 
+    0 0 30px #ff00ff, 
+    inset 0 0 15px rgba(255, 0, 255, 0.4);
+}
