@@ -233,6 +233,7 @@ const Register = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     error={passwordStrengthError}
+                    autoComplete="new-password"
                 />
                 
                 <ValidatedInput 

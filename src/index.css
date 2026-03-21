@@ -167,7 +167,7 @@ h1 {
   text-shadow: 0 0 10px #ffffff;
 }
 
-.profile-field .label {
+.profile-field .label, .loading-text{
   font-family: 'Secret Midnight';
   color: #ffffff;
   margin-right: 15px;
@@ -207,8 +207,58 @@ h1 {
 
 /* Login */
 
-.login-container, .profile-container {
+.login-container, .profile-container, .loading-text {
   padding-top: 200px;
+}
+
+.neon-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.remember-me-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 10px 0 30px 0; 
+  width: 100%;
+  max-width: 400px;
+  padding-left: 4%;
+}
+
+.neon-checkbox:checked {
+  background: #ff00ff88;
+  border-color: #ff00ff;
+  box-shadow: 0 0 15px #ff00ff, inset 0 0 10px rgba(255, 47, 168, 0.5);
+}
+
+.neon-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 7px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.neon-checkbox-label {
+  font-family: 'Beowulf Modern';
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+  text-shadow: 0 0 10px #ffffff;
 }
 
 /* Login */
@@ -229,12 +279,12 @@ h1 {
   background-color: rgba(0, 0, 0, 0.849);
   font-size: 1.6rem;
   min-height: 65vh;
-  margin-top: 170px;
+  margin-top: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 100px;
-  width: 60%;
+  width: 70%;
   box-shadow: 
     0 0 10px rgba(255, 255, 255, 0.8),      
     0 0 50px rgba(255, 255, 255, 0.5),      
@@ -248,7 +298,7 @@ h1 {
   line-height: 2.5rem;
   font-size: 1.6rem;
   color: white;
-  padding: 15px 10px 15px 0px;
+  padding: 15px 40px 15px 0px;
   border-radius: 15px;
   margin: 15px;
   text-shadow: 0 0 10px #ffffff;
@@ -261,10 +311,10 @@ h1 {
   position: relative;
   font-family: 'Beowulf Modern';
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  width: 320px;
 }
 
 .register-creds-list, .login-creds-list {
-  margin-top: 50px;
   width: 100%;
   display: flex;
   flex-direction: column;

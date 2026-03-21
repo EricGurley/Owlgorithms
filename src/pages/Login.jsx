@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithPopup, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithPopup, signInWithEmailAndPassword,
+         browserLocalPersistence, browserSessionPersistence } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase';
 
 export default function Login() {
@@ -8,10 +9,15 @@ export default function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [rememberMe, setRememberMe] = useState(true);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
+            const persistenceType = rememberMe ? browserLocalPersistence : browserSessionPersistence;
+        
+            await setPersistence(auth, persistenceType);
+
             const result = await signInWithEmailAndPassword(auth, email, password);
             console.log("Logged in with email: ", result.user.email);
             navigate('/');
@@ -55,6 +61,19 @@ export default function Login() {
                     value = {password}
                     onChange={(e) => setPassword(e.target.value)}
                     />
+                </div>
+
+                <div className="remember-me-container">
+                    <input 
+                        type="checkbox" 
+                        id="rememberMe" 
+                        checked={rememberMe} 
+                        onChange={(e) => setRememberMe(e.target.checked)}
+                        className="neon-checkbox"
+                    />
+                    <label htmlFor="rememberMe" className="neon-checkbox-label">
+                        Remember Me
+                    </label>
                 </div>
 
                 <div className="submit-wrapper">
