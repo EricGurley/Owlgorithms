@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signInWithPopup, createUserWithEmailAndPassword, updateProfile  } from 'firebase/auth';
-import { auth, googleProvider } from '../firebase';
+import { doc, setDoc, collection, query, where, getDocs } from 'firebase/firestore';
+import { auth, googleProvider, db } from '../firebase';
 import zxcvbn from 'zxcvbn';
 import ValidatedInput from '../components/ValidatedInput';
 import * as EmailValidator from 'email-validator';
@@ -21,6 +22,45 @@ const Register = () => {
     const [emailTouched, setEmailTouched] = useState(false);
     const [usernameError, setUsernameError] = useState('');
 
+
+    // Check if username is already in use
+
+    useEffect(() => {
+        const checkUsernameAvailability = async () => {
+            if (username.length > 0) {
+                
+                if (leoProfanity.check(username)) {
+                    setUsernameError("Please keep usernames clean and family-friendly.");
+                    return; 
+                } 
+                
+                if (username.length < 3) {
+                    setUsernameError("Username must be at least 3 characters.");
+                    return; 
+                }
+
+                try {
+                    const usersRef = collection(db, "users");
+                    const q = query(usersRef, where("username", "==", username));
+                    const querySnapshot = await getDocs(q);
+
+                    if (!querySnapshot.empty) {
+                        setUsernameError("This username is already taken!");
+                    } else {
+                        setUsernameError("");
+                    }
+                } catch (error) {
+                    console.error("Error checking username: ", error);
+                }
+
+            } else {
+                setUsernameError("");
+            }
+        };
+
+        checkUsernameAvailability();
+        
+    }, [username]);
 
     // Offensive or ineffective username porevention
 
@@ -93,24 +133,30 @@ const Register = () => {
     const handleRegister = async (e) => {
         e.preventDefault();
 
+        // Username taken
+        if (usernameError !== "") {
+            console.error("This username is taken!");
+            return;
+        }
+
         // Valid email
 
         if (!EmailValidator.validate(email)) {
-            console.error("Invalid email");
+            setEmailError("Invalid email");
             return;
         }
 
         // Matching passwords
 
         if (password !== confirmPassword) {
-            console.error("Passwords don't match");
+            setPasswordMatchError("Passwords don't match");
             return;
         }
 
         // Password strength
 
         if (zxcvbn(password).score < 3) {
-            console.error("This password is too weak");
+            setPasswordStrengthError("This password is too weak");
             return;
         }
 
@@ -120,11 +166,26 @@ const Register = () => {
 
             await updateProfile (user, {displayName: username});
 
+            await setDoc(doc(db, "users", user.uid), {
+                username: username,
+                email: email,
+                accountCreated: new Date(),
+                role: "astronomer"
+            });
+
             console.log("User registered successfully: ", user.email);
-            console.log("Profile username: ", user.displayName);
             navigate('/');
         } catch (error) {
-            console.error("Registration failed: ", error.message);
+            if (error.code === 'auth/email-already-in-use') {
+                setEmailError("This email is already in use!");
+            } 
+            else if (error.code === 'auth/too-many-requests') {
+                setEmailError("Too many attempts! Please wait a moment.");
+            }
+            else {
+                setEmailError("An error occurred during registration.");
+                console.error("Firebase Error: ", error.message);
+            }
         }
     };
 
