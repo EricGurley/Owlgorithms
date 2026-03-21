@@ -45,6 +45,21 @@ body {
     0 0 30px #ffffff; 
 }
 
+.glass-card {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  background-color: rgba(0, 0, 0, 0.849);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px;
+  width: 60%;
+  box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),      
+    0 0 50px rgba(255, 255, 255, 0.5),      
+    inset 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
 h1 {
   background-color: transparent;
   color: white;
@@ -129,28 +144,70 @@ h1 {
 
 /* App */
 
-/* Navbar */
+/* Profile */
 
-.navbar-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  z-index: 10;
-
-  gap: 30px;
-  padding: 50px 50px;
+.profile-container {
+  padding-top: 100px;
   width: 100%;
-  box-sizing: border-box;
-
-  position: absolute;
-  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.profile-info-list {
+  margin-top: 30px;
+  text-align: left;
+  width: 100%;
+}
+
+.profile-field {
+  font-family: 'Beowulf Modern';
+  font-size: 1.8rem;
+  margin: 20px 0;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.profile-field .label {
+  font-family: 'Secret Midnight';
+  color: #ffffff;
+  margin-right: 15px;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff;
+}
+
+/* Profile */
+
 /* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  box-sizing: border-box; 
+  position: fixed;
+}
+
+.nav-links .neon-button.nav-btn {
+  margin: 15px 5px; 
+  font-size: 1.5rem; 
+  padding: 10px 20px; 
+  transform: scale(1.0);
+  transition: transform 0.5s ease-in-out;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
 
 /* Login */
 
-.login-container {
+.login-container, .profile-container {
   padding-top: 200px;
 }
 
@@ -160,6 +217,10 @@ h1 {
 
 .register-input {
   position: relative;
+}
+
+.register-input input::placeholder, .login-container input::placeholder {
+  font-family: 'Secret Midnight';
 }
 
 .register-container, .login-container {
@@ -183,7 +244,6 @@ h1 {
 .register-input input::placeholder, .register-input input,
 .login-container input::placeholder, .login-input input {
   background-color: transparent;
-  font-family: 'Secret Midnight';
   text-indent: 30px;
   line-height: 2.5rem;
   font-size: 1.6rem;
@@ -198,6 +258,8 @@ h1 {
 }
 
 .register-input input, .login-input input {
+  position: relative;
+  font-family: 'Beowulf Modern';
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
 }
 
@@ -317,7 +379,7 @@ h1 {
   background-color: #000000cb;
   color: #ffffff;
   border: 2px solid #ffffff; 
-  border-radius: 20px;
+  border-radius: 45px;
   padding: 30px 30px;
   margin: 30px;
   font-size: 2rem;
@@ -341,7 +403,10 @@ h1 {
 }
 
 .neon-button:hover,
-.navbar-container .neon-button:hover {
+.nav-links .neon-button.nav-btn:hover,
+.navbar-container .neon-button:hover,
+.nav-links a:hover, .nav-button:hover,
+.logout-button:hover {
   transform: scale(1.1);
   background-color: #000000cb;
   box-shadow: 
