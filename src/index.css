@@ -158,6 +158,10 @@ h1 {
 
 /* Register */
 
+.register-input {
+  position: relative;
+}
+
 .register-container, .login-container {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
@@ -207,6 +211,59 @@ h1 {
 
 /* Register */
 
+/* Register error popup */
+
+@keyframes popupFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-50%) scale(0.9);
+        filter: blur(4px); 
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-50%) scale(1);
+        filter: blur(0px);
+    }
+}
+
+.live-error-popup {
+  position: absolute;
+  left: 105%; 
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 77, 77, 0.1);
+  border: 1px solid #ff4d4d;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ff5f5f, 0 0 20px #ff0000;
+  box-shadow: 
+    0 0 10px rgba(255, 55, 55, 0.8),      
+    0 0 20px rgba(255, 95, 95, 0.5),      
+    inset 0 0 15px rgba(255, 78, 78, 0.6);
+  
+  font-family: 'Secret Midnight';
+  font-size: 30px;
+  letter-spacing: 1px;
+  
+  padding: 15px 25px;
+  border-radius: 10px;
+  white-space: nowrap;
+  z-index: 10;
+  animation: popupFadeIn 0.5s ease-out forwards;
+}
+
+.live-error-popup::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent #ff4d4d transparent transparent;
+}
+
+/* Register error popup */
+
 /* Practice */
 
 .practice-container {
@@ -221,8 +278,9 @@ h1 {
   font-family: 'Beowulf Modern';
   font-size: 3rem; 
   color: #ffffff;
-  text-shadow: 0 0 5px rgb(255, 255, 255); 
-  text-shadow: 0 0 10px rgb(255, 255, 255); 
+  text-shadow:
+    0 0 5px rgb(255, 255, 255),
+    0 0 10px rgb(255, 255, 255); 
   letter-spacing: 2px;
   text-align: center;
 }
@@ -395,7 +453,7 @@ h1 {
   background: #ff4dff; 
 }
 
-*/
+/* Read */
 
 /* Default browser behaviors being overrided */
 
@@ -409,13 +467,12 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: #ffffff !important;
 }
 
-
 /* Clears blue wrapping around active input fields */
 
 .register-input input:focus, 
 .login-input input:focus {
   outline: none; 
-  border-color: #ff00ff;
+  border-color: #ff9cff;
   box-shadow: 
     0 0 15px rgba(255, 255, 255, 0.8), 
     0 0 30px #ff00ff, 
