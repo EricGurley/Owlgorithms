@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithPopup, signInWithEmailAndPassword,
-         browserLocalPersistence, browserSessionPersistence } from 'firebase/auth';
 import { auth, googleProvider } from '../firebase';
+import { signInWithPopup, signInWithEmailAndPassword,
+         browserLocalPersistence, browserSessionPersistence, 
+         setPersistence, GoogleAuthProvider } from 'firebase/auth';
 
 export default function Login() {
 
@@ -10,6 +11,8 @@ export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(true);
+
+    //Remember me
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -26,9 +29,16 @@ export default function Login() {
         }
     };
 
+    // Sign in with google
+
     const handleGoogleLogin = async () => {
         try {
+            const persistenceType = rememberMe ? browserLocalPersistence : browserSessionPersistence;
+            await setPersistence(auth, persistenceType);
+
+            const provider = new GoogleAuthProvider();
             const result = await signInWithPopup(auth, googleProvider);
+
             const user = result.user;
             console.log("User logged in: ", user.displayName);
             console.log("User's email: ", user.email);
@@ -37,6 +47,23 @@ export default function Login() {
             console.error("Couldn't sign in to google: ", error.message);
         }   
     }
+
+    // Reset password
+
+    const handleResetPassword = async () => {
+        if (!email) {
+            alert("Please enter your email address in the box first!");
+            return;
+        }
+
+        try {
+            await sendPasswordResetEmail(auth, email);
+            alert("Password reset email sent! Check your inbox (and spam folder).");
+        } catch (error) {
+            console.error("Error resetting password:", error);
+            alert("Failed to send reset email. Make sure the address is correct.");
+        }
+    };
 
     return (
         <div className="login-container">
@@ -62,6 +89,10 @@ export default function Login() {
                     onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
+
+                <p onClick={() => navigate('/forgot-password')} className="forgot-password-link">
+                    Forgot Password?
+                </p>
 
                 <div className="remember-me-container">
                     <input 

@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Donate from './pages/Donate';
 import Profile from './pages/Profile';
+import ForgotPassword from './components/ForgotPassword';
 
 import Navbar from './components/Navbar';
 
@@ -44,6 +45,7 @@ const App = () => {
           
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="/register" element={user ? <Navigate to="/profile" /> : <Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
           
           <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
         </Routes>

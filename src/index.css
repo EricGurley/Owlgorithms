@@ -261,6 +261,21 @@ h1 {
   text-shadow: 0 0 10px #ffffff;
 }
 
+.forgot-password-link {
+  font-family: 'Secret Midnight';
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  transition: all 0.3s ease;
+}
+
+.forgot-password-link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff;
+}
+
 /* Login */
 
 /* Register */
