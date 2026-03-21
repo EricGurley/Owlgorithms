@@ -5,7 +5,8 @@ import Read from './pages/Read';
 import Practice from './pages/Practice';
 import Login from './pages/Login';
 import Register from './pages/Register';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import Donate from './pages/Donate';
 
 export default function App() {
 
@@ -29,6 +30,7 @@ export default function App() {
 
         <Routes>
           <Route path="/" element={<Practice />} />
+          <Route path="/donate" element={<Donate />} />
           <Route path="/read" element={<Read />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

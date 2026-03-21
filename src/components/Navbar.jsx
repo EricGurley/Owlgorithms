@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export default function Navbar() {
     return (
         <div className = "navbar-container">
+            <Link to="/donate" className = "neon-button"> Donate </Link>
             <Link to="/" className = "neon-button"> Practice </Link>
             <Link to="/read" className = "neon-button"> Read </Link>
             <Link to="/login" className = "neon-button"> Login </Link>

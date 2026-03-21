@@ -211,6 +211,14 @@ h1 {
 
 /* Register */
 
+/* Donate */
+
+.donate-container {
+  margin-top: 200px;
+}
+
+/* Donate */
+
 /* Register error popup */
 
 @keyframes popupFadeIn {
@@ -240,15 +248,19 @@ h1 {
     0 0 20px rgba(255, 95, 95, 0.5),      
     inset 0 0 15px rgba(255, 78, 78, 0.6);
   
-  font-family: 'Secret Midnight';
+  font-family: 'Beowulf Modern';
   font-size: 30px;
   letter-spacing: 1px;
   
   padding: 15px 25px;
   border-radius: 10px;
-  white-space: nowrap;
   z-index: 10;
   animation: popupFadeIn 0.5s ease-out forwards;
+
+  max-width: 500px;
+  width: max-content;
+  white-space: normal;
+  line-height: 1.4;
 }
 
 .live-error-popup::before {

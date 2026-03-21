@@ -21,6 +21,14 @@ export default function Practice() {
                 <button className = 'neon-button'>
                     Special Relativity
                 </button>
+
+                <button className = 'neon-button'>
+                    Light And Matter
+                </button>
+
+                <button className = 'neon-button'>
+                    Telescopes
+                </button>
             </div>
         </div>
     );
