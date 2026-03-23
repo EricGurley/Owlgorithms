@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import TocItem from '../components/TocItem';
+import ChapterOne from './Articles/ChapterOne';
 
 const Read = () => {
+
+    const [contentsOpen, setContentsOpen] = useState(true);
+    const [activeChapter, setActiveChapter] = useState('chap-1');
 
     const astrophysicsSyllabus = [
     {
@@ -29,7 +33,13 @@ const Read = () => {
     }
     ];
 
-    const [contentsOpen, setContentsOpen] = useState(true);
+    const renderChapter = () => {
+        switch(activeChapter) {
+            case 'chapter-1': return <ChapterOne />;
+            default: return <ChapterOne />;
+        }
+    };
+
     return (
         <div className = "read-container">
             <div className={`table-of-contents ${contentsOpen ? 'open' : 'closed'}`}>
@@ -51,7 +61,7 @@ const Read = () => {
             </div>
 
             <div className="reading-content">
-                <h1>The Cosmos Awaits</h1>
+                {renderChapter()} 
             </div>
         </div>
     );
