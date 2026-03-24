@@ -9,7 +9,11 @@ const Read = () => {
     const [activeChapter, setActiveChapter] = useState('chapter-1');
 
     const astrophysicsSyllabus = [
-    {
+        {
+            id: 'preface',
+            title: 'Preface'
+        },
+        {
         id: 'part-1',
         title: 'I. The Tools Of Astronomy',
         children: [
@@ -17,17 +21,25 @@ const Read = () => {
             id: 'chapter-1',
             title: '1. The Celestial Sphere',
             children: [
-            { id: '1.1', title: '1.1 The Greek Tradition', link: '#greek-tradition' },
-            { id: '1.2', title: '1.2 The Copernican Revolution', link: '#copernican' },
-            { id: '1.3', title: '1.3 Positions on the Celestial Sphere', link: '#positions' },
-            { id: '1.4', title: '1.4 Physics and Astronomy', link: '#physics' },
+            { id: '1.1', title: '1.1 The Altitude-Azimuth Coordinate System', link: 'altitude-azimuth' },
+            { id: '1.2', title: '1.2 The Equitorial Coordinate System', link: '#equitorial' },
+            { id: '1.3', title: '1.3 Right Ascension And Declination', link: '#right-ascension' },
+            { id: '1.4', title: '1.4 The Celestial Sphere', link: '#celestial-sphere' },
+            
+            { id: '1.5', title: '1.5 Order Of The Planets', link: '#order-of-planets' },
+            { id: '1.6', title: '1.6 Synodic And Sidereal Periods', link: '#periods' },
+            { id: '1.7', title: '1.7 Precession', link: '#precession' },
+
+            { id: '1.8', title: '1.8 Measurements Of Time', link: '#measuring-time' },
+            { id: '1.9', title: '1.9 Proper Motion', link: '#proper-motion' },
+            { id: '1.10', title: '1.10 Spherical Trigonometry', link: '#trig' },
             ]
         },
         {
             id: 'chapter-2',
             title: '2. Orbital Mechanics', 
             children: [
-            { id: '2.1', title: '2.1 Elliptical Orbits', link: '#orbits' }
+            { id: '2.1', title: '2.1 Keplers Laws', link: '#keplers-laws' }
             ]
         }
         ]

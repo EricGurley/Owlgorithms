@@ -5,22 +5,25 @@ const ChapterOne = ({activeTopic}) => {
 
     const renderTopic = () => {
         switch(activeTopic) {
+            case 'preface':
+                return (
+                    <h1>Welcome To Astrophysics!!!</h1>
+                );
             case 'chapter-1':
+            case '1.1':
             default:
                 return (
-                    <h1>Welcome to Astrophysics!!!</h1>
+                    <h1>The Altitude-Azimuth Coordinate System</h1>
                 );
-            case '1.1':
+            case '1.2':
                 return (
-                    <h1>Equitorial Coordinates</h1>
+                    <h1>The Equitorial Coordinate System</h1>
                 );
         }
     }
 
     return (
         <div className = "chapter-one">
-            <h1>The Celestial Sphere</h1>
-
             {renderTopic()}
         </div>
     );
