@@ -475,6 +475,7 @@ h1 {
 .logout-button:hover {
   transform: scale(1.1);
   background-color: #000000cb;
+  transition: all 0.3s ease-in-out;
   box-shadow: 
     0 0 20px rgba(255, 0, 255, 1), 
     0 0 40px rgba(255, 0, 255, 0.8), 
@@ -581,7 +582,7 @@ h1 {
 .contents-toggle:hover {
   color: #ffffff;
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-
+  transition: all 0.3s ease-in-out;
   box-shadow: 
     10px 0 20px rgba(255, 0, 255, 0.6),
     inset -5px 0 15px rgba(255, 0, 255, 0.4);
@@ -590,6 +591,11 @@ h1 {
 .toc-tree-container {
   width: 100%;
   text-align: left;
+}
+
+.chapter-one h1{
+  font-family: 'Beowulf Modern';
+
 }
 
 .toc-header {
@@ -605,6 +611,8 @@ h1 {
 
 .toc-header:hover {
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  transition: all 0.3s ease-in-out;
+
 }
 
 .toc-header.clickable {

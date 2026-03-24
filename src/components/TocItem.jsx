@@ -1,26 +1,18 @@
 import React, { useState } from 'react';
 
 const TocItem = ({ item, level = 0, setActiveChapter }) => {
-    const [isOpen, setIsOpen] = useState(false);
+    const shouldBeOpenByDefault = item.id === 'part-1' || item.id === 'chapter-1';
     
+    const [isOpen, setIsOpen] = useState(shouldBeOpenByDefault); 
+
     const hasChildren = item.children && item.children.length > 0;
-
-    const handleNodeClick = (e) => {
-        e.preventDefault(); // This stops any rogue HTML links from refreshing the page
-        
-        // --- THE DETECTIVE LOGS ---
-        console.log("👉 Clicked on:", item.title, "| ID:", item.id);
-        console.log("🛠️ Did Read.jsx hand over the function?", !!setActiveChapter);
-
+    const handleNodeClick = () => {
         if (hasChildren) {
             setIsOpen(!isOpen);
         }
         
         if (setActiveChapter) {
             setActiveChapter(item.id);
-            console.log("✅ Function fired successfully!");
-        } else {
-            console.error("🚨 ERROR: setActiveChapter is undefined here!");
         }
     };
 
@@ -37,7 +29,6 @@ const TocItem = ({ item, level = 0, setActiveChapter }) => {
                     <span className="toc-bullet">•</span> 
                 )}
                 
-                {/* Notice there are NO <a> tags here anymore! */}
                 <span>{item.title}</span>
             </div>
 

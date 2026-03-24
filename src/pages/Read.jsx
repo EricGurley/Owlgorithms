@@ -36,9 +36,20 @@ const Read = () => {
 
     const renderChapter = () => {
         switch(activeChapter) {
-            case 'chapter-1': return <ChapterOne />;
-            case 'chapter-2': return <ChapterTwo />;
-            default: return <ChapterOne />;
+            case 'part-1':
+            case 'chapter-1': 
+            case '1.1':
+            case '1.2':
+            case '1.3':
+            case '1.4':
+                return <ChapterOne activeTopic={activeChapter}/>;
+                
+            case 'chapter-2': 
+            case '2.1':
+                return <ChapterTwo activeTopic={activeChapter} />;
+                
+            default: 
+                return <ChapterOne activeTopic={activeChapter} />;
         }
     };
 
