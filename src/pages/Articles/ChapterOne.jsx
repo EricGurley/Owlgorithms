@@ -6,12 +6,12 @@ const ChapterOne = ({activeTopic}) => {
     const renderTopic = () => {
         switch(activeTopic) {
             case 'preface':
+            default:
                 return (
                     <h1>Welcome To Astrophysics!!!</h1>
                 );
             case 'chapter-1':
             case '1.1':
-            default:
                 return (
                     <h1>The Altitude-Azimuth Coordinate System</h1>
                 );

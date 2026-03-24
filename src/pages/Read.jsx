@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import TocItem from '../components/TocItem';
 import ChapterOne from './Articles/ChapterOne';
 import ChapterTwo from './Articles/ChapterTwo';
+
+import PageNav from '../components/PageNav';
+import TocItem from '../components/TocItem';
 
 const Read = () => {
 
@@ -89,8 +91,12 @@ const Read = () => {
                 </div>
             </div>
 
-            <div className="reading-content">       
-                {renderChapter()} 
+            <div className="read-and-nav">
+                <div className="reading-content">
+                    {renderChapter()}
+                </div>
+
+                <PageNav />
             </div>
         </div>
     );
