@@ -1,10 +1,29 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const PageNav = () => {
+const PageNav = ({ currentPage, onNext, onPrev, hasNext, hasPrev }) => {
     return (
-        <div className = "page-nav-container">
-            <h1>Page nav</h1>
+        <div className="page-nav-container">
+            <div className="page-nav-content">
+                
+                <span 
+                    className={`nav-arrow ${hasPrev ? 'active' : 'disabled'}`}
+                    onClick={hasPrev ? onPrev : undefined}
+                >
+                    ◀
+                </span>
+                
+                <span className="nav-text">
+                    {currentPage} of 10
+                </span>
+                
+                <span 
+                    className={`nav-arrow ${hasNext ? 'active' : 'disabled'}`}
+                    onClick={hasNext ? onNext : undefined}
+                >
+                    ▶
+                </span>
+                
+            </div>
         </div>
     );
 }

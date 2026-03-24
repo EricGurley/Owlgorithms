@@ -12,7 +12,7 @@ const TocItem = ({ item, level = 0, setActiveChapter }) => {
         }
         
         if (setActiveChapter) {
-            setActiveChapter(item.id);
+            setActiveChapter(item.id); 
         }
     };
 
