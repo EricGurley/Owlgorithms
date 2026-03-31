@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "optimize-css": "lightningcss --minify --bundle src/index.css -o src/optimized.css"},
+    "optimize-css": "lightningcss --bundle src/index.css -o src/optimized.css"
+  },
   "dependencies": {
     "csso": "^5.0.5",
     "email-validator": "^2.0.4",
