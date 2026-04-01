@@ -528,233 +528,50 @@ h1 {
 
 /*! Read */
 
-.table-of-contents h2 {
-  font-family: 'Beowulf Modern';
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #ffffff;
-  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-  
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  padding-bottom: 15px;
-  letter-spacing: 2px;
-  width: 90%;
-}
-
-.table-of-contents {
-  width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-shrink: 0;
-  background-color: rgba(0, 0, 0, 0.747);
-  padding: 30px;
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
-  
-  position: relative;
-  transition: margin-left 1.0s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.table-of-contents.open {
-  margin-left: 0px;
-}
-
-.table-of-contents.closed {
-  margin-left: -410px; 
-}
-
-.contents-toggle {
-  position: absolute;
-  top: 50%;
-  right: -40px; 
-  transform: translateY(-50%);
-  
-  width: 40px;
-  height: 80px;
-  background-color: rgba(0, 0, 0, 0.747);
-  border: 1px solid rgba(126, 126, 126, 0.4);
-  border-left: none;
-  border-radius: 0 15px 15px 0;
-  
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
-  font-size: 1.5rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  box-shadow: 
-    10px 0 15px rgb(255, 255, 255),
-    inset -5px 0 10px rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  z-index: 5;
-}
-
-.contents-toggle:hover {
-  color: #ffffff;
-  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 
-    10px 0 20px rgba(255, 0, 255, 0.6),
-    inset -5px 0 15px rgba(255, 0, 255, 0.4);
-}
-
-.toc-tree-container {
-  width: 100%;
-  text-align: left;
-}
-
-.chapter-one h1, .page-nav-container h1{
-  font-family: 'Beowulf Modern';
-}
-
-.toc-header {
-  font-family: 'Beowulf Modern';
-  display: flex;
-  align-items: center;
-  padding: 8px 10px;
-  color: #ffffff;
-  font-size: 1.5rem;
-  transition: background-color 0.2s ease, color 0.2s ease;
-  border-radius: 4px;
-  transform: scale(1.0);
-}
-
-.toc-header:hover {
-  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-  transition: all 0.3s ease-in-out;
-  transform: scale(1.1);
-}
-
-.toc-header.clickable {
-  cursor: pointer;
-}
-
-.toc-arrow {
-  font-size: 1.0rem;
-  margin-right: 10px;
-  color: #ffffff;
-  width: 15px; 
-  display: inline-block;
-}
-
-.toc-bullet {
-  font-size: 2.0rem;
-  margin-right: 10px;
-  color: #ffffff; 
-  width: 15px;
-  display: inline-block;
-  text-align: center;
-}
-
-.toc-header a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.toc-header a:hover {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff;
-}
-
-.toc-header.level-0 {
-  font-size: 2.0rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 15px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.toc-header.level-1 {
-  font-size: 1.7rem; 
-}
-
-.toc-header.level-2 {
-  font-size: 1.5rem; 
-}
-
-.toc-header.level-2 .toc-bullet {
-  font-size: 1.0rem; 
-}
-
 .read-container {
+  width: 100%;
+  height: 100%;
   display: flex;
-  width: 100%;
-  min-height: 100vh;
-  margin: 0;
-  padding: 0px;
-  font-size: 2.0rem;
+  justify-content: center;
+  background-color: #9b65657c;
 }
 
-.read-and-nav {
-  width: 100%;
+.contents-container {
+  display: flex;
+  justify-content: center;
+  background-color: #426fb365;
+  padding: 15px;
+  padding-top: 100px;
 }
 
-.reading-content {
-  padding: 50px;
+.articles-and-nav-container {
   width: 100%;
-  margin-top: 120px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #83c23a3b;
+}
+
+.page-nav-container {
+  display: flex;
+  margin-top: auto;
+  justify-content: center;
+  background-color: #3ac2bb7a;
+  padding: 15px;
+}
+
+.chapter-one-container {
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
 }
 
 /*! Read */
 
 /*! Page Navigator */
 
-.page-nav-container {
-  font-family: 'Beowulf Modern';
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  height: 60px; 
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.747);
-  box-shadow: 
-    0 -5px 15px rgba(255, 255, 255, 0.1); 
-  z-index: 10; 
-}
 
-.page-nav-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px; 
-}
-
-.nav-text {
-  font-size: 3rem; 
-  color: white;
-  text-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff;
-  padding-bottom: 12px;
-}
-
-.nav-arrow {
-  font-size: 2.5rem;
-  user-select: none;
-  transition: all 0.2s ease-in-out; 
-}
-
-.nav-arrow.active {
-  cursor: pointer;
-  opacity: 1;
-  color: white;
-}
-
-.nav-arrow.active:hover {
-  transform: scale(1.2);
-  text-shadow: 0 0 10px white;
-}
-
-.nav-arrow.disabled {
-  cursor: default;
-  opacity: 0.2;
-  color: gray;
-}
 
 /*! Page Navigator */
 
