@@ -73,10 +73,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button {
   animation: global-fade-in 1.0s ease-in-out forwards;
 }
 
-h1 {
+h1, h2 {
   background-color: transparent;
   color: white;
-  font-family: 'Secret Midnight';
+  font-family: 'Beowulf Modern';
   font-size: 3.2em;
   line-height: 1.1;
   margin: 0;
@@ -181,7 +181,7 @@ h1 {
 }
 
 .profile-field .label, .loading-text{
-  font-family: 'Secret Midnight';
+  font-family: 'Beowulf Modern';
   font-size: 2.5rem;
   color: #ffffff;
   margin-right: 15px;
@@ -276,7 +276,7 @@ h1 {
 }
 
 .forgot-password-link {
-  font-family: 'Secret Midnight';
+  font-family: 'Beowulf Modern';
   color: #ffffff;
   font-size: 1.2rem;
   cursor: pointer;
@@ -299,7 +299,7 @@ h1 {
 }
 
 .register-input input::placeholder, .login-container input::placeholder {
-  font-family: 'Secret Midnight';
+  font-family: 'Beowulf Modern';
 }
 
 .register-container, .login-container {
@@ -464,7 +464,7 @@ h1 {
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
-  font-family: 'Secret Midnight';
+  font-family: 'Beowulf Modern';
   text-decoration: none;
   z-index: 1;
   
@@ -536,14 +536,6 @@ h1 {
   background-color: #9b65657c;
 }
 
-.contents-container {
-  display: flex;
-  justify-content: center;
-  background-color: #426fb365;
-  padding: 15px;
-  padding-top: 100px;
-}
-
 .articles-and-nav-container {
   width: 100%;
   height: 100%;
@@ -565,6 +557,22 @@ h1 {
   padding-top: 150px;
   display: flex;
   justify-content: center;
+}
+
+.contents-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #426fb365;
+  padding: 15px;
+  padding-top: 100px;
+  width: 20%;
+}
+
+.toc-item {
+  font-family: 'Beowulf Modern';
+  font-size: 2.5rem;
+  padding: 15px;
 }
 
 /*! Read */
