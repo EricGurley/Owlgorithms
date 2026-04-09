@@ -17,25 +17,28 @@ const Read = () => {
         { id: '3.0', title: "3. Electromagnetic Radiation", type: 'chapter', section: '2' }
     ];
 
+    const [activeSection, setActiveSection] = useState('1');
     const [activeChapter, setActiveChapter] = useState('1.0'); 
     const [activeTopic, setActiveTopic] = useState('1.1'); 
     
 
     const renderChapter = () => {
-            switch (activeChapter) {
-                case '1.0':
-                default:
-                    return <ChapterOne activeTopic={activeTopic}/>;
-                case '2.0':
-                    return <ChapterTwo activeTopic={activeTopic}/>;
-                }
-        };
+        switch (activeChapter) {
+            case '1.0':
+            default:
+                return <ChapterOne activeTopic={activeTopic}/>;
+            case '2.0':
+                return <ChapterTwo activeTopic={activeTopic}/>;
+            }
+    };
 
     return (
         <div className="read-container">
             
             <Contents
                 table={table}
+                activeSection={activeSection} 
+                setActiveSection={setActiveSection}
                 activeChapter={activeChapter} 
                 setActiveChapter={setActiveChapter}
                 activeTopic={activeTopic}
@@ -48,9 +51,10 @@ const Read = () => {
 
                 <PageNav
                     table={table}
-                    setActiveChapter={setActiveChapter}
                     activeTopic={activeTopic}
+                    setActiveChapter={setActiveChapter}
                     setActiveTopic={setActiveTopic}
+                    setActiveSection={setActiveSection}
                 />
             </div>
         </div>

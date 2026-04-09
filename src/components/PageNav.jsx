@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PageNav = ({ table, activeTopic, setActiveTopic, setActiveChapter }) => {
+const PageNav = ({ table, activeTopic, setActiveTopic, setActiveChapter, setActiveSection }) => {
     const readingSequence = table; 
 
     const currentIndex = readingSequence.findIndex(item => item.id === activeTopic);

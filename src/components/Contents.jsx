@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 
-const Contents = ({ table, activeChapter, setActiveChapter, activeTopic, setActiveTopic }) => {
-
-    const [activeSection, setActiveSection] = useState('1');
+const Contents = ({ table, activeSection, setActiveSection, activeChapter, setActiveChapter, activeTopic, setActiveTopic }) => {
 
     return (
         <div className="contents-container">
