@@ -6,14 +6,18 @@ const ChapterOne = ({ activeTopic }) => {
 
     const renderTopic = () => {
         switch (activeTopic) {
+        case '0':
+            return (
+                <h1>Welcome To Astrophysics!!!</h1>
+            );
         case '1':
-        return (
-            <h1>The Tools Of Astronomy</h1>
-        );
+            return (
+                <h1>The Tools Of Astronomy</h1>
+            );
         case '1.0':
-        return (
-            <h1>The Celestial Sphere</h1>
-        );
+            return (
+                <h1>The Celestial Sphere</h1>
+            );
         case '1.1':
         default:
             return <OneOne />;

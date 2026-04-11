@@ -5,7 +5,7 @@ const OneOne = () => {
 
     return (
         <div className = "one-one-container">
-            <h1> One One </h1>
+            <h1> The Altitude-Azimuth Coordinate System </h1>
         </div>
     );
 }

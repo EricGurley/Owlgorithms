@@ -4,6 +4,7 @@ const PageNav = ({ table, activeTopic, setActiveTopic, setActiveChapter, setActi
     const readingSequence = table; 
 
     const currentIndex = readingSequence.findIndex(item => item.id === activeTopic);
+    const currentPageNumber = readingSequence[currentIndex];
 
     const prevPage = currentIndex > 0 ? readingSequence[currentIndex - 1] : null;
     const nextPage = currentIndex < readingSequence.length - 1 ? readingSequence[currentIndex + 1] : null;
@@ -26,20 +27,21 @@ const PageNav = ({ table, activeTopic, setActiveTopic, setActiveChapter, setActi
     return (
         <div className="page-nav-container">
             
-            <div>
-                {prevPage && (
-                    <button onClick={() => navigateTo(prevPage)}>
-                        ← 
-                    </button>
-                )}
+            <div className='nav-arrow' style={{ visibility: prevPage ? 'visible' : 'hidden' }}>
+                <h2 onClick={() => navigateTo(prevPage)}>
+                    ◀ 
+                </h2>
             </div>
 
-            <div>
-                {nextPage && (
-                    <button onClick={() => navigateTo(nextPage)}>
-                        →
-                    </button>
-                )}
+            <div className='page-number'>
+                <h1>Page {currentPageNumber?.page} of 11</h1>
+            </div>
+
+            
+            <div className='nav-arrow' style={{ visibility: nextPage ? 'visible' : 'hidden' }}>
+                <h2 onClick={() => navigateTo(nextPage)}>
+                    ▶
+                </h2>
             </div>
 
         </div>

@@ -73,11 +73,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, li, button {
   animation: global-fade-in 1.0s ease-in-out forwards;
 }
 
-h1, h2 {
+h1, h2, h3 {
   background-color: transparent;
   color: white;
   font-family: 'Beowulf Modern';
-  font-size: 3.2em;
   line-height: 1.1;
   margin: 0;
 }
@@ -405,14 +404,14 @@ h1, h2 {
 }
 
 .live-error-popup::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    transform: translateY(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent #ff4d4d transparent transparent;
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent #ff4d4d transparent transparent;
 }
 
 /*! Register error popup */
@@ -533,7 +532,7 @@ h1, h2 {
   height: 100%;
   display: flex;
   justify-content: center;
-  background-color: #9b65657c;
+  /*background-color: #9b65657c;*/
 }
 
 .articles-and-nav-container {
@@ -542,18 +541,24 @@ h1, h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #83c23a3b;
+  /*background-color: #83c23a3b;*/
 }
 
 .page-nav-container {
   display: flex;
   margin-top: auto;
   justify-content: center;
-  background-color: #3ac2bb7a;
+  align-items: center;
+  background-color: #000000cc;
+  border-top: 3px solid #c5c5c5;
+  box-shadow: 
+    10px 0 20px rgba(255, 255, 255, 0.8),
+    inset 5px 0px 15px rgba(255, 255, 255, 0.4);
   padding: 15px;
+  height: 5%;
 }
 
-.chapter-one-container {
+.chapter-one-container, .chapter-two-container {
   padding-top: 150px;
   display: flex;
   justify-content: center;
@@ -561,20 +566,139 @@ h1, h2 {
   align-items: center;
 }
 
+.contents-container h1 {
+  font-size: 3rem;
+}
+
+.contents-container h2, h3 {
+  font-size: 2rem;
+  cursor: pointer;
+  transform: scale(1.0);
+  transition: all 0.5s ease-in-out;
+  padding: 5px;
+}
+
+.contents-container h2:hover,
+.contents-container h3:hover,
+.toc-topic.active {
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  transform: scale(1.05);
+}
+
 .contents-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #426fb365;
-  padding: 15px;
+  background-color: #000000cc;
+  padding: 30px;
   padding-top: 100px;
   width: 20%;
+  border-right: 2px solid #c5c5c5;
+  position: relative; 
+  transition: transform 1.0s ease-in-out;
+  box-shadow: 
+    0px 0px 20px rgba(255, 255, 255, 0.8),
+    inset -5px 2px 15px rgba(255, 255, 255, 0.4);
+}
+
+.contents-container.closed {
+  transform: translateX(-100%);
+}
+
+.accordion-wrapper {
+  display: grid;
+  grid-template-rows: 0fr; 
+  transition: grid-template-rows 1.0s ease-in-out;
+}
+
+.accordion-wrapper.open {
+  grid-template-rows: 1fr; 
+}
+
+.chapter-list, 
+.topic-list {
+  overflow: hidden; 
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out;
+  padding: 15px 0 25px 0;
+}
+
+.accordion-wrapper.open > .chapter-list,
+.accordion-wrapper.open > .topic-list {
+  opacity: 1;
+}
+
+.contents-divider {
+  margin: 30px 0 30px 0;
+  height: 1px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  width: 100%;
+  box-shadow: 
+    0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+.section-block {
+  position: relative;
+  width: 100%;
+}
+
+.chapter-block {
+  position: relative;
+  padding-left: 30px;
+}
+
+.topic-list {
+  position: relative;
+  padding-left: 50px;
 }
 
 .toc-item {
   font-family: 'Beowulf Modern';
   font-size: 2.5rem;
   padding: 15px;
+}
+
+.toc-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 10px 0 5px;
+  height: 8%;
+  top: 40%;
+  position: absolute; 
+  right: -55px; 
+  
+  border-right: 2px solid #f9f9f9;
+  border-top: 2px solid #f9f9f9;
+  border-bottom: 2px solid #f9f9f9;
+  border-radius: 0 10px 10px 0;
+  background-color: #00000098;
+
+  box-shadow: 
+    0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+.page-number {
+  padding: 0 20px 0 20px;
+  width: 8%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-arrow h2 {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 2rem;
+  transform: scale(1.0);
+  transition: all 0.5s ease-in-out;
+  text-shadow: 
+    0px 0px 10px rgba(255, 255, 255, 0.8);
+}
+
+.nav-arrow h2:hover {
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+  transform: scale(1.2);
 }
 
 /*! Read */
