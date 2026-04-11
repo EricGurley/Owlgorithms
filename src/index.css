@@ -608,7 +608,7 @@ h1, h2, h3 {
 .accordion-wrapper {
   display: grid;
   grid-template-rows: 0fr; 
-  transition: grid-template-rows 1.0s ease-in-out;
+  transition: grid-template-rows 2.0s cubic-bezier(0.8, 0, 0.2, 1);
 }
 
 .accordion-wrapper.open {
@@ -619,13 +619,24 @@ h1, h2, h3 {
 .topic-list {
   overflow: hidden; 
   opacity: 0; 
-  transition: opacity 0.5s ease-in-out;
-  padding: 15px 0 25px 0;
+  transition: opacity 1.0s ease-in-out;
+  padding: 0;
+  min-height: 0;
 }
 
 .accordion-wrapper.open > .chapter-list,
 .accordion-wrapper.open > .topic-list {
   opacity: 1;
+}
+
+.chapter-block:first-child,
+.topic-list h3:first-child {
+  padding-top: 15px; 
+}
+
+.chapter-block:last-child,
+.topic-list h3:last-child {
+  padding-bottom: 25px; 
 }
 
 .contents-divider {
