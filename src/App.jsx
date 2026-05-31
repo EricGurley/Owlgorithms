@@ -41,7 +41,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Practice />} />
           <Route path="/donate" element={<Donate />} />
+          
+          {/* Default Read Page */}
           <Route path="/read" element={<Read />} />
+          
+          {/* NEW: Dynamic Read Page that catches the topic slugs */}
+          <Route path="/read/:topicSlug" element={<Read />} />
           
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />
           <Route path="/register" element={user ? <Navigate to="/profile" /> : <Register />} />

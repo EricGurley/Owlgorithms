@@ -423,16 +423,40 @@ h1, h2, h3 {
   flex-direction: column;
   position: relative;
   align-items: center;
-  padding-top: 200px;
+  padding-top: 75px;
+  width: 100%;
+  height: 100%;
 }
 
 .practice-container h1 {
-  font-family: 'Beowulf Modern';
-  font-size: 3rem; 
-  color: #ffffff;
+  font-size: 8rem; 
+  padding-bottom: 30px;
+  width: 70%;
+  text-shadow:
+    0 0 15px rgb(255, 255, 255),
+    0 0 50px rgba(255, 255, 255, 0.5); 
+}
+
+.borderline {
+  width: 70%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  margin: 20px;
+}
+
+.celestial-sphere-symbol {
+  margin: 20px 0 0 40px;
+}
+
+.practice-container h2 {
+  font-size: 3rem;
   text-shadow:
     0 0 5px rgb(255, 255, 255),
     0 0 10px rgb(255, 255, 255); 
+}
+
+.practice-container h1, h2{
+  font-family: 'Beowulf Modern';
+  color: #ffffff;
   letter-spacing: 2px;
   text-align: center;
 }
@@ -440,16 +464,212 @@ h1, h2, h3 {
 .practice-container .skills-container {
   display: flex;
   flex-direction: row;
-  margin-top: 100px;
 }
 
-.practice-container h1 {
-  padding-bottom: 30px;
-  width: 70%;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+.skills-container {
+  /*background-color: #4286f40c;*/
+  height: 100%;
+  width: 100%;
 }
 
 /*! Practice */
+
+/* Topic Nodes */
+
+/* --- TOPIC NODE WRAPPER --- */
+.topic-node-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  position: relative; 
+  margin: 20px;
+  width: 120px;
+}
+
+.topic-buttons-container {
+  display: flex;
+  flex-direction: row;       /* Arranges the nodes adjacent to each other */
+  justify-content: center;   /* Centers the group of buttons on the screen */
+  flex-wrap: wrap;           /* If they run out of screen space, push them to a new line */
+  gap: 200px;                 /* Adds clean spacing between adjacent nodes */
+  width: 100%;
+  padding-top: 100px;
+}
+/* --- THE ICON BUTTON --- */
+.topic-icon-btn {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.849);
+  background-color: #000000cc;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Gives a nice springy bounce! */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.node-image {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+/* Hover and Active (Clicked) States */
+.topic-icon-btn:hover:not(.placeholder) {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.726);
+  border-color: #ffffff;
+}
+
+/* BULLETPROOF ACTIVE STATE: Guarantees the push-down triggers instantly */
+.topic-icon-btn.active + .topic-title,
+.topic-icon-btn.active:hover:not(.placeholder) + .topic-title {
+  transform: scale(1.05) translateY(15px); 
+}
+
+.topic-icon-btn.active,
+.topic-icon-btn.active:hover {
+  transform: scale(1.15); 
+  box-shadow: 
+    0 0 20px rgba(255, 0, 255, 1), 
+    0 0 40px rgba(255, 0, 255, 0.8), 
+    inset 0 0 20px rgba(255, 0, 255, 0.8);
+  border-color: #ffffff;
+}
+
+.topic-icon-btn:hover:not(.placeholder) + .topic-title {
+  transform: scale(1.05);
+}
+
+.topic-icon-btn.active + .topic-title,
+.topic-icon-btn.active:hover + .topic-title {
+  transform: scale(1.05) translateY(15px); 
+}
+
+/* Placeholder Styling */
+.topic-icon-btn.placeholder {
+  cursor: default;
+}
+
+.question-mark {
+  font-family: 'Beowulf Modern';
+  font-size: 2.5rem;
+  color: #777777;
+}
+
+/* --- THE TITLE --- */
+.topic-title {
+  font-family: 'Beowulf Modern';
+  font-size: 2.0rem;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 15px;
+  text-shadow: 0 0 5px rgb(255, 255, 255);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.801); 
+  padding: 8px 16px; 
+  border-radius: 8px; 
+  z-index: 5;
+  white-space: nowrap;
+  
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+}
+
+.topic-icon-btn:hover:not(.placeholder) + .topic-title {
+  transform: scale(1.05);
+}
+
+/* --- THE POPUP WINDOW --- */
+.topic-popup {
+  position: absolute;
+  
+  top: 300px; 
+  width: 240px;
+  background-color: #000000d7;
+  border: 2px solid rgba(255, 255, 255, 0.925);
+  border-radius: 15px;
+  padding: 0 15px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.9);
+  z-index: 20;
+  animation: popupSlide 0.2s ease-out forwards; 
+}
+
+
+.topic-popup::after {
+  content: "";
+  position: absolute;
+  top: -10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 0 10px 10px; 
+  border-style: solid;
+  border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent; 
+}
+
+.topic-description {
+  color: #dddddd;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  font-family: 'Beowulf Modern';
+}
+
+/* --- POPUP BUTTONS --- */
+.topic-actions {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.popup-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px rgb(255, 255, 255);
+  font-family: 'Beowulf Modern';
+}
+
+.popup-btn:active {
+  transform: scale(0.95);
+}
+
+.practice-btn {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.practice-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.read-btn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.read-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Animation Keyframes */
+@keyframes popupSlide {
+  from { opacity: 0; transform: translateY(10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Topic Nodes */
 
 /*! Neon Button */
 
