@@ -10,8 +10,8 @@ import Register from './pages/Register';
 import Donate from './pages/Donate';
 import Profile from './pages/Profile';
 import ForgotPassword from './components/ForgotPassword';
-
 import Navbar from './components/Navbar';
+import PracticeSession from './pages/PracticeSession';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -40,12 +40,11 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Practice />} />
+          <Route path="/practice/:topicSlug" element={<PracticeSession />} />
           <Route path="/donate" element={<Donate />} />
           
-          {/* Default Read Page */}
           <Route path="/read" element={<Read />} />
           
-          {/* NEW: Dynamic Read Page that catches the topic slugs */}
           <Route path="/read/:topicSlug" element={<Read />} />
           
           <Route path="/login" element={user ? <Navigate to="/" /> : <Login />} />

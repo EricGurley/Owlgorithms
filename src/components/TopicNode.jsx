@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
-export default function TopicNode({ image, title, description, isPlaceholder, urlSlug }) {
+export default function TopicNode({ image, title, description, isPlaceholder, urlSlug, difficulty = 0 }) {
     const [isOpen, setIsOpen] = useState(false);
-    
     const navigate = useNavigate(); 
 
-    // Toggle the popup. Does nothing if it's a ? node
     const handleNodeClick = () => {
         if (!isPlaceholder) {
             setIsOpen(!isOpen);
@@ -21,8 +19,6 @@ export default function TopicNode({ image, title, description, isPlaceholder, ur
                 <div className="topic-popup">
                     <p className="topic-description">{description}</p>
                     <div className="topic-actions">
-                        
-                        {/* 4. Attach the onClick events to route the user */}
                         <button 
                             className="popup-btn practice-btn"
                             onClick={() => navigate(`/practice/${urlSlug}`)}
@@ -36,8 +32,18 @@ export default function TopicNode({ image, title, description, isPlaceholder, ur
                         >
                             Read
                         </button>
-                        
                     </div>
+
+                    {/* The Difficulty Display */}
+                    <div className="difficulty-container">
+                        <p className="difficulty-label">Difficulty:</p>
+                        <div className="difficulty-boxes">
+                            <div className={`diff-box ${difficulty >= 1 ? `filled-${difficulty}` : ''}`}></div>
+                            <div className={`diff-box ${difficulty >= 2 ? `filled-${difficulty}` : ''}`}></div>
+                            <div className={`diff-box ${difficulty >= 3 ? `filled-${difficulty}` : ''}`}></div>
+                        </div>
+                    </div>
+
                 </div>
             )}
 

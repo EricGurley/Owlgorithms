@@ -19,8 +19,11 @@ const Contents = ({ table, activeSection, setActiveSection, activeChapter, setAc
                     <div key={section.id} className="section-block">
                         
                         <h2 
-                            onClick={() => setActiveSection(activeSection === section.id ? null : section.id)}
-                            className={activeSection === section.id ? 'toc-section active' : 'toc-section'}
+                            onClick={() => {
+                                setActiveSection(activeSection === section.id ? null : section.id);
+                                setActiveTopic(section.id); 
+                            }}
+                            className={activeTopic === section.id ? 'toc-section active' : 'toc-section'}
                         >
                             {section.title}
                         </h2>
@@ -33,8 +36,11 @@ const Contents = ({ table, activeSection, setActiveSection, activeChapter, setAc
                                         <div key={chapter.id} className="chapter-block">
                                             
                                             <h3 
-                                                onClick={() => setActiveChapter(activeChapter === chapter.id ? null : chapter.id)}
-                                                className={activeChapter === chapter.id ? 'toc-chapter active' : 'toc-chapter'}
+                                                onClick={() => {
+                                                    setActiveChapter(activeChapter === chapter.id ? null : chapter.id);
+                                                    setActiveTopic(chapter.id); 
+                                                }}
+                                                className={activeTopic === chapter.id ? 'toc-chapter active' : 'toc-chapter'}
                                             >
                                                 {chapter.title}
                                             </h3>

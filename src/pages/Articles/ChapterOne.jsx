@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Preface from './Topics/Preface';           // <-- 1. Import it
+import Tools from './Topics/Tools';    // <-- 1. Import it
 import OneOne from './Topics/OneOne';
 
 const ChapterOne = ({ activeTopic }) => {
@@ -7,13 +9,9 @@ const ChapterOne = ({ activeTopic }) => {
     const renderTopic = () => {
         switch (activeTopic) {
         case '0':
-            return (
-                <h1>Welcome To Astrophysics!!!</h1>
-            );
+            return <Preface />;          // <-- 2. Render it!
         case '1':
-            return (
-                <h1>The Tools Of Astronomy</h1>
-            );
+            return <Tools />; // <-- 2. Render it!
         case '1.0':
             return (
                 <h1>The Celestial Sphere</h1>

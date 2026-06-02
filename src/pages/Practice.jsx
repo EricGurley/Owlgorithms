@@ -19,19 +19,13 @@ export default function Practice() {
                 </div>
                 
                 <div className = "topic-buttons-container">
-                    {/*
-                    5 buttons will be called here, 2 with actual icons and 3 with a question box,
-                    only because those icons haven't been drawn yet. The 2 actual icons are the only
-                    topics that will work and have practice problems
-                    */}
-
-                    {/* Active Topics */}
                     <TopicNode 
                         title="Altitude-Azimuth"
                         description="Learn to navigate the sky!"
                         image="/Images/Topics/AA.png"
                         isPlaceholder={false}
                         urlSlug="altitude-azimuth"
+                        difficulty={1}
                     />
 
                     <TopicNode 
@@ -40,6 +34,7 @@ export default function Practice() {
                         image="/Images/Topics/EQ.png"
                         isPlaceholder={false}
                         urlSlug="right-ascension"
+                        difficulty={3}
                     />
 
                     {/* Placeholder Topics */}
@@ -48,6 +43,7 @@ export default function Practice() {
                         description="Coming Soon!"
                         image={null} 
                         isPlaceholder={true}
+                        difficulty={0}
                     />
 
                     <TopicNode 
@@ -55,6 +51,7 @@ export default function Practice() {
                         description="Coming Soon!"
                         image={null} 
                         isPlaceholder={true}
+                        difficulty={0}
                     />
 
                     <TopicNode 
@@ -62,6 +59,7 @@ export default function Practice() {
                         description="Coming Soon!"
                         image={null} 
                         isPlaceholder={true}
+                        difficulty={0}
                     />
                 </div>
 

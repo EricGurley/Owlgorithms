@@ -613,7 +613,7 @@ h1, h2, h3 {
 
 .topic-description {
   color: #dddddd;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-align: center;
   margin-bottom: 15px;
   line-height: 1.4;
@@ -667,6 +667,62 @@ h1, h2, h3 {
 @keyframes popupSlide {
   from { opacity: 0; transform: translateY(10px) scale(0.95); }
   to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* =========================================
+   DIFFICULTY INDICATORS
+========================================= */
+.difficulty-container {
+  margin: 10px 0 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.difficulty-label {
+  color: #ffffff;
+  font-family: 'Beowulf Modern', sans-serif;
+  font-size: 1.7rem;
+  margin: 0;
+  text-shadow: 0 0 5px rgb(255, 255, 255);
+}
+
+.difficulty-boxes {
+  display: flex;
+  gap: 12px;
+}
+
+/* The Base Hollow Box (White Glow) */
+.diff-box {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px; /* Gives it that smooth rounded-square look */
+  border: 2px solid #ffffffbd;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+/* Level 1: Blue Glow */
+.diff-box.filled-1 {
+  background-color: #6ee3fd;
+  border-color: #6ee3fd;
+  box-shadow: 0 0 15px rgba(145, 235, 255, 0.9);
+}
+
+/* Level 2: Orange Glow */
+.diff-box.filled-2 {
+  background-color: #ffb35c;
+  border-color: #ffb35c;
+  box-shadow: 0 0 15px rgba(255, 170, 0, 0.9);
+}
+
+/* Level 3: Deep Purple Glow */
+.diff-box.filled-3 {
+  background-color: #aa32ff; 
+  border-color: #aa32ff;
+  box-shadow: 0 0 15px rgb(214, 126, 255);
 }
 
 /* Topic Nodes */
@@ -742,6 +798,59 @@ h1, h2, h3 {
     
   text-shadow: 0 0 10px #ffffff, 0 0 20px #4285F4, 0 0 30px #4285F4;
 }
+
+/* Practice Page */
+
+.practice-layout-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  
+  /* 1. Removed position: absolute so it sits nicely underneath your global Navbar */
+  
+  /* 2. Fill the screen height, minus the ~100px taken up by the Navbar */
+  height: calc(100vh - 100px); 
+  
+  background-color: rgba(5, 5, 5, 0.95);
+  color: white;
+  width: 100%;
+  font-family: 'Beowulf Modern';
+}
+
+.practice-main-column {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Take up exactly the height of the grid, no more */
+  overflow-y: auto;
+  
+  /* 3. Reduced top padding, because the Navbar is already giving us that breathing room at the top */
+  padding: 40px 80px 40px 80px; 
+  
+  /* 4. CRITICAL FIX: Forces padding to be absorbed into the height, keeping the footer on screen! */
+  box-sizing: border-box; 
+}
+
+/* =========================================
+   PRACTICE INPUT STYLES
+========================================= */
+
+/* Make the placeholder text white */
+.practice-number-input::placeholder {
+  color: #ffffff;
+  opacity: 0.8; /* Keeps it looking slightly like background text */
+}
+
+/* Remove the up/down arrows in Chrome/Edge/Safari */
+.practice-number-input::-webkit-outer-spin-button,
+.practice-number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove the up/down arrows in Firefox */
+.practice-number-input[type=number] {
+  -moz-appearance: textfield;
+}
+/* Practice Page */
 
 /*! Neon Button */
 
@@ -897,7 +1006,7 @@ h1, h2, h3 {
   height: 8%;
   top: 40%;
   position: absolute; 
-  right: -55px; 
+  right: -57px; 
   
   border-right: 2px solid #f9f9f9;
   border-top: 2px solid #f9f9f9;
