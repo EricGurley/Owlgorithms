@@ -36,6 +36,8 @@ const App = () => {
           <source src="/Images/Backgrounds/BG-Seamless.mp4" type="video/mp4" />
         </video>
 
+        <div className="video-background-overlay" />
+
         <Navbar user={user} />
 
         <Routes>
