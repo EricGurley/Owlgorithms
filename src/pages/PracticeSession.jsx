@@ -21,7 +21,6 @@ export default function PracticeSession() {
     const rawBlueprints = practiceProblems[topicSlug];
     
     const [sessionSequence, setSessionSequence] = useState([]);
-    
     const [currentIndex, setCurrentIndex] = useState(0);
     const [activeProblemData, setActiveProblemData] = useState(null);
     const [userAnswer, setUserAnswer] = useState("");
@@ -64,13 +63,11 @@ export default function PracticeSession() {
         }
     };
 
-    if (!rawBlueprints) return <div style={{ color: 'white', textAlign: 'center', marginTop: '100px' }}>No problems found for this topic.</div>;
-    if (!activeProblemData) return <div style={{ color: 'white', textAlign: 'center', marginTop: '100px' }}>Loading problem...</div>;
+    if (!rawBlueprints) return <div className="practice-session-status-msg">No problems found for this topic.</div>;
+    if (!activeProblemData) return <div className="practice-session-status-msg">Loading problem...</div>;
 
     return (
         <div className="practice-layout-grid">
-            
-            
             <PracticeSidebar 
                 currentTopic={topicSlug} 
                 totalProblems={sessionSequence.length}
@@ -82,55 +79,39 @@ export default function PracticeSession() {
                     <QuestionCanvas prompt={activeProblemData.prompt} />
                     
                     {activeProblemData.type === 'multiple-choice' ? (
-                        <>
-                            <div style={{ color: '#888', fontStyle: 'italic' }}>
-                                [Multiple Choice Panel will go here]
-                            </div>
-                        </>
+                        <div className="mc-panel-placeholder">
+                            [Multiple Choice Panel will go here]
+                        </div>
                     ) : (
-                        <>
-                            <input 
-                                type="number" 
-                                value={userAnswer} 
-                                onChange={(e) => setUserAnswer(e.target.value)} 
-                                placeholder="Type your answer..."
-                                style={{ 
-                                    padding: '15px', fontSize: '1.2rem', borderRadius: '8px', 
-                                    border: '2px solid #333', backgroundColor: '#111', color: 'white',
-                                    width: '100%', maxWidth: '300px', fontFamily: 'Beowulf Modern' 
-                                }}
-                            />
-                        </>
+                        <input 
+                            type="number" 
+                            className="practice-number-input"
+                            value={userAnswer} 
+                            onChange={(e) => setUserAnswer(e.target.value)} 
+                            placeholder="Type your answer..."
+                        />
                     )}
 
                     {showSolution && (
-                        <div style={{ 
-                            marginTop: '40px', padding: '25px', backgroundColor: '#1a1a1a', 
-                            borderRadius: '8px', borderLeft: '4px solid #aa32ff' 
-                        }}>
-                            <h3 style={{ color: '#aa32ff', margin: '0 0 15px 0' }}>Solution</h3>
-                            <p style={{ whiteSpace: 'pre-line', margin: '0 0 20px 0', lineHeight: '1.6', fontSize: '1.1rem' }}>
+                        <div className="practice-solution-card">
+                            <h3 className="practice-solution-heading">Solution</h3>
+                            <p className="practice-solution-text">
                                 {activeProblemData.solution}
                             </p>
                             <button 
                                 onClick={handleNext}
-                                style={{ 
-                                    padding: '10px 25px', backgroundColor: '#333', color: 'white', 
-                                    border: 'none', borderRadius: '5px', cursor: 'pointer', fontSize: '1rem'
-                                }}
+                                className="practice-next-btn"
                             >
                                 Next Question ➔
                             </button>
                         </div>
                     )}
-
                 </div>
 
                 <ActionFooter 
                     onCheck={handleSubmit} 
                     onViewSolution={() => setShowSolution(true)} 
                 />
-                
             </div>
         </div>
     );

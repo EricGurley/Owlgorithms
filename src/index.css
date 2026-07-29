@@ -826,51 +826,118 @@ h1, h2, h3 {
 .practice-layout-grid {
   display: grid;
   grid-template-columns: 280px 1fr;
+  width: 100%;
   
-  /* 1. Removed position: absolute so it sits nicely underneath your global Navbar */
+  margin-top: 0;
+  padding-top: 0; 
   
-  /* 2. Fill the screen height, minus the ~100px taken up by the Navbar */
-  height: calc(100vh - 100px); 
+  flex-grow: 1;
+  min-height: 100vh;
   
   background-color: rgba(5, 5, 5, 0.95);
   color: white;
-  width: 100%;
   font-family: 'Beowulf Modern';
+  box-sizing: border-box;
 }
 
 .practice-main-column {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Take up exactly the height of the grid, no more */
+  justify-content: space-between;
+  height: 100%;
   overflow-y: auto;
-  
-  /* 3. Reduced top padding, because the Navbar is already giving us that breathing room at the top */
-  padding: 40px 80px 40px 80px; 
-  
-  /* 4. CRITICAL FIX: Forces padding to be absorbed into the height, keeping the footer on screen! */
+  padding: 100px 80px 40px 80px; 
   box-sizing: border-box; 
 }
 
-/* =========================================
-   PRACTICE INPUT STYLES
-========================================= */
-
-/* Make the placeholder text white */
-.practice-number-input::placeholder {
-  color: #ffffff;
-  opacity: 0.8; /* Keeps it looking slightly like background text */
+.problem-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Remove the up/down arrows in Chrome/Edge/Safari */
+.practice-session-status-msg {
+  color: white;
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Beowulf Modern';
+  font-size: 1.5rem;
+}
+
+.mc-panel-placeholder {
+  color: #888888;
+  font-style: italic;
+}
+
+/* Practice Input Field */
+
+.practice-number-input {
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid #333333;
+  background-color: #111111;
+  color: #ffffff;
+  width: 100%;
+  max-width: 300px;
+  font-family: 'Beowulf Modern';
+}
+
+/* Practice Solution Box */
+
+.practice-solution-card {
+  margin-top: 40px;
+  padding: 25px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border-left: 4px solid #aa32ff;
+}
+
+.practice-solution-heading {
+  color: #aa32ff;
+  margin: 0 0 15px 0;
+}
+
+.practice-solution-text {
+  white-space: pre-line;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.practice-next-btn {
+  padding: 10px 25px;
+  background-color: #333333;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: 'Beowulf Modern';
+  transition: background-color 0.2s ease;
+}
+
+.practice-next-btn:hover {
+  background-color: #444444;
+}
+
+.practice-number-input::placeholder {
+  color: #ffffff;
+  opacity: 0.8; 
+}
+
+/* Remove the up/down arrows across all browsers */
+
 .practice-number-input::-webkit-outer-spin-button,
 .practice-number-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
 
-/* Remove the up/down arrows in Firefox */
 .practice-number-input[type=number] {
   -moz-appearance: textfield;
+  appearance: textfield;
 }
 /* Practice Page */
 

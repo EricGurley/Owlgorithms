@@ -20,17 +20,26 @@ export default function Practice() {
                 
                 <div className = "topic-buttons-container">
                     <TopicNode 
-                        title="Altitude-Azimuth"
-                        description="Learn to navigate the sky!"
+                        title="The Celestial Sphere"
+                        description="Change how you view the globe!"
                         image="/Images/Topics/AA.png"
                         isPlaceholder={false}
-                        urlSlug="altitude-azimuth"
+                        urlSlug="celestial-sphere"
+                        difficulty={1}
+                    />
+
+                    <TopicNode 
+                        title="Order Of The Planets"
+                        description="Learn celestial positions!"
+                        image="/Images/Topics/AA.png"
+                        isPlaceholder={false}
+                        urlSlug="order-of-planets"
                         difficulty={1}
                     />
 
                     <TopicNode 
                         title="Right Ascension & Declination"
-                        description="Learn to navigate the sky, but better!"
+                        description="Learn to navigate the sky!"
                         image="/Images/Topics/EQ.png"
                         isPlaceholder={false}
                         urlSlug="right-ascension"
@@ -38,22 +47,6 @@ export default function Practice() {
                     />
 
                     {/* Placeholder Topics */}
-                    <TopicNode 
-                        title="Coming Soon!"
-                        description="Coming Soon!"
-                        image={null} 
-                        isPlaceholder={true}
-                        difficulty={0}
-                    />
-
-                    <TopicNode 
-                        title="Coming Soon!"
-                        description="Coming Soon!"
-                        image={null} 
-                        isPlaceholder={true}
-                        difficulty={0}
-                    />
-
                     <TopicNode 
                         title="Coming Soon!"
                         description="Coming Soon!"

@@ -1,7 +1,7 @@
 export const practiceProblems = {
-    'altitude-azimuth': [
+    'celestial-sphere': [
         {
-            id: 'aa-q1',
+            id: 'cs-q1',
             type: 'numerical',
             generate: () => {
                 const x = Math.floor(Math.random() * 50) + 10; 
@@ -15,7 +15,7 @@ export const practiceProblems = {
             }
         },
         {
-            id: 'aa-q2',
+            id: 'cs-q2',
             type: 'numerical',
             generate: () => {
                 const x = Math.floor(Math.random() * 20) + 5; 
@@ -27,9 +27,11 @@ export const practiceProblems = {
                     solution: `Step 1: Add the values together: ${x} + ${y}. \nFinal Answer: ${expectedAnswer}`
                 };
             }
-        },
+        }
+    ],
+    'order-of-planets': [
         {
-            id: 'aa-q3',
+            id: 'op-q1',
             type: 'numerical',
             generate: () => {
                 const x = Math.floor(Math.random() * 12) + 2; 
@@ -43,7 +45,7 @@ export const practiceProblems = {
             }
         },
         {
-            id: 'aa-q4',
+            id: 'op-q2',
             type: 'numerical',
             generate: () => {
                 const divisor = Math.floor(Math.random() * 10) + 2; 
@@ -55,9 +57,11 @@ export const practiceProblems = {
                     solution: `Step 1: Divide ${dividend} by ${divisor}. \nFinal Answer: ${answer}`
                 };
             }
-        },
+        }
+    ],
+    'right-ascension': [
         {
-            id: 'aa-q5',
+            id: 'ra-q1',
             type: 'numerical',
             generate: () => {
                 const x = Math.floor(Math.random() * 10) + 1; 
@@ -68,6 +72,20 @@ export const practiceProblems = {
                     prompt: `Calculate the result: ${x} + ${y} - ${z} = ?`,
                     correctAnswer: expectedAnswer,
                     solution: `Step 1: Add the first two values: ${x} + ${y} = ${x+y}. \nStep 2: Subtract the third value: ${x+y} - ${z}. \nFinal Answer: ${expectedAnswer}`
+                };
+            }
+        },
+        {
+            id: 'ra-q2',
+            type: 'numerical',
+            generate: () => {
+                const x = Math.floor(Math.random() * 20) + 10; 
+                const y = Math.floor(Math.random() * 10) + 5;  
+                const expectedAnswer = x + y;
+                return {
+                    prompt: `Calculate the sum: ${x} + ${y} = ?`,
+                    correctAnswer: expectedAnswer,
+                    solution: `Step 1: Add the values together: ${x} + ${y}. \nFinal Answer: ${expectedAnswer}`
                 };
             }
         }
