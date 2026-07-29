@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function QuestionCanvas({ prompt }) {
     return (
-        <div style={{ marginBottom: '40px', marginTop: '20px' }}>
-            <h2 style={{ fontSize: '1.8rem', lineHeight: '1.5' }}>
+        <div className="question-canvas-container">
+            <h2 className="question-canvas-text">
                 {prompt}
             </h2>
         </div>

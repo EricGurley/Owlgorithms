@@ -50,7 +50,7 @@ export const practiceProblems = {
             generate: () => {
                 const divisor = Math.floor(Math.random() * 10) + 2; 
                 const answer = Math.floor(Math.random() * 12) + 2;
-                const dividend = divisor * answer; // Ensures a clean whole number division
+                const dividend = divisor * answer; 
                 return {
                     prompt: `Calculate the quotient: ${dividend} / ${divisor} = ?`,
                     correctAnswer: answer,

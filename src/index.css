@@ -132,7 +132,9 @@ h1, h2, h3 {
   z-index: -1; 
 }
 
-/*! App */
+/* =========================================
+   APP LAYOUT
+========================================= */
 
 .app-wrapper::before {
   content: "";
@@ -175,10 +177,9 @@ h1, h2, h3 {
   overflow-x: hidden; 
 }
 
-
-/*! App */
-
-/*! Profile */
+/* =========================================
+   PROFILE
+========================================= */
 
 .profile-container {
   padding-top: 100px;
@@ -209,21 +210,20 @@ h1, h2, h3 {
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff;
 }
 
-/*! Profile */
-
-/*! Navbar */
+/* =========================================
+   NAVBAR
+========================================= */
 
 .navbar {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1;
   width: 100%;
   box-sizing: border-box; 
-  position: fixed;
 }
 
 .nav-links .neon-button.nav-btn {
@@ -240,7 +240,9 @@ h1, h2, h3 {
   align-items: center;
 }
 
-/*! Login */
+/* =========================================
+   LOGIN & REGISTER
+========================================= */
 
 .login-container, .profile-container, .loading-text {
   padding-top: 200px;
@@ -311,10 +313,6 @@ h1, h2, h3 {
   text-shadow: 0 0 10px #ffffff, 0 0 20px #ff00ff;
 }
 
-/*! Login */
-
-/*! Register */
-
 .register-input {
   position: relative;
 }
@@ -371,17 +369,13 @@ h1, h2, h3 {
   align-items: center;
 }
 
-/*! Register */
-
-/*! Donate */
-
 .donate-container {
   margin-top: 200px;
 }
 
-/*! Donate */
-
-/*! Register error popup */
+/* =========================================
+   REGISTER ERROR POPUP
+========================================= */
 
 @keyframes popupFadeIn {
     0% {
@@ -436,9 +430,9 @@ h1, h2, h3 {
   border-color: transparent #ff4d4d transparent transparent;
 }
 
-/*! Register error popup */
-
-/*! Practice */
+/* =========================================
+   PRACTICE OVERVIEW / MAP PAGE
+========================================= */
 
 .practice-container {
   display: flex;
@@ -489,16 +483,12 @@ h1, h2, h3 {
 }
 
 .skills-container {
-  /*background-color: #4286f40c;*/
   height: 100%;
   width: 100%;
 }
 
-/*! Practice */
-
 /* Topic Nodes */
 
-/* --- TOPIC NODE WRAPPER --- */
 .topic-node-container {
   display: flex;
   flex-direction: column; 
@@ -510,14 +500,14 @@ h1, h2, h3 {
 
 .topic-buttons-container {
   display: flex;
-  flex-direction: row;       /* Arranges the nodes adjacent to each other */
-  justify-content: center;   /* Centers the group of buttons on the screen */
-  flex-wrap: wrap;           /* If they run out of screen space, push them to a new line */
-  gap: 200px;                 /* Adds clean spacing between adjacent nodes */
+  flex-direction: row;       
+  justify-content: center;   
+  flex-wrap: wrap;           
+  gap: 200px;                 
   width: 100%;
   padding-top: 100px;
 }
-/* --- THE ICON BUTTON --- */
+
 .topic-icon-btn {
   width: 200px;
   height: 200px;
@@ -528,7 +518,7 @@ h1, h2, h3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Gives a nice springy bounce! */
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
@@ -538,14 +528,12 @@ h1, h2, h3 {
   object-fit: contain;
 }
 
-/* Hover and Active (Clicked) States */
 .topic-icon-btn:hover:not(.placeholder) {
   transform: scale(1.05);
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.726);
   border-color: #ffffff;
 }
 
-/* BULLETPROOF ACTIVE STATE: Guarantees the push-down triggers instantly */
 .topic-icon-btn.active + .topic-title,
 .topic-icon-btn.active:hover:not(.placeholder) + .topic-title {
   transform: scale(1.05) translateY(15px); 
@@ -565,12 +553,6 @@ h1, h2, h3 {
   transform: scale(1.05);
 }
 
-.topic-icon-btn.active + .topic-title,
-.topic-icon-btn.active:hover + .topic-title {
-  transform: scale(1.05) translateY(15px); 
-}
-
-/* Placeholder Styling */
 .topic-icon-btn.placeholder {
   cursor: default;
 }
@@ -581,7 +563,6 @@ h1, h2, h3 {
   color: #777777;
 }
 
-/* --- THE TITLE --- */
 .topic-title {
   font-family: 'Beowulf Modern';
   font-size: 2.0rem;
@@ -595,18 +576,11 @@ h1, h2, h3 {
   border-radius: 8px; 
   z-index: 5;
   white-space: nowrap;
-  
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
-.topic-icon-btn:hover:not(.placeholder) + .topic-title {
-  transform: scale(1.05);
-}
-
-/* --- THE POPUP WINDOW --- */
 .topic-popup {
   position: absolute;
-  
   top: 300px; 
   width: 240px;
   background-color: #000000d7;
@@ -620,7 +594,6 @@ h1, h2, h3 {
   z-index: 20;
   animation: popupSlide 0.2s ease-out forwards; 
 }
-
 
 .topic-popup::after {
   content: "";
@@ -642,7 +615,6 @@ h1, h2, h3 {
   font-family: 'Beowulf Modern';
 }
 
-/* --- POPUP BUTTONS --- */
 .topic-actions {
   display: flex;
   gap: 10px;
@@ -685,15 +657,12 @@ h1, h2, h3 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* Animation Keyframes */
 @keyframes popupSlide {
   from { opacity: 0; transform: translateY(10px) scale(0.95); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* =========================================
-   DIFFICULTY INDICATORS
-========================================= */
+/* Difficulty Indicators */
 .difficulty-container {
   margin: 10px 0 15px;
   display: flex;
@@ -715,61 +684,54 @@ h1, h2, h3 {
   gap: 12px;
 }
 
-/* The Base Hollow Box (White Glow) */
 .diff-box {
   width: 35px;
   height: 35px;
-  border-radius: 10px; /* Gives it that smooth rounded-square look */
+  border-radius: 10px; 
   border: 2px solid #ffffffbd;
   background-color: transparent;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
   transition: all 0.3s ease;
 }
 
-/* Level 1: Blue Glow */
 .diff-box.filled-1 {
   background-color: #6ee3fd;
   border-color: #6ee3fd;
   box-shadow: 0 0 15px rgba(145, 235, 255, 0.9);
 }
 
-/* Level 2: Orange Glow */
 .diff-box.filled-2 {
   background-color: #ffb35c;
   border-color: #ffb35c;
   box-shadow: 0 0 15px rgba(255, 170, 0, 0.9);
 }
 
-/* Level 3: Deep Purple Glow */
 .diff-box.filled-3 {
   background-color: #aa32ff; 
   border-color: #aa32ff;
   box-shadow: 0 0 15px rgb(214, 126, 255);
 }
 
-/* Topic Nodes */
-
-/*! Neon Button */
+/* =========================================
+   GLOBAL NEON BUTTON STYLES
+========================================= */
 
 .neon-button {
   background-color: #000000cb;
   color: #ffffff;
   border: 2px solid #ffffff; 
   border-radius: 45px;
-  padding: 30px 30px;
-  margin: 30px;
-  font-size: 2rem;
+  padding: 15px 35px;
+  margin: 10px;
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   font-family: 'Beowulf Modern';
   text-decoration: none;
   z-index: 1;
-  
-  transform: scale(1.0);
-  transition: transform 0.5s ease-in-out;
+  display: inline-block;
 
-  text-shadow: 
-    0 0 10px #ffffff;
+  text-shadow: 0 0 10px #ffffff;
 
   box-shadow: 
     0 0 10px rgba(255, 255, 255, 0.8),      
@@ -783,9 +745,8 @@ h1, h2, h3 {
 .navbar-container .neon-button:hover,
 .nav-links a:hover, .nav-button:hover,
 .logout-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: #000000cb;
-  transition: all 0.3s ease-in-out;
   box-shadow: 
     0 0 20px rgba(255, 0, 255, 1), 
     0 0 40px rgba(255, 0, 255, 0.8), 
@@ -821,19 +782,18 @@ h1, h2, h3 {
   text-shadow: 0 0 10px #ffffff, 0 0 20px #4285F4, 0 0 30px #4285F4;
 }
 
-/* Practice Page */
+/* =========================================
+   PRACTICE SESSION PAGE & INPUTS
+========================================= */
 
 .practice-layout-grid {
   display: grid;
   grid-template-columns: 280px 1fr;
   width: 100%;
-  
   margin-top: 0;
   padding-top: 0; 
-  
   flex-grow: 1;
   min-height: 100vh;
-  
   background-color: rgba(5, 5, 5, 0.95);
   color: white;
   font-family: 'Beowulf Modern';
@@ -856,6 +816,14 @@ h1, h2, h3 {
   gap: 20px;
 }
 
+.question-canvas h2,
+.question-canvas p,
+.problem-container h2 {
+  font-size: 2.8rem; 
+  line-height: 1.3;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
 .practice-session-status-msg {
   color: white;
   text-align: center;
@@ -869,22 +837,38 @@ h1, h2, h3 {
   font-style: italic;
 }
 
-/* Practice Input Field */
-
+/* Input Field */
 .practice-number-input {
-  padding: 15px;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  border: 2px solid #333333;
+  padding: 18px 24px;
+  font-size: 2rem; 
+  border-radius: 12px;
+  border: 2px solid #555555;
   background-color: #111111;
   color: #ffffff;
   width: 100%;
-  max-width: 300px;
+  max-width: 420px; 
   font-family: 'Beowulf Modern';
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.practice-number-input::placeholder {
+  color: #ffffff;
+  opacity: 0.8; 
+}
+
+.practice-number-input::-webkit-outer-spin-button,
+.practice-number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.practice-number-input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* Practice Solution Box */
-
 .practice-solution-card {
   margin-top: 40px;
   padding: 25px;
@@ -902,17 +886,17 @@ h1, h2, h3 {
   white-space: pre-line;
   margin: 0 0 20px 0;
   line-height: 1.6;
-  font-size: 1.1rem;
+  font-size: 2.0rem;
 }
 
 .practice-next-btn {
-  padding: 10px 25px;
+  padding: 16px 40px;
   background-color: #333333;
   color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 1.8rem;
   font-family: 'Beowulf Modern';
   transition: background-color 0.2s ease;
 }
@@ -921,36 +905,162 @@ h1, h2, h3 {
   background-color: #444444;
 }
 
-.practice-number-input::placeholder {
+/* =========================================
+   PRACTICE SIDEBAR
+========================================= */
+
+.practice-sidebar {
+  border-right: 1px solid #333333;
+  padding: 100px 20px 40px 20px; 
+  background-color: rgba(10, 10, 10, 0.95);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.back-to-map-pill {
+  font-size: 1.3rem;
+  padding: 10px 24px;
+  text-decoration: none;
+  display: inline-block;
+  align-self: flex-start;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.sidebar-heading {
+  font-family: 'Beowulf Modern';
+  margin-bottom: 15px;
+  font-size: 1.5rem;
   color: #ffffff;
-  opacity: 0.8; 
 }
 
-/* Remove the up/down arrows across all browsers */
-
-.practice-number-input::-webkit-outer-spin-button,
-.practice-number-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  appearance: none;
-  margin: 0;
+.sidebar-topic-badge {
+  padding: 12px;
+  background-color: rgba(170, 50, 255, 0.2);
+  border-left: 4px solid #aa32ff;
+  border-radius: 4px;
+  font-family: 'Beowulf Modern';
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
-.practice-number-input[type=number] {
-  -moz-appearance: textfield;
-  appearance: textfield;
+.sidebar-progress-container {
+  margin-top: 20px;
 }
-/* Practice Page */
 
-/*! Neon Button */
+.sidebar-subheading {
+  font-family: 'Beowulf Modern';
+  margin-bottom: 15px;
+  color: #cccccc;
+}
 
-/*! Read */
+.sidebar-progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-progress-item {
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-progress-item.active {
+  background-color: rgba(170, 50, 255, 0.15);
+  border: 1px solid #aa32ff;
+  color: #aa32ff;
+}
+
+.sidebar-progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.sidebar-progress-dot.active {
+  background-color: #aa32ff;
+}
+
+.sidebar-progress-dot.completed {
+  background-color: #aaaaaa;
+}
+
+.sidebar-progress-dot.pending {
+  background-color: #ffffff;
+}
+
+.sidebar-progress-text {
+  font-family: 'Beowulf Modern';
+  font-size: 1.2rem;
+}
+
+.question-canvas h2,
+.question-canvas p,
+.problem-container h2 {
+  font-size: 2.6rem; 
+  line-height: 1.3;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.question-canvas-container {
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.question-canvas-text {
+  font-size: 1.0rem;
+  line-height: 1.4;
+}
+
+/* =========================================
+   ACTION FOOTER & BUTTONS
+========================================= */
+
+.action-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid #333333;
+  margin-top: 40px;
+}
+
+.action-footer-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.view-solution-btn {
+  font-size: 1.8rem;
+  padding: 18px 45px;
+}
+
+.check-answer-btn,
+.next-question-btn {
+  font-size: 1.8rem; 
+  padding: 18px 45px;
+}
+
+/* =========================================
+   READ PAGE
+========================================= */
 
 .read-container {
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
-  /*background-color: #9b65657c;*/
 }
 
 .articles-and-nav-container {
@@ -959,7 +1069,6 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*background-color: #83c23a3b;*/
 }
 
 .page-nav-container {
@@ -1131,40 +1240,9 @@ h1, h2, h3 {
   transform: scale(1.2);
 }
 
-/*! Read */
-
-/*! Page Navigator */
-
-
-
-/*! Page Navigator */
-
-/*! Scrollbar in progress derp I can't see it for some reason
-
-::-webkit-scrollbar {
-  width: 12px; 
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.6); 
-  border-left: 1px solid rgba(255, 255, 255, 0.1); 
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ff00ff; 
-  border-radius: 10px; 
-  border: 2px solid rgba(0, 0, 0, 0.6); 
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #ff4dff; 
-}
-
-/*! Read */
-
-/*! Default browser behaviors being overrided */
-
-/*! Clears yellow filling of input fields */
+/* =========================================
+   AUTOFILL OVERRIDES
+========================================= */
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -1173,8 +1251,6 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0px 1000px #000000 inset !important;
   -webkit-text-fill-color: #ffffff !important;
 }
-
-/*! Clears blue wrapping around active input fields */
 
 .register-input input:focus, 
 .login-input input:focus {

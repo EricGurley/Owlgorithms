@@ -6,7 +6,6 @@ import PracticeSidebar from '../components/Practice/PracticeSidebar';
 import QuestionCanvas from '../components/Practice/QuestionCanvas';
 import ActionFooter from '../components/Practice/ActionFooter';
 
-// Helper function to shuffle an array (Fisher-Yates)
 const shuffleArray = (array) => {
     let shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -98,12 +97,6 @@ export default function PracticeSession() {
                             <p className="practice-solution-text">
                                 {activeProblemData.solution}
                             </p>
-                            <button 
-                                onClick={handleNext}
-                                className="practice-next-btn"
-                            >
-                                Next Question ➔
-                            </button>
                         </div>
                     )}
                 </div>
@@ -111,6 +104,7 @@ export default function PracticeSession() {
                 <ActionFooter 
                     onCheck={handleSubmit} 
                     onViewSolution={() => setShowSolution(true)} 
+                    onNext={handleNext}
                 />
             </div>
         </div>
