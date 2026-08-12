@@ -1,7 +1,16 @@
+// src/components/TopicNode.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function TopicNode({ image, title, description, isPlaceholder, urlSlug, difficulty = 0 }) {
+export default function TopicNode({ 
+    image, 
+    title, 
+    description, 
+    isPlaceholder, 
+    courseId = 'astrophysics-1', // Defaults to original course if unspecified
+    urlSlug, 
+    difficulty = 0 
+}) {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate(); 
 
@@ -13,28 +22,25 @@ export default function TopicNode({ image, title, description, isPlaceholder, ur
 
     return (
         <div className="topic-node-container">
-            
-            {/* The Popup Window */}
             {isOpen && (
                 <div className="topic-popup">
                     <p className="topic-description">{description}</p>
                     <div className="topic-actions">
                         <button 
                             className="popup-btn practice-btn"
-                            onClick={() => navigate(`/practice/${urlSlug}`)}
+                            onClick={() => navigate(`/practice/${courseId}/${urlSlug}`)}
                         >
                             Practice
                         </button>
                         
                         <button 
                             className="popup-btn read-btn"
-                            onClick={() => navigate(`/read/${urlSlug}`)}
+                            onClick={() => navigate(`/read/${courseId}/${urlSlug}`)}
                         >
                             Read
                         </button>
                     </div>
 
-                    {/* The Difficulty Display */}
                     <div className="difficulty-container">
                         <p className="difficulty-label">Difficulty:</p>
                         <div className="difficulty-boxes">
@@ -43,11 +49,9 @@ export default function TopicNode({ image, title, description, isPlaceholder, ur
                             <div className={`diff-box ${difficulty >= 3 ? `filled-${difficulty}` : ''}`}></div>
                         </div>
                     </div>
-
                 </div>
             )}
 
-            {/* The Main Icon Button */}
             <button 
                 className={`topic-icon-btn ${isOpen ? 'active' : ''} ${isPlaceholder ? 'placeholder' : ''}`}
                 onClick={handleNodeClick}
@@ -59,9 +63,7 @@ export default function TopicNode({ image, title, description, isPlaceholder, ur
                 )}
             </button>
 
-            {/* The Title Underneath */}
             <h3 className="topic-title">{title}</h3>
-
         </div>
     );
 }

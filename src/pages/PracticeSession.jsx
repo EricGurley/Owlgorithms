@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { practiceProblems } from '../data/practiceProblems.js';
+import { getPracticeProblems } from '../data/practiceRegistry.js';
 
 import PracticeSidebar from '../components/Practice/PracticeSidebar';
 import QuestionCanvas from '../components/Practice/QuestionCanvas';
@@ -16,8 +16,10 @@ const shuffleArray = (array) => {
 };
 
 export default function PracticeSession() {
-    const { topicSlug } = useParams();
-    const rawBlueprints = practiceProblems[topicSlug];
+    const { courseId, topicSlug } = useParams();
+    
+    // Retrieve problem blueprints dynamically across courses
+    const rawBlueprints = getPracticeProblems(courseId, topicSlug);
     
     const [sessionSequence, setSessionSequence] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +34,7 @@ export default function PracticeSession() {
             setSessionSequence(selectedProblems);
             setCurrentIndex(0); 
         }
-    }, [topicSlug]); 
+    }, [topicSlug, courseId]); 
 
     useEffect(() => {
         if (sessionSequence.length > 0 && sessionSequence[currentIndex]) {

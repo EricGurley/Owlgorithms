@@ -1241,6 +1241,62 @@ h1, h2, h3 {
 }
 
 /* =========================================
+   COURSE CATALOG
+========================================= */
+
+.course-catalog-container {
+  width: 85%;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.course-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 4rem;
+  margin-top: 3rem;
+  align-items: start;
+  width: 100%;
+}
+
+.course-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.course-column-title {
+  color: #ffffff;
+  border-bottom: 2px solid #e28ae2;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.course-node-container {
+  margin: 25px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topic-icon-btn.clickable {
+  cursor: pointer;
+}
+
+.topic-icon-btn.disabled {
+  cursor: not-allowed;
+}
+
+.back-catalog-btn {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* =========================================
    AUTOFILL OVERRIDES
 ========================================= */
 
