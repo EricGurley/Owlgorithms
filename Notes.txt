@@ -1,3 +1,92 @@
-Owlgorithms will no longer be a platform for learning C programming.
-It will now focus on providing supplementary material for
-a typical introductory Astrophysics 101 university course.
+MATHEMATICS
+
+1. Calculus 3 (Multivariable)
+
+    Standard Textbook: Calculus: Early Transcendentals by James Stewart.
+
+    Chapters Covered: Chapters 12–16. Vectors and the Geometry of Space, Vector Functions, Partial Derivatives, Multiple Integrals, and Vector Calculus.
+
+2. Differential Equations
+
+    Standard Textbook: Elementary Differential Equations and Boundary Value Problems by William E. Boyce and Richard C. DiPrima.
+
+    Chapters Covered: Chapters 1–7. First-Order ODEs, Second-Order Linear Equations, Higher-Order Linear Equations, Series Solutions, Laplace Transforms, and Systems of First-Order Linear Equations.
+
+3. Linear Algebra
+
+    Standard Textbook: Linear Algebra and Its Applications by David C. Lay.
+
+    Chapters Covered: Chapters 1–7. Linear Equations in Linear Algebra, Matrix Algebra, Determinants, Vector Spaces, Eigenvalues and Eigenvectors, Orthogonality and Least Squares, and Symmetric Matrices.
+
+4. Tensor Calculus
+
+    Standard Textbook: A First Course in General Relativity by Bernard F. Schutz. 
+
+    Chapters Covered: Chapters 1–4. Special Relativity, Vector Analysis, Tensor Analysis in Special Relativity, and Perfect Fluids/Intro to Curved Spacetime.
+
+
+
+
+PHYSICS
+
+1. Astrophysics I & II
+
+    Standard Textbook: An Introduction to Modern Astrophysics (The "Big Orange Book") by Bradley W. Carroll and Dale A. Ostlie.
+
+    Chapters Covered (Astro I): Chapters 1–17. Covers Celestial Mechanics, The Nature of Light, Stellar Interiors, The Sun, Stellar Evolution, White Dwarfs, Neutron Stars, and Black Holes.
+
+    Chapters Covered (Astro II): Chapters 18–30. Covers Binary Systems, The Milky Way, Galactic Dynamics, Active Galaxies, and Cosmology.
+
+2. University Physics III (Modern Physics)
+
+    Standard Textbook: University Physics with Modern Physics by Hugh D. Young and Roger A. Freedman.
+
+    Chapters Covered: Chapters 37–44. Covers Special Relativity, Photons/Matter Waves, Quantum Mechanics Intro, Atomic Structure, Molecules and Solids, and Nuclear Physics.
+
+3. Classical Mechanics (Hamiltonian and Lagrangian)
+
+    Standard Textbook: Classical Mechanics by John R. Taylor.
+
+    Chapters Covered: Chapters 1–11, plus 13. Newton's Laws, Oscillations, Calculus of Variations, Lagrange's Equations, Central Forces, Non-inertial Frames, Rigid Bodies, Coupled Oscillators, and Hamiltonian Mechanics.
+
+4. Special and General Relativity
+
+    Standard Textbook: Spacetime and Geometry: An Introduction to General Relativity by Sean M. Carroll.
+
+    Chapters Covered: Chapters 1–7. Special Relativity/Flat Spacetime, Manifolds, Curvature, Gravitation (Einstein's Field Equations), The Schwarzschild Solution (Black Holes), and Cosmology.
+
+5. Quantum Mechanics
+
+    Standard Textbook: Introduction to Quantum Mechanics by David J. Griffiths.
+
+    Chapters Covered: Chapters 1–7. The Wave Function, The Time-Independent Schrödinger Equation, Formalism, Quantum Mechanics in Three Dimensions, Identical Particles, and Time-Independent Perturbation Theory.
+
+
+
+
+ENGINEERING
+
+1. Thermodynamics
+
+    Standard Textbook: Thermodynamics: An Engineering Approach by Yunus A. Çengel and Michael A. Boles.
+
+    Chapters Covered: Chapters 1–10. Basic concepts, energy analysis, properties of pure substances, closed systems, open systems, the second law of thermodynamics, entropy, and basic power cycles (like the Rankine and Brayton cycles).
+
+
+2. Fluid Mechanics
+
+    Standard Textbook: Fundamentals of Fluid Mechanics by Bruce R. Munson, Donald F. Young, and Theodore H. Okiishi.
+
+    Chapters Covered: Chapters 1–9. Fluid Statics, Elementary Fluid Dynamics (Bernoulli), Kinematics, Finite Control Volume Analysis, Differential Analysis (Navier-Stokes), Similitude, Viscous Pipe Flow, and Flow Over Immersed Bodies.
+
+3. Signals and Systems
+
+    Standard Textbook: Signals and Systems by Alan V. Oppenheim and Alan S. Willsky.
+
+    Chapters Covered: Chapters 1–10. Continuous and discrete LTI systems, Fourier series and transforms, filtering, sampling, the Laplace transform, and the Z-transform.
+
+4. Electromagnetics
+
+    Standard Textbook: Fundamentals of Applied Electromagnetics by Fawwaz T. Ulaby or Elements of Electromagnetics by Matthew N.O. Sadiku.
+
+    Chapters Covered: Chapters 1–9. Vector Calculus, Electrostatics, Magnetostatics, Maxwell's Equations, Plane Waves, and Transmission Lines.
