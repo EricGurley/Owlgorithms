@@ -1,4 +1,3 @@
-// src/components/TopicNode.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +12,10 @@ export default function TopicNode({
 }) {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate(); 
+
+    const formattedImage = image && image.startsWith('/')
+        ? `${import.meta.env.BASE_URL}${image.slice(1)}`
+        : image;
 
     const handleNodeClick = () => {
         if (!isPlaceholder) {
@@ -59,7 +62,7 @@ export default function TopicNode({
                 {isPlaceholder ? (
                     <span className="question-mark">?</span>
                 ) : (
-                    image && <img src={image} alt={title} className="node-image" />
+                    formattedImage && <img src={formattedImage} alt={title} className="node-image" />
                 )}
             </button>
 

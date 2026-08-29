@@ -30,11 +30,11 @@ const App = () => {
   if (loading) return <div className="loading-screen">Loading...</div>;
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <div className={`app-wrapper ${currentBackground}`}>
         
         <video className="video-background" autoPlay loop muted playsInline>
-          <source src="/Images/Backgrounds/BG-Seamless.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}Images/Backgrounds/BG-Seamless.mp4`} type="video/mp4" />
         </video>
         
         <div className="video-background-overlay" />
@@ -58,6 +58,7 @@ const App = () => {
           <Route path="/register" element={user ? <Navigate to="/profile" /> : <Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
 
       </div>

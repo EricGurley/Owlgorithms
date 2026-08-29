@@ -2,6 +2,10 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const CourseNode = ({ title, image, onClick, isPlaceholder }) => {
+    const formattedImage = image && image.startsWith('/')
+        ? `${import.meta.env.BASE_URL}${image.slice(1)}`
+        : image;
+
     return (
         <div className="topic-node-container course-node-container">
             <button 
@@ -11,7 +15,7 @@ const CourseNode = ({ title, image, onClick, isPlaceholder }) => {
                 {isPlaceholder ? (
                     <span className="question-mark">?</span>
                 ) : (
-                    image && <img src={image} alt={title} className="node-image" />
+                    formattedImage && <img src={formattedImage} alt={title} className="node-image" />
                 )}
             </button>
             <h3 className="topic-title">{title}</h3>
