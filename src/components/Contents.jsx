@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 
+/**
+ * RECURSIVE TABLE OF CONTENTS (TOC) ACCORDION
+ * 
+ * Renders a collapsible sidebar hierarchy (Section -> Chapter -> Topic).
+ * Filters a flat table array to dynamically build multi-level nested accordions,
+ * managing active state triggers and expanding active modules automatically.
+ */
 const Contents = ({ table, activeSection, setActiveSection, activeChapter, setActiveChapter, activeTopic, setActiveTopic }) => {
 
     const [isOpen, setIsOpen] = useState(true);
     
     return (
         <div className={`contents-container ${isOpen ? '' : 'closed'}`}>
+            {/* Sidebar collapse / expand toggle tab */}
             <div className='toc-toggle' onClick={() => setIsOpen(!isOpen)}>
                 <h2>{isOpen ? '◀' : '▶'}</h2>
             </div>
@@ -13,6 +21,8 @@ const Contents = ({ table, activeSection, setActiveSection, activeChapter, setAc
             <h1> Contents </h1>
 
             <div className="contents-divider"/>
+            
+            {/* Level 1: Sections */}
             {table
                 .filter(item => item.type === 'section')
                 .map(section => (
@@ -28,6 +38,7 @@ const Contents = ({ table, activeSection, setActiveSection, activeChapter, setAc
                             {section.title}
                         </h2>
 
+                        {/* Level 2: Chapters within target Section */}
                         <div className={`accordion-wrapper ${activeSection === section.id ? 'open' : ''}`}>
                             <div className="chapter-list">
                                 {table
@@ -45,6 +56,7 @@ const Contents = ({ table, activeSection, setActiveSection, activeChapter, setAc
                                                 {chapter.title}
                                             </h3>
 
+                                            {/* Level 3: Topics within target Chapter */}
                                             <div className={`accordion-wrapper ${activeChapter === chapter.id ? 'open' : ''}`}>
                                                 <div className="topic-list">
                                                     {table

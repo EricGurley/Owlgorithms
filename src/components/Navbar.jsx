@@ -3,9 +3,11 @@ import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebase';
 
+// Primary application navigation bar; dynamically toggles profile and authentication controls.
 const Navbar = ({ user }) => {
   const navigate = useNavigate();
 
+  // Signs user out of Firebase auth and redirects to login route
   const handleLogout = () => {
     signOut(auth);
     navigate('/login');

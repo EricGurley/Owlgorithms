@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+/**
+ * Interactive node component used in course skill trees.
+ * Toggles a detail popover displaying topic difficulty and routing options (Practice vs. Read).
+ */
 export default function TopicNode({ 
     image, 
     title, 
     description, 
     isPlaceholder, 
-    courseId = 'astrophysics-1', // Defaults to original course if unspecified
+    courseId = 'astrophysics-1', 
     urlSlug, 
     difficulty = 0 
 }) {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate(); 
 
+    // Handle Vite relative asset paths for build deployment
     const formattedImage = image && image.startsWith('/')
         ? `${import.meta.env.BASE_URL}${image.slice(1)}`
         : image;

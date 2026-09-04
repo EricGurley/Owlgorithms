@@ -6,6 +6,7 @@ const Profile = () => {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    // Fetch account details from Firestore using the authenticated user's UID
     useEffect(() => {
         const fetchUserData = async () => {
             const user = auth.currentUser;

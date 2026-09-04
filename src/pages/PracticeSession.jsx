@@ -6,6 +6,7 @@ import PracticeSidebar from '../components/Practice/PracticeSidebar';
 import QuestionCanvas from '../components/Practice/QuestionCanvas';
 import ActionFooter from '../components/Practice/ActionFooter';
 
+// Utility helper to randomize problem set order per session
 const shuffleArray = (array) => {
     let shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -27,6 +28,7 @@ export default function PracticeSession() {
     const [userAnswer, setUserAnswer] = useState("");
     const [showSolution, setShowSolution] = useState(false);
 
+    // Initialize 5-problem session sequence when topic or course route changes
     useEffect(() => {
         if (rawBlueprints) {
             const shuffled = shuffleArray(rawBlueprints);
@@ -36,6 +38,7 @@ export default function PracticeSession() {
         }
     }, [topicSlug, courseId]); 
 
+    // Instantiate dynamic values and prompt variables for current problem
     useEffect(() => {
         if (sessionSequence.length > 0 && sessionSequence[currentIndex]) {
             const currentBlueprint = sessionSequence[currentIndex];

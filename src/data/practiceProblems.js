@@ -1,8 +1,21 @@
+/**
+ * DYNAMIC PROBLEM GENERATION BLUEPRINTS
+ * 
+ * Contains algorithmic question generators grouped by topic slug.
+ * Instead of static questions, each entry provides a `generate()` closure that procedurally 
+ * instantiates randomized values, calculates expected numerical answers, and constructs 
+ * step-by-step solution derivations at runtime.
+ */
+
 export const practiceProblems = {
     'celestial-sphere': [
         {
             id: 'cs-q1',
             type: 'numerical',
+            /**
+             * Generates a basic subtraction problem.
+             * Randomizes two integers within bounded ranges to prevent hardcoded answer memorization.
+             */
             generate: () => {
                 const x = Math.floor(Math.random() * 50) + 10; 
                 const y = Math.floor(Math.random() * 10) + 1;  
@@ -47,6 +60,10 @@ export const practiceProblems = {
         {
             id: 'op-q2',
             type: 'numerical',
+            /**
+             * Generates a clean division problem.
+             * Reverses multiplication to ensure the dividend yields a whole number quotient.
+             */
             generate: () => {
                 const divisor = Math.floor(Math.random() * 10) + 2; 
                 const answer = Math.floor(Math.random() * 12) + 2;

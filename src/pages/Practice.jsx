@@ -27,6 +27,7 @@ export default function Practice() {
                     <h2> 1: The Celestial Sphere </h2>
                 </div>
                 
+                {/* Course unit node map targeting Astrophysics I topic routes */}
                 <div className="topic-buttons-container">
                     <TopicNode 
                         title="The Celestial Sphere"

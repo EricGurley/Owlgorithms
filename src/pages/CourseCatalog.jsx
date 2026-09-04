@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// Renders selectable course cards with Vite base URL pathing for static assets
 const CourseNode = ({ title, image, onClick, isPlaceholder }) => {
     const formattedImage = image && image.startsWith('/')
         ? `${import.meta.env.BASE_URL}${image.slice(1)}`
@@ -31,6 +32,7 @@ export default function CourseCatalog() {
             <h1> Catalog </h1>
             <div className="borderline" />
 
+            {/* Subject grid layout organizing available and upcoming courses */}
             <div className="course-catalog-grid">
                 
                 <div className="course-column">
