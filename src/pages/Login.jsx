@@ -1,24 +1,25 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth, googleProvider } from '../firebase';
-import { signInWithPopup, signInWithEmailAndPassword,
-         browserLocalPersistence, browserSessionPersistence, 
-         setPersistence, GoogleAuthProvider } from 'firebase/auth';
+import { auth, googleProvider } from '../firebase'; 
+import { 
+    signInWithPopup, 
+    signInWithEmailAndPassword,
+    browserLocalPersistence, 
+    browserSessionPersistence, 
+    setPersistence,
+    sendPasswordResetEmail
+} from 'firebase/auth';
 
 export default function Login() {
-
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(true);
 
-    //Remember me
-
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
             const persistenceType = rememberMe ? browserLocalPersistence : browserSessionPersistence;
-        
             await setPersistence(auth, persistenceType);
 
             const result = await signInWithEmailAndPassword(auth, email, password);
@@ -29,14 +30,12 @@ export default function Login() {
         }
     };
 
-    // Sign in with google
-
     const handleGoogleLogin = async () => {
         try {
             const persistenceType = rememberMe ? browserLocalPersistence : browserSessionPersistence;
             await setPersistence(auth, persistenceType);
 
-            const provider = new GoogleAuthProvider();
+            // Pass googleProvider directly to signInWithPopup
             const result = await signInWithPopup(auth, googleProvider);
 
             const user = result.user;
@@ -44,11 +43,9 @@ export default function Login() {
             console.log("User's email: ", user.email);
             navigate('/');
         } catch (error) {
-            console.error("Couldn't sign in to google: ", error.message);
+            console.error("Couldn't sign in to Google: ", error.code, error.message);
         }   
-    }
-
-    // Reset password
+    };
 
     const handleResetPassword = async () => {
         if (!email) {
@@ -70,7 +67,6 @@ export default function Login() {
             <h1>Sign In</h1>
             
             <form className="login-creds-list" onSubmit={handleLogin}>
-                
                 <div className="login-input">
                     <input
                         type="email"
@@ -82,15 +78,16 @@ export default function Login() {
                 </div>
                 
                 <div className="login-input">
-                    <input type="password"
-                    placeholder="Password"
-                    required
-                    value = {password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    <input 
+                        type="password"
+                        placeholder="Password"
+                        required
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                     />
                 </div>
 
-                <p onClick={() => navigate('/forgot-password')} className="forgot-password-link">
+                <p onClick={handleResetPassword} className="forgot-password-link">
                     Forgot Password?
                 </p>
 
@@ -122,7 +119,6 @@ export default function Login() {
                         Login With Google
                     </button>
                 </div>
-
             </form>
         </div>
     );
