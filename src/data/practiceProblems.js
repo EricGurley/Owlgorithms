@@ -77,7 +77,7 @@ export const practiceProblems = {
                         "The Proceeder"
                     ],
                     correctAnswer: "The South Celestial Pole",
-                    solution: "This line extending from the top of the Earth out into the celestial sphere represents the South Celestial Pole"
+                    solution: "This line extending from the top of the Earth out into the celestial sphere represents the South Celestial Pole."
                 };
             }
         },
@@ -102,34 +102,74 @@ export const practiceProblems = {
     ],
     'order-of-planets': [
         {
-            id: 'op-q1',
-            type: 'numerical',
+            id: 'cs-q1',
+            type: 'multiple-choice',
             generate: () => {
-                const x = Math.floor(Math.random() * 12) + 2; 
-                const y = Math.floor(Math.random() * 12) + 2;  
-                const expectedAnswer = x * y;
                 return {
-                    prompt: `Calculate the product: ${x} * ${y} = ?`,
-                    correctAnswer: expectedAnswer,
-                    solution: `Step 1: Multiply the values: ${x} * ${y}. \nFinal Answer: ${expectedAnswer}`
+                    prompt: "If the center circle is the Sun, and the smaller white circle below it is the Earth, what is the position of the pink circle representing a celestial object considered to be?",
+                    image: "/Images/Practice/Astrophysics/OrderOfThePlanets/OOTPConjunction.png",
+                    options: [
+                        "Quadrature",
+                        "Superior Opposition",
+                        "Conjunction",
+                        "Southern Elongation"
+                    ],
+                    correctAnswer: "Conjunction",
+                    solution: "The pink celestial object is considered to be in a position of conjunction."
                 };
             }
         },
         {
-            id: 'op-q2',
-            type: 'numerical',
-            /**
-             * Generates a clean division problem.
-             * Reverses multiplication to ensure the dividend yields a whole number quotient.
-             */
+            id: 'cs-q2',
+            type: 'multiple-choice',
             generate: () => {
-                const divisor = Math.floor(Math.random() * 10) + 2; 
-                const answer = Math.floor(Math.random() * 12) + 2;
-                const dividend = divisor * answer; 
                 return {
-                    prompt: `Calculate the quotient: ${dividend} / ${divisor} = ?`,
-                    correctAnswer: answer,
-                    solution: `Step 1: Divide ${dividend} by ${divisor}. \nFinal Answer: ${answer}`
+                    prompt: "If the center circle is the Sun, and the smaller white circle below it is the Earth, what is the position of the pink circle representing a celestial object considered to be?",
+                    image: "/Images/Practice/Astrophysics/OrderOfThePlanets/OOTPOpposition.png",
+                    options: [
+                        "Quadrature",
+                        "Inferior Opposition",
+                        "Opposition",
+                        "Northern Elongation"
+                    ],
+                    correctAnswer: "Opposition",
+                    solution: "The pink celestial object is considered to be in a position of opposition."
+                };
+            }
+        },
+        {
+            id: 'cs-q3',
+            type: 'multiple-choice',
+            generate: () => {
+                return {
+                    prompt: "If the center circle is the Sun, and the smaller white circle below it is the Earth, what is the position of the pink circle representing a celestial object considered to be?",
+                    image: "/Images/Practice/Astrophysics/OrderOfThePlanets/OOTPEastQuad.png",
+                    options: [
+                        "Eastern Quadrature",
+                        "Western Opposition",
+                        "Left Conjunction",
+                        "Western Superior"
+                    ],
+                    correctAnswer: "Eastern Quadrature",
+                    solution: "The pink celestial object forms a 90 degree angle between itself, the Earth, and the Sun. But the reason this is East and not West is because when viewing the celestial object from on Earth, the object would appear to be to your right (East)."
+                };
+            }
+        },
+        {
+            id: 'cs-q4',
+            type: 'multiple-choice',
+            generate: () => {
+                return {
+                    prompt: "If the center circle is the Sun, and the smaller white circle below it is the Earth, what is the position of the pink circle representing a celestial object considered to be?",
+                    image: "/Images/Practice/Astrophysics/OrderOfThePlanets/OOTPWestQuad.png",
+                    options: [
+                        "Western Quadrature",
+                        "Eastern Opposition",
+                        "Right Conjunction",
+                        "Eastern Superior"
+                    ],
+                    correctAnswer: "Western Quadrature",
+                    solution: "The pink celestial object forms a 90 degree angle between itself, the Earth, and the Sun. But the reason this is East and not West is because when viewing the celestial object from on Earth, the object would appear to be to your left (West)."
                 };
             }
         }
