@@ -11,33 +11,91 @@ export const practiceProblems = {
     'celestial-sphere': [
         {
             id: 'cs-q1',
-            type: 'numerical',
-            /**
-             * Generates a basic subtraction problem.
-             * Randomizes two integers within bounded ranges to prevent hardcoded answer memorization.
-             */
+            type: 'multiple-choice',
             generate: () => {
-                const x = Math.floor(Math.random() * 50) + 10; 
-                const y = Math.floor(Math.random() * 10) + 1;  
-                const expectedAnswer = x - y;
                 return {
-                    prompt: `Calculate the following difference: ${x} - ${y} = ?`,
-                    correctAnswer: expectedAnswer,
-                    solution: `Step 1: Identify your variables. x = ${x} and y = ${y}. \nStep 2: Subtract ${y} from ${x}. \nFinal Answer: ${expectedAnswer}`
+                    prompt: "What part of the celestial sphere model does this ring highlight?",
+                    image: "/Images/Practice/Astrophysics/CelestialSphere/CSCelEq.png",
+                    options: [
+                        "The Earth's Equator",
+                        "The Celestial Equator",
+                        "The Astronomical Equator",
+                        "The Exterior Equator"
+                    ],
+                    correctAnswer: "The Celestial Equator",
+                    solution: "The ring projected out into space aligned with Earth's equator represents the Celestial Equator."
                 };
             }
         },
         {
             id: 'cs-q2',
-            type: 'numerical',
+            type: 'multiple-choice',
             generate: () => {
-                const x = Math.floor(Math.random() * 20) + 5; 
-                const y = Math.floor(Math.random() * 15) + 5;  
-                const expectedAnswer = x + y;
                 return {
-                    prompt: `Calculate the sum: ${x} + ${y} = ?`,
-                    correctAnswer: expectedAnswer,
-                    solution: `Step 1: Add the values together: ${x} + ${y}. \nFinal Answer: ${expectedAnswer}`
+                    prompt: "What part of the celestial sphere model does this ring highlight?",
+                    image: "/Images/Practice/Astrophysics/CelestialSphere/CSEarthEq.png",
+                    options: [
+                        "The Significant Equator",
+                        "The Celestial Equator",
+                        "The Earth's Equator",
+                        "The Interior Equator"
+                    ],
+                    correctAnswer: "The Earth's Equator",
+                    solution: "The ring projected out onto the inner sphere's equator represents the Earth's Equator."
+                };
+            }
+        },
+        {
+            id: 'cs-q3',
+            type: 'multiple-choice',
+            generate: () => {
+                return {
+                    prompt: "What part of the celestial sphere model does this line highlight?",
+                    image: "/Images/Practice/Astrophysics/CelestialSphere/CSNorthPole.png",
+                    options: [
+                        "The Upper Significant Line",
+                        "The Preceder",
+                        "The North Celestial Pole",
+                        "The Interior Equator"
+                    ],
+                    correctAnswer: "The North Celestial Pole",
+                    solution: "This line extending from the top of the Earth out into the celestial sphere represents the North Celestial Pole."
+                };
+            }
+        },
+        {
+            id: 'cs-q4',
+            type: 'multiple-choice',
+            generate: () => {
+                return {
+                    prompt: "What part of the celestial sphere model does this line highlight?",
+                    image: "/Images/Practice/Astrophysics/CelestialSphere/CSSouthPole.png",
+                    options: [
+                        "The Significant Equator",
+                        "The Lower Significant Line",
+                        "The South Celestial Pole",
+                        "The Proceeder"
+                    ],
+                    correctAnswer: "The South Celestial Pole",
+                    solution: "This line extending from the top of the Earth out into the celestial sphere represents the South Celestial Pole"
+                };
+            }
+        },
+        {
+            id: 'cs-q5',
+            type: 'multiple-choice',
+            generate: () => {
+                return {
+                    prompt: "How much space does this arrow represent?",
+                    image: "/Images/Practice/Astrophysics/CelestialSphere/CSSpace.png",
+                    options: [
+                        "Twice the Earth's radius",
+                        "Infinity",
+                        "The Solar System",
+                        "Three times the Earth's radius"
+                    ],
+                    correctAnswer: "Infinity",
+                    solution: "This space in the celestial sphere is infinitely large."
                 };
             }
         }

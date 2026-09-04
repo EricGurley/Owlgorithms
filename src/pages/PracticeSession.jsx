@@ -6,7 +6,6 @@ import PracticeSidebar from '../components/Practice/PracticeSidebar';
 import QuestionCanvas from '../components/Practice/QuestionCanvas';
 import ActionFooter from '../components/Practice/ActionFooter';
 
-// Utility helper to randomize problem set order per session
 const shuffleArray = (array) => {
     let shuffled = [...array];
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -19,7 +18,6 @@ const shuffleArray = (array) => {
 export default function PracticeSession() {
     const { courseId, topicSlug } = useParams();
     
-    // Retrieve problem blueprints dynamically across courses
     const rawBlueprints = getPracticeProblems(courseId, topicSlug);
     
     const [sessionSequence, setSessionSequence] = useState([]);
@@ -28,7 +26,6 @@ export default function PracticeSession() {
     const [userAnswer, setUserAnswer] = useState("");
     const [showSolution, setShowSolution] = useState(false);
 
-    // Initialize 5-problem session sequence when topic or course route changes
     useEffect(() => {
         if (rawBlueprints) {
             const shuffled = shuffleArray(rawBlueprints);
@@ -38,7 +35,6 @@ export default function PracticeSession() {
         }
     }, [topicSlug, courseId]); 
 
-    // Instantiate dynamic values and prompt variables for current problem
     useEffect(() => {
         if (sessionSequence.length > 0 && sessionSequence[currentIndex]) {
             const currentBlueprint = sessionSequence[currentIndex];
@@ -57,9 +53,13 @@ export default function PracticeSession() {
     };
 
     const handleSubmit = () => {
-        if (!activeProblemData) return;
+        if (!activeProblemData || !userAnswer) return;
 
-        if (parseFloat(userAnswer) === activeProblemData.correctAnswer) {
+        const isCorrect = activeProblemData.options
+            ? userAnswer === activeProblemData.correctAnswer
+            : parseFloat(userAnswer) === activeProblemData.correctAnswer;
+
+        if (isCorrect) {
             alert("Correct!");
             handleNext(); 
         } else {
@@ -69,6 +69,9 @@ export default function PracticeSession() {
 
     if (!rawBlueprints) return <div className="practice-session-status-msg">No problems found for this topic.</div>;
     if (!activeProblemData) return <div className="practice-session-status-msg">Loading problem...</div>;
+
+    // Check if current question has multiple choice options
+    const isMultipleChoice = Array.isArray(activeProblemData.options) && activeProblemData.options.length > 0;
 
     return (
         <div className="practice-layout-grid">
@@ -80,11 +83,35 @@ export default function PracticeSession() {
 
             <div className="practice-main-column">
                 <div className="problem-container">
-                    <QuestionCanvas prompt={activeProblemData.prompt} />
+                    <QuestionCanvas 
+                        prompt={activeProblemData.prompt} 
+                        image={activeProblemData.image} 
+                    />
                     
-                    {activeProblemData.type === 'multiple-choice' ? (
-                        <div className="mc-panel-placeholder">
-                            [Multiple Choice Panel will go here]
+                    {isMultipleChoice ? (
+                        <div className="mc-options-list" style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginTop: '24px', alignItems: 'center' }}>
+                            {activeProblemData.options.map((option, idx) => {
+                                const isSelected = userAnswer === option;
+                                return (
+                                    <button
+                                        key={idx}
+                                        type="button"
+                                        className={`neon-button ${isSelected ? 'active' : ''}`}
+                                        onClick={() => setUserAnswer(option)}
+                                        style={{
+                                            width: '80%',
+                                            maxWidth: '500px',
+                                            padding: '12px 20px',
+                                            textAlign: 'left',
+                                            borderColor: isSelected ? '#a855f7' : '',
+                                            backgroundColor: isSelected ? 'rgba(168, 85, 247, 0.25)' : 'transparent',
+                                            boxShadow: isSelected ? '0 0 12px #a855f7' : 'none'
+                                        }}
+                                    >
+                                        {String.fromCharCode(65 + idx)}) {option}
+                                    </button>
+                                );
+                            })}
                         </div>
                     ) : (
                         <input 
